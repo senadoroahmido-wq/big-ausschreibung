@@ -1,0 +1,53 @@
+name: Extract documents for analysis
+
+on:
+  push:
+    branches:
+      - analysis/ad-extract-20260914
+    paths:
+      - .github/workflows/extract-docs.yml
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PDF text tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+      - name: Extract source documents
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p extracted
+          pdftotext -layout "04 Managed Service IT-Dienstleistungen, Anlage 3 Leistungsbeschreibung_Vers. 1.2.pdf" extracted/current_lb.txt
+          pdftotext -layout "03 Managed Services IT-Dienstleistungen, Anlage 3 Leistungsbeschreibung.pdf" extracted/old_lb.txt
+          python - <<'PY'
+          import zipfile
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          src = Path('BIG_Betriebshandbuch_Frankfurt.docx')
+          out = Path('extracted/betriebshandbuch.txt')
+          ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+          with zipfile.ZipFile(src) as z:
+              root = ET.fromstring(z.read('word/document.xml'))
+          lines = []
+          for p in root.findall('.//w:p', ns):
+              texts = [t.text or '' for t in p.findall('.//w:t', ns)]
+              text = ''.join(texts).strip()
+              if text:
+                  lines.append(text)
+          out.write_text('\n'.join(lines), encoding='utf-8')
+          PY
+      - name: Commit extracted text
+        run: |
+          git config user.name "chatgpt-analysis"
+          git config user.email "actions@users.noreply.github.com"
+          git add extracted
+          git commit -m "Extract source documents for analysis [skip ci]"
+          git push
