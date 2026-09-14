@@ -1,0 +1,80 @@
+name: Extract screenshot document
+
+on:
+  push:
+    branches:
+      - analysis/ad-extract-20260914
+    paths:
+      - '.github/workflows/extract-screenshot.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: analysis/ad-extract-20260914
+
+      - name: Install extraction tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-deu
+          python3 -m pip install --quiet python-docx pillow pytesseract
+
+      - name: Extract text and OCR embedded images
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import io, zipfile
+          from docx import Document
+          from PIL import Image
+          import pytesseract
+
+          src = Path('Bildschirmfoto 2026-08-31 um 14.19.10.docx')
+          out = Path('extracted/screenshot_doc_ocr.txt')
+          out.parent.mkdir(exist_ok=True)
+          chunks = []
+
+          doc = Document(src)
+          chunks.append('=== DOCX TEXT ===')
+          for p in doc.paragraphs:
+              t = p.text.strip()
+              if t:
+                  chunks.append(t)
+          for ti, table in enumerate(doc.tables):
+              chunks.append(f'\n=== TABLE {ti} ===')
+              for row in table.rows:
+                  chunks.append(' | '.join(c.text.strip() for c in row.cells))
+
+          chunks.append('\n=== EMBEDDED IMAGE OCR ===')
+          with zipfile.ZipFile(src) as z:
+              media = [n for n in z.namelist() if n.startswith('word/media/')]
+              chunks.append(f'Embedded media files: {len(media)}')
+              for name in media:
+                  data = z.read(name)
+                  try:
+                      im = Image.open(io.BytesIO(data))
+                      chunks.append(f'\n--- {name} {im.size} {im.format} ---')
+                      # OCR only reasonably sized raster images.
+                      if im.width >= 500 and im.height >= 150:
+                          text = pytesseract.image_to_string(im, lang='deu+eng')
+                          chunks.append(text)
+                      else:
+                          chunks.append('[OCR skipped: small image]')
+                  except Exception as e:
+                      chunks.append(f'\n--- {name} ---\n[unsupported image for OCR: {e}]')
+
+          out.write_text('\n'.join(chunks), encoding='utf-8')
+          print(out)
+          PY
+
+      - name: Commit extraction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add extracted/screenshot_doc_ocr.txt
+          git commit -m "Extract screenshot document for analysis" || exit 0
+          git push origin HEAD:analysis/ad-extract-20260914
