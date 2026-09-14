@@ -1,0 +1,12 @@
+Base media count: 153
+Screenshot-doc media count: 155
+Unique media count: 1
+
+=== UNIQUE word/media/image210.png ===
+sha256=b94a330f0d032b0a60b09182e5f14670faf85b54bc84e277cc236b2231a1a633
+bytes=9779
+format=PNG size=(418, 326)
+--- OCR ---
+(3)
+
+direkt gesund
