@@ -1,0 +1,5515 @@
+BetriebshandbuchBetriebshandbuch
+Betriebshandbuch
+Betriebshandbuch
+Wahrung der Vertraulichkeit
+Der Inhalt dieses Dokuments ist Eigentum der PROACT Deutschland GmbH. Er darf ohne ausdrückliche und schriftliche Genehmigung der PROACT Deutschland GmbH weder ganz noch teilweise dupliziert, an Dritte weitergegeben oder anderweitig veröffentlicht werden.
+Inhaltsverzeichnis
+1.Einleitung3
+2.Änderungsverzeichnis4
+3.Verantwortlichkeiten6
+3.1.Kunde6
+3.2.Proact6
+4.Übersicht Leistungsscheine und Services6
+4.1.Proact Cloud7
+4.2.On Prem7
+5.Lizenzen7
+5.1.Übersicht Beistellung8
+5.2.Übersicht Lizenzerfassung8
+5.3.Dokumentation Windows CPU-Kerne8
+6.Kundenumgebung10
+6.1.Management- und Servernetzwerk BIG Dortmund11
+6.2.Zugangskontrolle11
+6.3.Telefonie11
+6.3.1.BIG11
+6.4.Trend Micro Deep Discovery Analyzer (DDA)14
+6.5.Trend Micro Deep Discovery Inspector (DDI)16
+6.6.Greenbone Security Manager17
+6.7.Server und Services On-Premises17
+6.7.1.OnPrem Firewall Services MSL317
+6.7.2.OnPrem VMware Services MSL317
+6.7.3.OnPrem NetApp Services MSL321
+6.7.4.OnPrem Hyper-V Services MSL321
+7.Proact Cloud Firewall Services27
+7.1.Aufbau Firewall-Cluster Proact Cloud28
+7.1.Virtuelles Firewall-Cluster28
+7.2.Rechenzentrums-Netzwerke29
+7.3.veröffentlichte Dienste29
+7.4.Site-to-Site IPSec VPN31
+7.5.DHCP / Adressverteilung32
+8.Connectivity32
+8.1.Globale IP-Netzwerkstruktur33
+8.2.Logische Netzwerkstruktur33
+8.3.Direktverbindung Bitmarck33
+8.3.1.Support Hinweise34
+8.4.WAN35
+8.4.1.Öffentliche IP-Adressen36
+8.4.2.IPv436
+8.4.3.IPv636
+8.5.Standort Netzwerke (LAN)36
+8.6.Routing37
+8.6.1.Statisches Routing37
+8.6.2.Dynamisches Routing (BGP)37
+8.6.3.Peer to Peer Transfernetzwerke37
+8.7.Proact MPLS (hosted by Webdiscount)38
+8.7.1.globale Standortkürzel39
+8.7.2.MPLS Standorte BIG40
+8.7.3.MPLS Standortmigration41
+9.Active Directory Service41
+9.1.Infrastruktur42
+9.2.Sites und Services42
+9.2.1.Subnets42
+9.2.2.Inter-Site Transport44
+9.3.DNS45
+9.4.LDAPS45
+9.5.Betrieb46
+9.5.1.Betriebshinweise46
+9.5.2.Updates46
+9.5.3.Reboot46
+9.5.4.Besonderheiten46
+9.5.5.Hinweise zum Patchmanagement46
+9.5.6.Backup und Restore46
+9.5.7.Monitoring46
+9.5.8.Virenschutz47
+9.5.9.Verbrauchdatenerfassung47
+10.File Services47
+10.1.big-vfileclu01.big.krankenkasse.de48
+10.1.1.Infrastruktur48
+10.1.2.Konfiguration48
+10.1.3.Betrieb53
+10.2.big-vffslclu01.big.krankenkasse.de55
+10.2.1.Infrastruktur55
+10.2.2.Konfiguration55
+10.2.3.Betrieb56
+11.VMware Services58
+11.1.Infrastruktur59
+11.2.Konfigurationen59
+11.2.1.Hardware Systeminformationen ESXi Hosts59
+11.2.2.vSphere Cluster59
+11.2.3.vSphere Datastores59
+11.2.4.FC-SAN60
+11.3.Namenskonvention60
+11.4.Lizenzen60
+11.5.Betrieb60
+11.5.1.Updates60
+11.5.2.Monitoring60
+12.Hyper-V Services60
+12.1.Infrastruktur61
+12.2.Konfigurationen61
+12.2.1.Hardware Systeminformationen ESXi Hosts61
+12.2.2.Failover Cluster61
+12.2.3.Cluster Shared Volumes61
+12.3.Namenskonvention62
+12.4.Lizenzen62
+12.5.Betrieb62
+12.5.1.Updates62
+12.5.2.Monitoring62
+13.PKI Services62
+13.1.Infrastruktur63
+13.2.Konfiguration64
+13.2.1.CRL (CDP)64
+13.2.2.AIA64
+13.2.3.Templates64
+13.2.4.DNS-Einträge65
+13.3.Zertifikate65
+13.4.Betrieb65
+13.4.1.Betriebshinweise66
+13.4.2.Updates66
+13.4.3.Reboot66
+13.4.4.Besonderheiten66
+13.4.5.Hinweise zum Patchmanagement66
+13.4.6.AntiVirus66
+13.4.7.Backup und Restore66
+13.4.8.Monitoring66
+14.WSUS Services66
+14.1.Infrastruktur67
+14.1.1.Update Speicherort67
+14.2.Server Gruppierungen67
+14.2.1.AD-Gruppen67
+14.2.2.Gruppenrichtlinien67
+14.2.3.WSUS-Gruppen69
+14.2.4.Server Bereinigung69
+14.2.5.Weitere Konfigurationen69
+15.Exchange Services71
+15.1.Management72
+15.2.Externer Zugriff72
+15.3.Mailflow73
+15.3.1.MX Einträge73
+15.3.2.SPF Record73
+15.3.3.Mail Queue73
+15.3.4.Sendeconnectoren73
+15.3.5.Empfangsconnectoren74
+15.3.6.Akzeptierte Domänen77
+15.3.7.Transport Regeln77
+15.3.8.Remote Domänen78
+15.4.Virtuelle Verzeichnisse79
+15.4.1.big-vmail0279
+15.5.CodeTwo Exchange Rules Pro80
+15.5.1.Allgemeines80
+15.5.2.Konfiguration81
+15.5.3.Installation81
+15.6.Lizenzen81
+15.7.Zertifikate81
+15.8.Hybridstellung und Hybrid Modern Auth81
+15.8.1.Aktivierung Hybrid Modern Auth82
+15.8.2.Dedicated Hybrid App82
+15.9.Betrieb83
+15.9.1.Betriebshinweisekeine83
+15.9.2.Updates83
+15.9.3.Virenschutz83
+15.9.4.Reboot84
+15.9.5.Besonderheiten84
+15.9.6.Hinweise zum Patchmanagement84
+15.9.7.Backup und Restore84
+15.9.8.Monitoring84
+15.9.9.Lizenzerfassung85
+15.9.10.Exchange Usage85
+16.Remote Workplace auf Basis Citrix virtual Apps and Desktops85
+16.1.Grafische Übersicht86
+16.2.Tabellarische Serverübersicht86
+16.3.Version87
+16.4.Citrix Delivery Controller87
+16.4.1.Citrix License Activation Service (LAS)87
+16.4.2.Datenbank92
+16.4.3.Citrix Ressourcen (Desktops)92
+16.5.Citrix Director92
+16.5.1.Verfügbarkeit und Lastenausgleich92
+16.5.2.Administrative Rollen93
+16.6.FSLogix Profile93
+16.6.1.Profil Pfad93
+16.6.2.Ausnahmen93
+16.6.3.ODFC-Disks für Outlook Cached Modus93
+16.7.Storefront96
+16.7.1.Basis URL96
+16.7.2.Stores96
+16.7.3.Verfügbarkeit und Lastenausgleich97
+16.7.4.Zertifikat97
+16.8.Provisioning Services (Citrix PVS)98
+16.8.1.Setup98
+16.8.2.Netzwerk98
+16.8.3.Service Account98
+16.8.4.Datenbank98
+16.8.5.vDisks98
+16.8.6.Targets98
+16.9.Workspace Environment Management (WEM)99
+16.9.1.Infrastruktur Service99
+16.9.2.Datenbank99
+16.9.3.Service Account99
+16.9.4.Verfügbarkeit und Lastenausgleich100
+16.10.Zertifikate100
+16.11.Betrieb100
+16.11.1.Betriebshinweise100
+16.11.2.Updates100
+16.11.3.Hinweise zum Patchmanagement100
+16.11.4.Backup und Restore100
+16.11.5.Monitoring100
+16.11.6.Verbrauchdatenerfassung101
+16.12.besondere Anwendungen102
+16.12.1.Microsoft Edge102
+17.Citrix ADC103
+17.1.Citrix ADC Loadbalancer104
+17.1.1.Lizenzierung104
+17.1.2.Setup104
+17.1.3.Netzwerk104
+17.2.Citrix ADC Gateway104
+17.2.1.Lizensierung104
+17.2.2.Setup104
+17.2.3.Netzwerk104
+17.2.4.Citrix Gateway106
+17.2.5.Reverse Proxy Exchange106
+17.3.Betrieb107
+17.3.1.Monitoring107
+Das Monitoring im Rahmen der Citrix ADC Services beinhaltet:107
+18.Citrix/Azure Mulitfaktor Authentifizierung Einführung107
+18.1.Azure AD Connect Konfiguration109
+18.2.Citrix FAS (Federated Authentication Services)111
+18.3.Citrix ADC Gateway113
+18.4.Besonderheiten117
+18.4.1.PowerShell Skripte:117
+18.4.2.Azure Enterprise Applikation117
+18.4.3.Zertifikate120
+19.Intune121
+19.1.SCEP122
+19.2.Intune Profiles125
+19.3.Besonderheit126
+20.SQL Services126
+20.1.Infrastruktur127
+20.2.Konfiguration127
+20.2.1.BIG-VSQL01\INSTANZ02127
+20.2.2.BIG-VSQL01\INTRACONAC127
+20.2.3.BIG-VSQL01\ICKVARCHIVAC128
+20.2.4.BIG-VSQL01\INSTANZREPORT128
+20.2.5.BIG-VSQL02\ARCHIVAC129
+20.2.6.BIG-VSQL-DEV01129
+20.2.7.BIG-VTARZDEV01129
+20.3.Namenskonvention130
+20.4.Zertifikate130
+20.5.Betrieb130
+20.5.1.Betriebshinweise130
+20.5.2.Updates130
+20.5.3.Reboot130
+20.5.4.Besonderheiten130
+20.5.5.Hinweise zum Patchmanagement130
+20.5.6.Backup und Restore130
+20.5.7.Monitoring130
+Die Überwachung der MS SQL Services beinhaltet folgende Abfragen:130
+20.5.8.Verbrauchdatenerfassung131
+21.ADFS Service131
+21.1.Infrastruktur132
+21.2.Relying Party Trust132
+21.3.ADFS (WAP) Proxy133
+21.4.Zertifikate134
+21.5.Betrieb135
+21.5.1.Betriebshinweise135
+21.5.2.Updates135
+21.5.3.Reboot135
+21.5.4.Besonderheiten135
+21.5.5.Hinweise zum Patchmanagement135
+21.5.6.Backup und Restore135
+21.5.7.Monitoring135
+21.5.8.Verbrauchdatenerfassung135
+22.IaaS HYPER-V136
+22.1.Intracon Actimonda137
+22.2.PWS Actimonda137
+22.3.VEDA138
+22.4.Intranet actimonda139
+22.5.big-vansible139
+22.6.Germo140
+22.7.D3140
+22.8.21c141
+22.9.BIG-Vtransfer02141
+22.10.BIG-VELAN142
+22.11.BEATS143
+22.12.ACD144
+22.13.BIG-VSPEXPERT146
+22.14.BIG-VIF01147
+22.15.BIG-VKOLUMBUS147
+22.16.Sharepoint147
+22.17.Trendmicro148
+22.18.big-vqwrk01148
+23.IaaS VMWare149
+23.1.BIG-VD3CLASS150
+23.2.BIG-VD3COLD150
+23.3.BIG-VD3SIG01150
+23.4.BIG-VD3PS151
+23.5.HR151
+23.6.Intracon152
+23.7.Telefonie152
+24.Systeme und Services in Kundenverantwortung153
+25.Managed Services154
+25.1.Das Proact Service Operation Center (SOC)154
+25.1.1.Beschreibung und Ziele154
+25.1.2.Definition der Begrifflichkeiten154
+25.1.3.Der Proact Service Desk – zentrale Anlaufstelle für alle Kundenanfragen155
+25.1.4.Aufbau155
+25.1.5.Verantwortlichkeiten156
+25.1.6.Rollen156
+25.1.7.Ticket-Workflow157
+25.1.8.Notfallmanagement158
+25.2.Definition und Ziele der einzelnen Prozesse des Service Operation Centers159
+25.2.1.Event Management159
+25.2.2.Incident Management160
+25.2.3.Request Fulfilment160
+25.2.4.Problem Management161
+25.2.5.Change Management161
+25.2.6.IT Operations Management162
+25.2.7.Eskalation Management – Ziele162
+25.3.Überblick über die KPIs163
+26.Monitoring165
+26.1.Überblick166
+26.2.Monitoring-Infrastruktur166
+26.3.Lizenzerfassung166
+27.Backup166
+27.1.Konfiguration167
+27.1.1.Commvault Gruppen167
+27.1.2.Commvault Proxy167
+27.1.3.Commvault Firewall168
+27.1.4.Library168
+27.1.5.Dedupdatenbank170
+27.1.6.Storage Policies171
+27.1.7.Schedule Policies174
+27.1.8.Subclients (Auswahllisten)176
+27.2.Changes177
+28.Backup OnPrem BIG Dortmund178
+28.2.1.Grafische Übersicht179
+28.2.2.Beschreibung der Grafik179
+28.2.3.Commvault Media Agent OnPrem180
+28.2.4.Disklibrary180
+28.2.5.Commvault Storage Policy OnPrem181
+28.2.6.Commvault Schedule Policies181
+28.2.7.VMware Backup Settings182
+29.Anhang183
+Einleitung
+Dieses Betriebshandbuch beschreibt die von der PROACT für für den Kunden betriebenen IT-Systeme.
+Diese Dokumentation beschreibt alle relevanten Informationen über den Aufbau und den Betrieb des Gesamtsystems.
+Bei dem Betriebshandbuch handelt es sich um ein lebendes Dokument, in das sämtliche Änderungen eingetragen werden.
+Basis für den Aufbau ist die Struktur des gültigen Vertragswerkes zwischen der PROACT und dem Kunden.
+Änderungsverzeichnis
+Datum
+Bearbeitet/Geändert von
+Beschreibung Änderung/Bemerkungen
+05.10.2020
+Deipenbrock, Julian
+Erstellt
+09.10.2020
+Hoffmann, Jörg
+Dokumentation Active Directory
+04.11.2020
+Doneck, Benedikt
+Dokumentation der Netzwerkbereiche
+18.12.2020
+Hoffmann, Jörg
+Dokumentation IaaS
+21.12.2020
+Hoffmann, Jörg
+Dokumentation SQL, File
+22.12.2020
+Hoffmann, Jörg
+Ergänzungen SQL, File
+08.01.2021
+Hoffmann. Jörg
+Ergänzungen SQL, File
+21.08.2021
+Doneck, Benedikt
+Kapitel OpenVPN
+20.01.2021
+Doneck, Benedikt
+Anpassung Webproxy
+17.02.2021
+Deipenbrock, Julian
+Anpassung CPU Lizenzen
+17.03.2021
+Krieg, Maria
+Dokument repariert
+12.05.2021
+Hoffmann, Jörg
+Dokumentation IaaS Systeme
+02.06.2021
+Klopries, Tobias
+Anpassung SQL INSTANZ02 Datenbanken
+05.08.2021
+Sander, Dennis
+Dokumentation Datensicherung
+09.09.2021
+Doneck, Benedikt
+Anpassung Netzwerkstruktur
+20.09.2021
+Doneck, Benedikt
+Anpassung Kundenumgebung / Netzwerke
+08.02.2022
+Koppers, Steven
+Korrektur Doku Lizenzerfassung Exchange auf IST-Status
+16.11.2022
+Doneck, Benedikt
+Kapitel Client VPN SSL-VPN eingefügt
+06.12.2022
+Doneck, Benedikt
+Anpassung Connectivity Bitmarck
+31.08.2023
+Bornhold, Daniel
+CR #3950 big-vcucmedge01 Softphone Anbindung / Source-Natting
+29.11.2023
+Klose, Pascal
+Neuinstallation WSUS big-vwsus01.big.krankenkasse.de
+05.02.2024
+Klopries,Tobias
+Entfernung OpenVPN Kapitel
+08.02.2024
+Klopries,Tobias
+Erweiterung 8.8
+12.02.2024
+Klopries, Tobias
+Erstellung Kapitel 21 Intune
+21.03.2024
+Klose, Pascal
+Rückbau big-vsql-sp01
+06.06.2024
+Klose, Pascal
+Pflege Versionierung Betriebshandbuch
+15.07.2024
+Bowitz, Andreas
+Exchange Informationen erweitert und aktualisiert (Kontext: big-vmail02)
+21.08.2024
+Koppers, Steven
+Dokumentation Exchange Hybrid, Hybrid Modern Auth und SPN Workaround für Stellvertreterprobleme in Q3/24
+21.10.2024
+Grabsch, Benjamin
+Update DDAN Informationen nach Change #4959
+12.02.2025
+Klose, Pascal
+Aktualisierung big-vpki01.krankenkasse.de
+18.02.2025
+Klose, Pascal
+Aktualisierung big-vwsus01.big.krankenkasse.de
+18.02.2025
+Matthias Wälter
+Entfernen Punk 16 „Print Service“ – Print ist IaaS
+19.02.2025
+Klose, Pascal
+Kürzung „IaaS HYPER-V“-Kapitel
+19.02.2025
+Klose, Pascal
+Aktualisierung ADFS
+24.02.2025
+Klose, Pascal
+Kürzung „IaaS HYPER-V“-Kapitel
+Kürzung „IaaS VMWare“-Kapitel
+24.02.2025
+Klose, Pascal
+Aktualisierung „17. Remote Workplace“
+27.02.2025
+Klopries,Tobias
+Entfernen der Kapitel 9. Proact Webproxy & 10. Client-VPN
+04.03.2025
+Klopries,Tobias
+Anpassung Kapitel 14.9.2.2 Entfernen der vmail01/02 SPNs
+27.03.2025
+Klose, Pascal
+Erstellung/Aktualisierung „15.12. besondere Anwendungen“
+27.03.2025
+Klose, Pascal
+Aktualisierung „14.9.2.2“ SPNs
+02.04.2025
+Koppers, Steven
+LDAPSSL für Domaincontroller dokumentiert
+23.04.2025
+Klose, Pascal
+Anpassung FAS Zertifikate Besonderheiten „Smartcard Logon“
+02.05.2025
+Klopries, Tobias
+Anpassung Proact Cloud Firewall Service & Connectivity
+27.05.2025
+Klose, Pascal
+Pflege Remote-Domänen (Exchange)
+03.06.2025
+Koppers, Steven
+Pflege Exchange VirtualDirectories  CHGPRO0122192
+14.07.2025
+Koppers, Steven
+Pflege Exchange Dokumentation nach Migration big-vmail01 -> big-vmail02
+26.08.2025
+Koppers, Steven
+Upgrade auf Exchange SE, Beginn Dokumentation Dedicated Hybrid App
+27.08.2025
+Koppers, Steven
+Finalisierung Doku Hybridstellung
+29.10.2025
+Doneck, Benedikt
+Überarbeitung Kapitel 8 - Netzwerkstruktur
+24.11.2025
+Doneck, Benedikt
+Anpassung Grafik
+26.11.2025
+Duong, Binh
+Überprüfung und Korrektur
+03.06.2026
+Peters, Tim
+ODFC Konfiguration Citrix
+15.07.2026
+Doneck, Benedikt
+Anpassung Cloud Firewall-Cluster Frankfurt
+Verantwortlichkeiten
+Kunde
+Rolle
+Name
+Telefon
+Email
+IT Leitung
+Faltin, Andreas
+andreas.faltin@big-direkt.de
+Stellv. IT Leitung
+Rex, Stephan
++49 231 5557-1209
+stephan.rex@big-direkt.de
+IT Service Manager
+Berger, Patryk
++49 231 5557-1294
+Patryk.Berger@big-direkt.de
+Citrix / Microsoft / IaaS
+Kasprowiak, Mike
++49 231 5557-1206
+mike.kasprowiak@big-direkt.de
+Netzwerk
+Gronwald, Andre
++49 231 5557-1208
+andre.gronwald@big-direkt.de
+Citrix / IaaS / Microsoft / Netzwerk
+Kraus, Stefan
++49 241 90066-153
+stefan.kraus@actimonda.de
+Proact
+Rolle
+Name
+Telefon
+Email
+Vertrieb
+Peters, Torsten
++49 231 958699-12
+Torsten.Peters@Proact.de
+Cloud Architect
+Deipenbrock, Julian
++49 2938 9779-155
+julian.deipenbrock@Proact.de
+Netzwerk
+Doneck, Benedikt
++49 2938 9779-157
+benedikt.doneck@Proact.de
+Microsoft, Exchange
+Koppers, Steven
++49 2938 9779-195
+Steven.koppers@proact.de
+SDM
+Duong, Binh
++49 151 20849508
+Binh.duong@proact.de
+Übersicht Leistungsscheine und Services
+Proact Cloud
+Leistungsschein
+Proact Service
+Managed Service Level
+Performanceklasse
+Verfügbarkeitsklasse
+Proact Cloud WAN
+Cloud Firewall Services
+MSL 3
+Gold
+Professional
+Proact Cloud WAN
+Connectivity Services
+MSL 3
+Gold
+Proact Cloud WAN
+Cloud Proxy Services
+MSL 3
+Gold
+Professional
+IaaS Dienste
+IaaS Services
+MSL 3
+Gold
+Professional
+IaaS Dienste
+IaaS Services
+MSL 3
+Gold
+Standard
+MS Basis Dienste
+Active Directory Services
+MSL 3
+Gold
+Premium
+MS Basis Dienste
+File Services
+MSL 3
+Gold
+Premium
+MS Basis Dienste
+PKI Services
+MSL 3
+Gold
+Professional
+MS Basis Dienste
+WSUS Services
+MSL 3
+Gold
+Professional
+MS Basis Dienste
+Print Services
+MSL 3
+Gold
+Professional
+Mail Dienste
+Exchange Services
+MSL 3
+Gold
+Professional
+Remote Workplace
+Citrix Virtual Apps Services
+MSL 4
+Gold
+Professional
+Remote Workplace
+Citrix ADC Services
+MSL 4
+Gold
+Professional
+Datenbank Dienste
+MS SQL Services
+MSL 3
+Gold
+Professional
+Datenbank Dienste
+MS SQL Services
+MSL 3
+Gold
+Standard
+On Prem
+Leistungsschein
+Proact Service
+Managed Service Level
+Performanceklasse
+Verfügbarkeitsklasse
+On-Prem Dienste
+NetApp Services
+MSL 3
+Gold
+Keine
+On-Prem Dienste
+VMware Services
+MSL 3
+Gold
+Keine
+On-Prem Dienste
+Network Services
+MSL 3
+Gold
+Keine
+On-Prem Dienste
+Firewall Services
+MSL 3
+Gold
+Keine
+Lizenzen
+Übersicht Beistellung
+Lizenztyp
+Verantwortlich/Beistellung
+Mircosoft (alles)
+BIG
+Citrix
+BIG
+Cloud Firewall Services (Fortinet)
+Proact
+Antivirus
+BIG
+Anti Spam
+BIG
+Übersicht Lizenzerfassung
+Die Erfassung der Lizenzen erfolgt anhand von LDAP Abfragen durch die “ahd licence usage” auf dem Server big-mon-win01.
+LDAP Querys:
+AD Services
+(&(objectCategory=person)(|(accountExpires>=133994591223190681)(accountExpires=0)(accountExpires=9223372036854775807))(!(userAccountControl:1.2.840.113556.1.4.803:=2))(!(userAccountControl:1.2.840.113556.1.4.803:=16))((objectClass=person))(!extensionAttribute15=Funktionsaccount)(!flags=-1)(!cn=HealthMailbox*))
+Citrix Virtual Apps Services
+(&(objectCategory=person)(|(accountExpires>=133994592902663676)(accountExpires=0)(accountExpires=9223372036854775807))(!(userAccountControl:1.2.840.113556.1.4.803:=2))(!(userAccountControl:1.2.840.113556.1.4.803:=16))(memberOf:1.2.840.113556.1.4.1941:=CN=G_Citrix_Site_Global,OU=Groups,OU=EDV,OU=Dortmund,DC=big,DC=krankenkasse,DC=de)((objectClass=person))(!flags=-1)(!extensionAttribute15=Funktionsaccount))
+Cloud FortiClient VPN Service
+(&(objectCategory=person)(|(accountExpires>=133994593347689070)(accountExpires=0)(accountExpires=9223372036854775807))(!(userAccountControl:1.2.840.113556.1.4.803:=2))(!(userAccountControl:1.2.840.113556.1.4.803:=16))(memberOf:1.2.840.113556.1.4.1941:=CN=RES-SSL-VPN,OU=Gruppen,OU=Frankfurt,DC=big,DC=krankenkasse,DC=de)((objectClass=person))(!flags=-1)(!extensionattribute15=Funktionsaccount))
+Cloud FortiClient VPN Service ADM
+(&(objectCategory=person)(|(accountExpires>=133994593518007548)(accountExpires=0)(accountExpires=9223372036854775807))(!(userAccountControl:1.2.840.113556.1.4.803:=2))(!(userAccountControl:1.2.840.113556.1.4.803:=16))(memberOf:1.2.840.113556.1.4.1941:=CN=RES-SSL-VPN-ADM,OU=Gruppen,OU=Frankfurt,DC=big,DC=krankenkasse,DC=de)((objectClass=person))(!flags=-1)(!extensionattribute15=Funktionsaccount))
+Exchange Services
+(&(objectCategory=person)(|(accountExpires>=133994593694716538)(accountExpires=0)(accountExpires=9223372036854775807))(!(userAccountControl:1.2.840.113556.1.4.803:=2))(!(userAccountControl:1.2.840.113556.1.4.803:=16))((&(objectClass=user)(homeMDB=)))(!flags=-1)(!extensionattribute15=Funktionsaccount)(!cn=HealthMailbox))
+Cloud Proxy Services
+(&(objectCategory=person)(|(accountExpires>=133994593889314770)(accountExpires=0)(accountExpires=9223372036854775807))(!(userAccountControl:1.2.840.113556.1.4.803:=2))(!(userAccountControl:1.2.840.113556.1.4.803:=16))((objectClass=person))(!flags=-1)(!extensionAttribute15=Funktionsaccount)(!cn=HealthMailbox*))
+Dokumentation Windows CPU-Kerne
+Hostname
+CPU-Typ
+Anzahl Kerne
+Nutzungsdatum
+Microsoft Lizenz
+svc-fra2-hyp002
+Intel(R) Xeon(R) E5-2680 v3
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra2-hyp006
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra2-hyp011
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra2-hyp012
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra2-hyp020
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra2-hyp039
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra2-hyp040
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra2-hyp041
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra2-hyp042
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra2-hyp045
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra7-hyp002
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra7-hyp006
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra7-hyp011
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra7-hyp012
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra7-hyp020
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra7-hyp039
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra7-hyp040
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra7-hyp041
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra7-hyp042
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra7-hyp045
+Intel(R) Xeon(R) CPU E5-2690 v4
+28
+01.03.2025
+CIS Suite Datacenter
+svc-fra2-hyp219
+Intel(R) Xeon(R) CPU E7-8890 v4
+96
+01.12.2023
+CIS Suite Datacenter
+svc-fra2-hyp220
+Intel(R) Xeon(R) CPU E7-8880 v4
+88
+01.12.2023
+CIS Suite Datacenter
+svc-fra7-hyp219
+Intel(R) Xeon(R) CPU E7-8890 v4
+96
+01.12.2023
+CIS Suite Datacenter
+svc-fra7-hyp220
+Intel(R) Xeon(R) CPU E7-8890 v4
+48
+01.12.2023
+CIS Suite Datacenter
+svc-fra2-hyp098
+Intel(R) Xeon(R) Gold 6248
+40
+01.09.2023
+CIS Suite Datacenter
+svc-fra2-hyp099
+Intel(R) Xeon(R) Gold 6248
+40
+01.09.2023
+CIS Suite Datacenter
+svc-fra7-hyp100
+Intel(R) Xeon(R) Gold 6248
+40
+01.09.2023
+CIS Suite Datacenter
+svc-fra7-hyp102
+Intel(R) Xeon(R) Gold 6248
+40
+01.09.2023
+CIS Suite Datacenter
+svc-fra7-hyp098
+Intel(R) Xeon(R) Gold 6248
+40
+01.09.2023
+CIS Suite Datacenter
+svc-fra7-hyp099
+Intel(R) Xeon(R) Gold 6248
+40
+01.09.2023
+CIS Suite Datacenter
+svc-fra7-hyp100
+Intel(R) Xeon(R) Gold 6248
+40
+01.09.2023
+CIS Suite Datacenter
+svc-fra7-hyp102
+Intel(R) Xeon(R) Gold 6248
+40
+01.09.2023
+CIS Suite Datacenter
+svc-fra2-hyp052
+Intel(R) Xeon(R) E5-2680 v2
+40
+01.01.2021
+CIS Suite Datacenter
+svc-fra2-hyp073
+Intel(R) Xeon(R) Gold 6148
+40
+01.01.2021
+CIS Suite Datacenter
+svc-fra2-hyp074
+Intel(R) Xeon(R) Gold 6148
+40
+01.01.2021
+CIS Suite Datacenter
+svc-fra7-hyp075
+Intel(R) Xeon(R) Gold 6148
+40
+01.01.2021
+CIS Suite Datacenter
+svc-fra7-hyp077
+Intel(R) Xeon(R) Gold 6148
+40
+01.01.2021
+CIS Suite Datacenter
+Kundenumgebung
+Management- und Servernetzwerk BIG Dortmund
+Für die OnPrem Serverumgebung wurde sowohl für das Management als auch für die D3 Scanprozesse zwei Subnetzwerke festgelegt, die aktiv in Dortmund verwendet werden.
+Für die beiden Netzwerke wurde eine entsprechende Liste mit Namen DTM-ServerSubnetzwerke.xlsx zwecks Dokumentation abgelegt, die hier zu finden ist:
+https://proactcustomer.sharepoint.com/sites/CSPBIG/TD/Forms/AllItems.aspx?id=%2Fsites%2FCSPBIG%2FTD%2FBetrieb%20Frankfurt%2FNetzwerk%2FConnectivity&viewid=4197efc6%2D5fdb%2D470d%2Da98c%2D6f52236c3863
+Zugangskontrolle
+Die Dortmunder Zugangskontrolle wurde aus dem Servernetzwerk 10.100.18.0 in das vor Ort gebliebene Netzwerk 10.100.10.0/24 migriert. Die Verantwortung des Systems liegt bei der BIG IT.
+Telefonie
+Dieses Kapitel beschreibt die Telefonie-Infrastruktur. Das Konsolidieren der Telefonie verantwortet die BIG und actimonda. Für den Umzug, Bereitstellung und Anbindung in Frankfurt sind Proact / BIG / actimonda zuständig.
+BIG
+Infrastruktur
+Die BIG betreibt ihre Telefonie-Infrastruktur zu Teilen virtuell und physisch. Als Produkt wird der Cisco Unified Communications Manager eingesetzt. Die virtuellen Serversysteme des CUCM werden in Frankfurt auf der vSphere Farm betrieben und sprechen dort mit den Cubes, welche im Cluster zusammengeschaltet sind. In der Serverliste sind die Server entsprechend dokumentiert.
+VCUCMEDGE01 Softphone Anbindung (Cisco Webex)
+Für die Softphone Anbindung der Citrix Clients aus dem Homeoffice wurde eine neue TKDMZ eingerichtet. In der aktuellen Konfiguration gibt es bisher nur einen EDGE (Expressway-E, Stand August 2023). Im späteren Verlauf soll ein weiterer implementiert werden. VCUCMEDGE01 (Expressway-E) dient dazu dem Homeoffice Client die nötigen Informationen zu liefern, um einen Webex Voice Call über die Webex Applikation (HVD) auf den Citrix Workern zum Thin Client im Homeoffice aufzubauen.
+Schematische Darstellung der Protocol Sessions für Webex VDI mit Unified CallManager über MRA aus dem Deployment Guide von Cisco:
+Um die oben abgebildete Protocol Sessions umzusetzen wurden u.a. in CR #3950 und SR-0028385 folgende Cloud Firewall Policys eingerichtet:
+Für die „speziellen“ Protocol Sessions „7“ wurde in Firewall Policy ID 1143 zudem ein Source-Nat One-to-One IP Pool eingerichtet und benutzt den IP-Range 10.119.12.1-10.119.12.254:
+Eine Route wurde von der BIG auf dem VCUCMEDGE01 ebenfalls eingerichtet (BIG Andre Gronwald nachdokumentieren).
+Session Border Controller (Cubes)
+Es gibt zwei physische SBCs, welche in Frankfurt auf beide Rechenzentren aufgeteilt sind. Pro RZ wird 1 Höheneinheit verwendet.
+Abbildung aus dem RZ Dortmund
+Trend Micro Deep Discovery Analyzer (DDA)
+Der Trend Micro DDA wertet Daten mittels Sandboxing aus, um Schadsoftware zu erkennen und zu blockieren. Der DDA ist in FR7 verbaut und ist über die IP-Adresse: 192.168.18.12 erreichbar. Er ist in dem Netzwerk 192.168.18.0/30 einsortiert und hat ausschließlich Internetzugriff. Andere Netzbereiche greifen nicht auf ihn zu.
+System
+Serialnumber
+RZ
+Rack
+HE
+DE-FRA2-BIG-DDA001
+7HWMPQ3
+FR2
+106
+15-16
+DE-FRA7-BIG-DDA001
+7TNJ814
+FR7
+106
+15-16
+System
+IP
+iDRAC IP
+Bemerkung
+DE-FRA2-BIG-DDA001
+10.18.20.194
+10.18.3.2
+Default iDRAC Login
+DE-FRA7-BIG-DDA001
+10.18.20.179
+10.18.3.3
+Default iDRAC Login
+DDAN LoadBalancer
+10.18.20.195
+DE-FRA2-BIG-DDA001:
+LAN:
+Power:
+DE-FRA7-BIG-DDA001:
+LAN:
+Power:
+Trend Micro Deep Discovery Inspector (DDI)
+Der Trend Micro DDI wertet Daten aus dem Netzwerk-Traffic aus. Der DDI ist im RZ Dortmund verbaut, um die Dortmunder Netzwerke entsprechend zu überwachen.
+IP-Adresse
+Name
+Typ
+Bemerkung
+10.100.10.21
+DDI idrac
+System-Management
+Mainboard
+10.100.10.22
+DDI.big.krankenkasse.de
+DDI Management
+Greenbone Security Manager
+Zwecks Schwachstellenanalyse wird eine Greenbone Appliance eingesetzt, die Netzwerkgeräte insbesondere Clients und Server analysiert und Schwachstellen aufzeigt. Diese Appliance wird weiterhin in Dortmund betrieben und ist im Client-Netzwerk konnektiert.
+Abbildung aus dem RZ Dortmund
+Server und Services On-Premises
+OnPrem Firewall Services MSL3
+Der On Prem Firewall Service regelt den Netzwerkverkehr, der aus Dortmund in Richtung Internet geleitet wird. Durch den Einsatz von Routern wird der Traffic via redundanter Direktverbindungen zur Frankfurter Cloud-Firewall geleitet und von dort aus für externe Verbindungen zum Internet geleitet. Ebenso wird der rückwärtige Weg von Frankfurt nach Dortmund wird über die Cloud-Firewall und über die Direktverbindungen und den Dortmunder Routern zum Standort gewährleistet.
+OnPrem VMware Services MSL3
+Dieser Service beschreibt die VMware ON-Prem Umgebung, welche in Dortmund lokalisiert ist. Im Folgenden werden die Details der Umgebung im Einzelnen beschrieben.
+Systeme
+Name
+DNS-Name
+IP-Adresse
+vCenter
+big-dtm-vcsa.big.krankenkasse.de
+10.155.70.10
+ESXi-Host
+big-dtm-esx1.big.krankenkasse.de
+10.155.70.11
+ESXi-Host
+big-dtm-esx2.big.krankenkasse.de
+10.155.70.12
+Hardware
+big-dtm-esx1.big.krankenkasse.de
+Model: PRIMERGY RX2530 M1
+Processor Type: Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+Memory:383,87 GB
+big-dtm-esx2.big.krankenkasse.de
+Model: PRIMERGY RX2530 M1
+Processor Type: Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+Memory:383,87 GB
+Storage
+Die Systeme nutzen via iSCSI Storage der angebunden Netapp
+LINK
+big-dtm-esx1.big.krankenkasse.de
+iSCSI Nameiqn.1998-01.com.vmware:big-dtm-esx1-3ab42e90
+big-dtm-esx2.big.krankenkasse.de
+iSCSI Nameiqn.1998-01.com.vmware:big-dtm-esx2-42aa9c87
+Network
+big-dtm-esx1.big.krankenkasse.de
+big-dtm-esx2.big.krankenkasse.de
+Networks
+Virtuelle Maschinen
+Upgrade / Patching
+Upgrades und Patching übernimmt nach Vereinbarung mit dem Kunden die Techniker der Proact.
+Versionen Stand 20.06.2025
+DNS-Name
+Version
+big-dtm-vcsa.big.krankenkasse.de
+8.0.3, 24674346
+big-dtm-esx1.big.krankenkasse.de
+8.0.3, 24585383
+big-dtm-esx2.big.krankenkasse.de
+8.0.3, 24585383
+Dem Kunden ist bekannt das die verwendeten Hosts (siehe Hardware) seitens Broadcom nicht mit der verwendeten Version (siehe Versions Stand) supported sind. Dies wurde in einem Weekly am 25.02.2025 nochmal vermittelt und verschriftlicht.
+Lizenzen
+Lizenzen werden durch den Kunden bereitgestellt.
+OnPrem NetApp Services MSL3
+=> s. Betriebshandbuch_BIG_OnPremNetApp_Neu => Punkt 5
+OnPrem Hyper-V Services MSL3
+Dieser Service beschreibt die Hyper-V ON-Prem Umgebung, welche in Dortmund lokalisiert ist. Im Folgenden werden die Details der Umgebung im Einzelnen beschrieben.
+Systeme
+Name
+DNS-Name
+IP-Adresse
+VLAN
+Hyper-V Host
+big-dtm-hypv1.big.krankenkasse.de
+10.141.70.102(iDRAC 10.141.70.101)
+70
+Hyper-V Host
+big-dtm-hypv2.big.krankenkasse.de
+10.141.70.104(iDRAC 10.141.70.103)
+70
+Hardware
+big-dtm-hypv1.big.krankenkasse.de
+Model: PowerEdge R660
+Processor Type: 2x Intel Xeon Silver 4509Y 2.6G, 8C/16T
+Memory:256 GB
+big-dtm-hypv2.big.krankenkasse.de
+Model: PowerEdge R660
+Processor Type: 2x Intel Xeon Silver 4509Y 2.6G, 8C/16T
+Memory:256 GB
+Storage
+Die Systeme nutzen lokale NVMe, welche mittels Storage Spaces Direct zu einem Storagepool konfiguriert wurden.
+Innerhalb dieses Cluster Pools wurde ein 8 TB Cluster Shared Volume als Two-Way Mirror erstellt, auf welchem die VMs abgelegt werden:
+Network
+Die Netzwerkkonfiguration ist wie folgt:
+Beide Server verfügen über 2x Dual-Port 10/25G Netzwerkadapter.Eine Karte als LOM/OCP und eine separate Karte.Die beiden LOM/OCP Ports werden über ein SET (Switch Embedded Team) als NIC-Team konfiguriert.Die beiden separaten Ports werden jeweils für ein Storage-Netzwerk (SMB) konfiguriert.Die Redundanz fürs Storage-Netzwerk erfolgt über SMB-Multichannel. Die Adapter müssen deshalb nicht zu einem NIC-Team zusammengefasst werden.
+Konfigurationsparameter
+Hostname Hyper-V-Server #1 (FQDN)
+big-dtm-hypv1
+Hostname Hyper-V-Server #2 (FQDN)
+big-dtm-hypv2
+IP Address and Subnet mask of iDRAC for
+Hyper-V-Server #1 (native VLAN)
+10.141.70.101/24native vlan: 70
+IP Address, VLAN and Subnet mask for Management Network (LAN) of Hyper-V-Server #1
+10.141.70.102/24vlan: 70
+IP Address and Subnet mask of iDRAC for Hyper-V-Server #2 (native VLAN)
+10.141.70.103/24native vlan: 70
+IP Address, VLAN and Subnet mask for Management Network (LAN) of Hyper-V-Server #2
+10.141.70.104/24
+vlan: 70
+IP Address, VLAN and Subnet mask for Storage Network 1 Hyper-V-Server #1
+192.168.2.1vlan: 2
+IP Address, VLAN and Subnet mask for Storage Network 1 Hyper-V-Server #2
+192.168.2.2
+vlan: 2
+IP Address, VLAN and Subnet mask for Storage Network 2 Hyper-V-Server #1
+192.168.3.1
+vlan: 3
+IP Address, VLAN and Subnet mask for Storage Network 2 Hyper-V-Server #2
+192.168.3.2
+vlan: 3
+Hostname for Failover Cluster (FQDN)
+big-dtm-hypv-cl
+IP Address for Failover Cluster
+10.141.70.100
+IP Address Default Gateway MGMT und iDRAC
+10.141.70.254
+IP Address DNS Server 1
+10.118.0.1
+IP Address DNS Server 2
+10.118.0.2
+IP Address and Hostname of NTP Server 1
+ntp.big.kranenkasse.de
+Cluster File Share Witness (Quorum)
+\\BIG-VFILEI01\big-dtm-hypv-cl-witness$
+Konfiguration:
+Installation von Data Center Bridging damit fürs Storage-Netzwerk RDMA verwendet werden kann:
+Erstellen eines SET (Switch Embedded Teams) über PowerShell:
+# Create SET-enabled vSwitch for Hyper-V using 2 LOM/OCP portsNew-VMSwitch -Name "S2DSwitch" -NetAdapterName "Integrated NIC 1 Port 1-1", "Integrated NIC 1 Port 2-1" -EnableEmbeddedTeaming $true -AllowManagementOS $false# Add host vNIC to the vSwitch just created and configure VLANAdd-VMNetworkAdapter -SwitchName "S2DSwitch" -Name "vNIC-Host" -ManagementOSSet-VMNetworkAdapterVlan -ManagementOS -Access -VlanId 70# Disable RDMA on LOM/OCP pNIC portsDisable-NetAdapterRDMA -Name "Integrated NIC 1 Port 1-1"Disable-NetAdapterRDMA -Name "Integrated NIC 1 Port 2-1"
+Check RDMA settings
+Virtuelle Maschinen
+Upgrade / Patching
+Upgrades und Patching übernimmt, nach Vereinbarung mit dem Kunden, die Proact.
+Lizenzen
+Lizenzen werden durch den Kunden bereitgestellt.
+Proact Cloud Firewall Services
+Aufbau Firewall-Cluster Proact Cloud
+Das folgende Schaubild zeigt den Aufbau des Firewall-Clusters in der Proact Cloud Frankfurt.
+Virtuelles Firewall-Cluster
+Das Firewall-Cluster wird mittels zweier FortiVMs realisiert, welche auf FRA2 und FRA7 aufgeteilt sind.
+Name
+Modell
+CPUs / RAM
+Bemerkung
+Standort
+Big-defra-fw-a0
+FortiVM04S
+4 CPUs / 16 GB
+Primary Clusternode
+ESX-Host FRA2
+Big-defra-fw-b0
+FortiVM04S
+4 CPUs / 16 GB
+Secondary Clusternode
+ESX-Host FRA7
+Subnetz
+Zweck
+Gateway
+Bemerkung
+10.18.0.0/16
+c-big-lan-new
+10.18.10.254
+10.118.0.0/24
+c-big-domain
+10.118.0.254
+10.118.10.0/24
+c-big-citrix
+10.118.10.254
+10.118.11.0/24
+c-big-pxe
+10.118.11.254
+10.118.12.0/24
+c-big-worker
+10.118.12.254
+10.118.224.0/20
+c-big-wlan
+10.118.224.1
+10.118.240.0/22
+c-big-wlan-gast
+10.118.240.1
+10.118.244.0/24
+c-big-wlan-devi
+10.118.244.1
+10.140.255.0/24
+c-big-nac-isol
+10.140.255.1
+93.180.75.0/29
+c-big-tkdmz-new
+93.180.75.1
+172.16.18.0/24
+c-big-ums-new
+172.16.18.254
+192.168.1.0/24
+c-big-tmpcucm
+192.168.1.254
+192.168.18.0/29
+c-big-dda-new
+192.168.18.1
+192.168.18.8/30
+c-big-qtn
+192.168.18.9
+192.168.248.0/24
+DMZ Netzwerk Proact Frankfurt
+192.168.248.254
+192.168.255.0/24
+c-big-yellow
+192.168.255.254
+10.100.18.0/24
+Legacy 1 Servernetzwerk
+10.100.18.240
+10.100.36.0/24
+Legacy 2 Servernetzwerk
+10.100.36.240
+210.5.229.0/24
+Legacy 3 Servernetzwerk
+210.5.229.40
+Rechenzentrums-Netzwerke
+Folgende Netzwerke werden innerhalb des Frankfurter Rechenzentrums verwendet:
+Subnetz
+Zweck
+Gateway
+Bemerkung
+10.18.0.0/16
+Internes Server-Netzwerk Proact Frankfurt
+10.18.10.254
+10.118.0.0/24
+c-big-domain
+10.118.0.254
+10.118.10.0/24
+c-big-citrix
+10.118.10.254
+10.118.11.0/24
+c-big-pxe
+10.118.11.254
+10.118.12.0/24
+c-big-worker
+10.118.12.254
+10.118.224.0/20
+c-big-wlan
+10.118.224.1
+10.118.240.0/22
+c-big-wlan-gast
+10.118.240.1
+10.118.244.0/24
+c-big-wlan-devi
+10.118.240.1
+192.168.248.0/24
+DMZ Netzwerk Proact Frankfurt
+192.168.248.254
+192.168.123.0/24
+TK-Netzwerk für VoIP
+192.168.123.254
+192.168.18.0/24
+Trend Micro Data Analyzer
+192.168.18.1
+10.100.18.0/24
+Legacy 1 Servernetzwerk
+10.100.18.240
+10.100.36.0/24
+Legacy 2 Servernetzwerk
+10.100.36.240
+210.5.229.0/24
+Legacy 3 Servernetzwerk
+210.5.229.40
+veröffentlichte Dienste
+Für den externen Zugriff auf Dienste innerhalb des Rechenzentrums werden entsprechende Ports weitergeleitet.
+Virtual IP Name
+Zweck
+Externer Name / IP
+Externe IP
+Zielsystem
+Port
+Vip-expressway-TCP80
+VoIP / Telefonie
+93.180.77.50
+192.168.123.20
+80
+Vip-expressway-TCP443
+VoIP / Telefonie
+93.180.77.50
+192.168.123.20
+443
+Vip-expressway-TCP1720
+VoIP / Telefonie
+93.180.77.50
+192.168.123.20
+1720
+Vip-expressway-TCP5061
+VoIP / Telefonie
+93.180.77.50
+192.168.123.20
+5061
+Vip-expressway-TCP5062
+VoIP / Telefonie
+93.180.77.50
+192.168.123.20
+5062
+Vip-expressway-TCP5222
+VoIP / Telefonie
+93.180.77.50
+192.168.123.20
+5222
+Vip-expressway-TCP5269
+VoIP / Telefonie
+93.180.77.50
+192.168.123.20
+5269
+Vip-expressway-TCP8443
+VoIP / Telefonie
+93.180.77.50
+192.168.123.20
+8443
+Vip-expressway-UDP-36002-59999
+VoIP / Telefonie
+93.180.77.50
+192.168.123.20
+36002-59999
+Vip-netscaler-aaa
+Citrix Netscaler
+93.180.77.228
+192.168.248.23
+443
+Vip-netscaler-adr-http
+Citrix Netscaler
+93.180.77.227
+192.168.248.24
+All
+Vip-netscaler-bigipedia
+Citrix Netscaler
+93.180.77.229
+192.168.248.26
+443
+Vip-netscaler-bigipedia-http
+Citrix Netscaler
+93.180.77.229
+192.168.248.26
+80
+Vip-netscaler-ess_http
+Citrix Netscaler
+93.180.77.53
+192.168.248.25
+80
+Vip-netscaler-ess-https
+Citrix Netscaler
+93.180.77.53
+192.168.248.25
+443
+Vip-netscaler-filetransfer
+Filetransfer via Netscaler
+93.180.77.233
+192.168.248.31
+All
+Vip-netscaler-icaproxy
+Citrix Netscaler
+93.180.77.52
+192.168.248.27
+443
+Vip-netscaler-mail-http
+Citrix Netscaler
+93.180.77.54
+192.168.248.24
+80
+Vip-netscaler-mail-https
+Citrix Netscaler
+93.180.77.54
+192.168.248.24
+443
+Vip-mail02-smtp
+93.180.77.54
+10.18.21.10
+25
+Vip-baramundic
+93.180.77.55
+192.168.248.55
+443
+Vip-smtp-to-vsepp
+93.180.77.58
+10.18.20.235
+25
+Vip-netscaler-miscellaneous
+Citrix Netscaler
+93.180.77.234
+192.168.248.30
+443
+Vip-netscaler-miscellaneous-http
+Citrix Netscaler
+93.180.77.234
+192.168.248.30
+80
+Vip-netscaler-portal
+Citrix Netscaler
+93.180.77.230
+10.100.36.116
+443
+Vip-netscaler-soap
+Citrix Netscaler
+93.180.77.232
+192.168.248.29
+all
+Vip-igelcgums-TCP8443
+IGEL-CloudGateway
+93.180.77.235
+192.168.248.100
+All
+Vip-vrustdesk01-21116-udp
+93.180.77.231
+192.168.248.45
+21116
+Vip-vrustdesk01-21119-tcp
+93.180.77.231
+192.168.248.45
+21119
+Vip-vrustdesk01-21118-tcp
+93.180.77.231
+192.168.248.45
+21118
+Vip-vrustdesk01-21117-tcp
+93.180.77.231
+192.168.248.45
+21117
+Vip-vrustdesk01-21116-tcp
+93.180.77.231
+192.168.248.45
+21116
+Vip-vrustdesk01-21115-tcp
+93.180.77.231
+192.168.248.45
+21115
+Vip-vcucmdmz02-udp36002-59999
+93.180.77.237
+192.168.248.221
+36002-59999
+Vip-vcucmdmz02-tcp8443
+93.180.77.237
+192.168.248.221
+8443
+Vip-vcucmdmz02-tcp80
+93.180.77.237
+192.168.248.221
+80
+Vip-vcucmdmz02-tcp5269
+93.180.77.237
+192.168.248.221
+5269
+Vip-vcucmdmz02-tcp5222
+93.180.77.237
+192.168.248.221
+5222
+Vip-vcucmdmz02-tcp5062
+93.180.77.237
+192.168.248.221
+6062
+Vip-vcucmdmz02-tcp6061
+93.180.77.237
+192.168.248.221
+5061
+Vip-vcucmdmz02-tcp443
+93.180.77.237
+192.168.248.221
+443
+Vip-vcucmdmz02-tcp1720
+93.180.77.237
+192.168.248.221
+1720
+Vip-netscaler-gateway-AzureMFA-https
+93.180.77.238
+192.168.248.23
+443
+Weitere externe Zugriffe, werden im Laufe des Projektes erarbeitet und umgesetzt.
+Site-to-Site IPSec VPN
+Für die Anbindung verschiedener Dienstleister und Außenstandorte werden Site-to-Site IPSec VPN Tunnel verwendet.
+Für jede Anbindung wird ein entsprechendes Formular ausgefüllt, welches unter folgendem Link abgelegt wird:
+https://proactcustomer.sharepoint.com/sites/CSPBIG/TD/Forms/AllItems.aspx?id=%2Fsites%2FCSPBIG%2FTD%2FBetrieb%20Frankfurt%2FNetzwerk%2FSite%2Dto%2DSite%20VPN&viewid=4197efc6%2D5fdb%2D470d%2Da98c%2D6f52236c3863
+Zusätzlich ist hier eine Partnerliste hinterlegt, in der alle Site-to-Site Teilnehmer eingetragen sind.
+DHCP / Adressverteilung
+Die IP-Adressverteilung für alle Standorte wird ein DHCP-Dienst in der Proact Cloud bereitgestellt. Für die entsprechenden Client Netzwerke an den Standorten werden in den Routern IP-Helper Adressen eingetragen, die auf den zentralen DHCP-Server zeigen.
+Connectivity
+Die folgenden Übersichten zeigen aktuellen Infrastrukturaufbau.
+Globale IP-Netzwerkstruktur
+Logische Netzwerkstruktur
+Logische Netzwerkstruktur
+Direktverbindung Bitmarck
+Zwischen der Proact Cloud Frankfurt und der Bitmarck wurde am 03.12.2022 die Direktverbindung in Betrieb genommen. Die Routen zur Bitmarck wurden statisch in der Proact Cloud Firewall eingetragen. Die beiden darüberliegenden IPsec VPN Tunnel wurden entsprechend unterschiedlich priorisiert, um asymmetrisches Routing zu vermeiden.
+Support Hinweise
+Die beiden Verbindungen werden via Logic-Monitor überwacht.
+Für die Telekom-Verbindung ist die Proact zuständig. Im Störfall muss die Proact direkt mit der Telekom sprechen. Proact Cloud-Operations muss hier zusätzlich involviert werden.
+Telekom-Kontakt: INMC.Helpline@telekom.de / +49 731 10034770
+Sollte bei der Bitmarck direkt eine Störung auftreten muss über den Kunden BIG direkt ein Ticket initiiert werden.
+Leitungsinformationen
+Putzbrunner Straße:
+Otto-Hahn-Ring:
+WAN
+Öffentliche IP-Adressen
+Für die BIG direkt gesund wird ein öffentlicher IP-Adress-Bereich zur Verfügung gestellt. Der folgende Punkt zeigt die festgelegten Adressen.
+IPv4
+Subnetz
+IP-Adresse
+Verwendungszweck
+93.180.75.1/29
+93.180.75.1
+big-tkdmz Gateway
+93.180.75.1/29
+93.180.75.2
+host-big-vcucmedge01_public
+93.180.75.1/29
+93.180.75.3
+big-vcucmedge02
+93.180.77.48/28
+93.180.77.49
+Virtuelle Router-Adresse
+93.180.77.48/28
+93.180.77.50
+Firewall-Gateway (WAN-Interface)
+93.180.77.48/28
+93.180.77.51
+lb-big-openvpn
+93.180.77.48/28
+93.180.77.52
+Vip-netsclaer-icaproxy
+93.180.77.48/28
+93.180.77.53
+Vip-netscaler-ess
+93.180.77.48/28
+93.180.77.54
+Vip-netscaler-mail
+93.180.77.48/28
+93.180.77.55
+vbaramundic
+93.180.77.48/28
+93.180.77.56
+Vip-big-vsplkhf02
+93.180.77.48/28
+93.180.77.57
+Nutzbar
+93.180.77.48/28
+93.180.77.58
+Vip-smtp-to-vsepp
+93.180.77.48/28
+93.180.77.59-60
+Nutzbar
+93.180.77.48/28
+93.180.77.61
+Firewall A-1 FR2
+93.180.77.48/28
+93.180.77.62
+Firewall A-2 FR7
+93.180.77.48/28
+93.180.77.63
+BROADCAST-Adresse
+Subnetz
+IP-Adresse
+Verwendungszweck
+93.180.77.224/28
+93.180.77.225
+Nutzbar
+93.180.77.224/28
+93.180.77.226
+w-big-down
+93.180.77.224/28
+93.180.77.227-234
+Citrix Netscaler
+93.180.77.224/28
+93.180.77.235
+Igel UMS
+93.180.77.224/28
+93.180.77.236
+Nutzbar
+93.180.77.224/28
+93.180.77.237
+vip-cucmdmz02
+93.180.77.224/28
+93.180.77.238
+citrixmfa.big.krankenkasse.de
+93.180.77.224/28
+93.180.77.239
+BROADCAST-Adresse
+IPv6
+Subnetz
+IP-Adresse
+Verwendungszweck
+2a00:4c40:2000:18::/64
+2a00:4c40:2000:18::1
+Virtuelle Router-Adresse
+2a00:4c40:2000:18::/64
+2a00:4c40:2000:18::2
+Firewall A FR2
+2a00:4c40:2000:18::/64
+2a00:4c40:2000:18::3
+Firewall B FR7
+2a00:4c40:2000:18::/64
+2a00:4c40:2000:18::4
+Firewall-Gateway (WAN-Interface)
+Standort Netzwerke (LAN)
+Zwecks Übersicht aller Standortnetzwerke ist im my.Proact Portal eine Liste der verwendeten Netzwerke abgelegt, die die Netzwerkanteile von Proact, BIG und actimonda zeigt. Diese Liste dient zusätzlich der Abstimmung und Dokumentation neuer Netzwerke, die an allen Standorten erschlossen werden.
+DHCP_BIG-DTM.xlsx
+Routing
+Zur Bekanntmachung der jeweiligen Standort- und Rechenzentrums-Netzwerke wird ein gemischtes Routing-Konzept realisiert.
+Statisches Routing
+Statisches Routing wird überall dort verwendet, wo der Netzwerk-Partner ein dynamisches Routing-Prototokoll nicht anbietet.
+Alle Routen zu Partnern, die via IPsec Site-to-Site VPN zentral an der Firewall terminieren, werden statisch eingetragen.
+Dynamisches Routing (BGP)
+Die Fa. Webdiscount hat für die BIG ein neues SDWAN Konzept eingerichtet, sodass sich die Außenstandorte der BIG via IPSec VPN zu einer Firewall der Webdiscount im Frankfurter Rechenzentrum verbinden. Diese Firewall tauscht die Routing-Informationen mit der Cloud Firewall der Proact mittels BGP aus.
+Peer to Peer Transfernetzwerke
+Innerhalb des Routings werden Schnittstellen benannt und konfiguriert, um Routinginformationen insbesondere für OSPF auszutauschen.
+Die Transfernetzliste ist im my.Proact.eu Portal unter folgendem Link zu finden:
+P2P_Transfernetzwerke.xlsx
+Proact MPLS (hosted by Webdiscount)
+Das neue MPLS-Konstrukt, welches alle Standorte der BIG und actimonda zukünftig in der Proact Cloud Frankfurt zusammenbringt, wird von der Webdiscount aufgebaut und ausgerollt. Die Übergabepunkte sind die jeweiligen Router an den Standorten und die Proact Cloud Firewall in Frankfurt. Innerhalb dieses Routing-Netzwerkes werden die Routing-Informationen mittels OSPF ausgetauscht.
+Im Rahmen des CR#4341 wurde ein „neues“ SDWAN Konzept geschaffen. Das alte Netz wird schrittweise auf das neue Netz umgezogen. Sofern alle Netze migriert wurden, wird das alte Netz abgebaut werden.  In diesem Konstrukt werden die Routen via BGP übermittelt. Die Neighbor IPs der Webdiscount sind 10.140.253.1/2. Als VLAN wurde hier jeweils die ID 2181 und 2182 definiert.
+globale Standortkürzel
+für Netzwerkübersichten werden globale Standortkürzel verwendet. Zwecks Übersicht sind diese in der folgenden Liste dargestellt.
+Standortkürzel
+Standort
+Zugehörigkeit
+WUP
+Wuppertal
+BIG
+DUE
+Düren
+BIG
+BGL
+Bergisch Gladbach
+BIG
+ESD
+Elsdorf
+BIG
+AAH
+Aachen
+BIG
+HAN
+Hameln
+BIG
+STG
+Stolberg
+BIG
+JUE
+Jülich
+BIG
+ESR
+Eschweiler
+BIG
+DUS
+Düsseldorf
+BIG
+CGN
+Köln
+BIG
+MUC
+München
+BIG
+MGL
+Mönchengladbach
+BIG
+BER
+Berlin
+BIG
+HAM
+Hamburg
+BIG
+DTM
+Dortmund
+BIG / Proact
+FRA
+Frankfurt
+Proact
+MPLS Standorte BIG
+Für die neuen WAN-Anschlüsse der Webdiscount wurde eine Standortliste ermittelt, die zusätzlich die Standorte der TAE-Dosen dokumentiert. Dies ist für den Migrationsprozess bedeutend, da bei Installation der neuen WAN-Router die Standorte der Anschlüsse bekannt sein müssen.
+Folgende Liste zeigt die Standorte:
+ID
+PLZ
+Stadt
+Straße
+Nr.
+Etage im Gebäude
+Lage TAE Dose
+3
+31785
+Hameln
+Kuhlmannstr.
+11
+EG
+Serverschrank
+4
+42275
+Wuppertal
+Schuchardstr.
+28
+1. OG
+Serverschrank
+5
+50189
+Elsdorf
+Dürener Str.
+40
+Keller
+Serverschrank
+6
+51465
+Bergisch-Gladbach
+Richard-Zanders-Str.
+2-6
+EG
+Serverschrank
+7
+52068
+Aachen, neue HV
+Hüttenstr.
+1
+EG, Raum E.18
+Serverschrank
+8
+52068
+Aachen, Roter Ochse
+Hüttenstr.
+3
+9
+52222
+Stolberg
+Willy-Bandt-Platz
+7
+EG
+Serverschrank
+10
+52224
+Stolberg
+Zweifaller Str.
+130
+EG, Zugang über Werkstechniker
+Serverschrank
+11
+52249
+Eschweiler
+Indestr.
+121
+EG
+Serverschrank
+12
+52349
+Düren
+(Kleine) Zehnthofstr.
+32
+EG
+Serverschrank
+13
+52353
+Düren
+An Gut Nazareth
+73
+EG
+Serverschrank
+14
+52428
+Jülich
+Düsseldorfer Str.
+23
+Keller
+Serverschrank
+15
+10969
+Berllin
+Markgrafenstraße
+62
+In Bearbeitung
+16
+40477
+Düsseldorf
+Fischerstraße
+8
+In Bearbeitung
+17
+50933
+Köln
+Aachener Str.
+300
+In Bearbeitung
+18
+22297
+Hamburg
+Überseering
+45
+In Bearbeitung
+19
+81737
+München
+Thomas-Dehler-Str.
+2
+In Bearbeitung
+20
+41066
+Mönchengladbach
+Grunewaldstraße
+59
+In Bearbeitung
+MPLS Standortmigration
+Das Proact MPLS wird parallel zum bestehenden MPLS aufgebaut und hat keinen Einfluss auf die Infrastruktur der actimonda und BIG Standorte.
+Folgende Migrationsschritte und Hinweise sind hier festgehalten:
+Der Standort X erhält einen neuen Router für den Standort von der Webdiscount.
+Die Default-Gateway-Adressen der Standort-Netzwerke werden übernommen (siehe IP-Subnetzliste).
+Zum Umschaltungszeitpunkt wird das Netzwerkabel vom bestehenden MPLS-Router auf den neuen Router gesteckt. Die verschiedenen Subnetzwerke werden via VLAN-Tagging an den Router übergeben.
+Zwecks OSPF-Routing ist der Weg zur Proact Cloud Frankfurt gesichert und durch die Direktverbindung zur itsc der Zugriff auf die Ressourcen gewährleistet, sofern die Netzwerkumschaltung vor der Dienste-Transition durchgeführt wird.
+Anpassung des Routings für den Standort Seitens der itsc in Richtung DIrekverbindung Proact, damit der Standort über den neuen Weg das itsc erreicht.
+Zwecks Fail-Back kann das Netzwerkkabel auf den „alten“ MPLS-Router zurückgesteckt werden, sofern die Verbindungen nicht funktionieren.
+Active Directory Service
+Infrastruktur
+Beim BIG Active Directory (AD) handelt es sich um die ROOT Domäne krankenkasse.de mit der Child Domäne big.krankenkasse.de. Sämtliche Userobjekte und Server sind in der Domäne big.krankenkasse.de.
+DNS Name
+IP
+Standort
+OS
+Rollen
+big-vrootdc01.krankenkasse.de
+10.18.20.3
+Frankfurt
+Server 2019
+AD, DNS
+big-vrootdc02.krankenkasse.de
+10.18.20.4
+Frankfurt
+Server 2019
+AD, DNS
+big-vdc01.big.krankenkasse.de
+10.118.0.1
+Frankfurt
+Server 2019
+AD, DNS, DHCP
+big-vdc02.big.krankenkasse.de
+10.118.0.2
+Frankfurt
+Server 2019
+AD, DNS, DHCP
+Sites und Services
+Es gibt zwei Sites, Frankfurt und Dortmund. Die Site Dortmund ist historisch bedingt noch in der Konfiguration vorhanden, enthält jedoch keine aktive Infrastruktur mehr.
+Subnets
+Name
+Standort
+Typ
+Beschreibung
+10.0.128.0/23
+Frankfurt
+Subnetz
+10.0.93.0/24
+Frankfurt
+Subnetz
+Subnetz Bitmarck
+10.100.10.0/24
+Dortmund
+Subnetz
+10.100.12.0/24
+Dortmund
+Subnetz
+10.100.14.0/24
+Frankfurt
+Subnetz
+10.100.15.0/24
+Frankfurt
+Subnetz
+10.100.18.0/24
+Frankfurt
+Subnetz
+10.100.33.0/24
+Frankfurt
+Subnetz
+10.100.36.0/24
+Frankfurt
+Subnetz
+10.100.38.0/24
+Frankfurt
+Subnetz
+10.100.39.0/24
+Frankfurt
+Subnetz
+10.100.4.0/24
+Frankfurt
+Subnetz
+10.100.40.0/24
+Frankfurt
+Subnetz
+10.100.41.0/24
+Frankfurt
+Subnetz
+10.100.42.0/24
+Frankfurt
+Subnetz
+10.100.5.0/24
+Dortmund
+Subnetz
+10.100.6.0/24
+Dortmund
+Subnetz
+10.100.7.0/24
+Dortmund
+Subnetz
+10.100.8.0/24
+Dortmund
+Subnetz
+10.18.0.0/16
+Frankfurt
+Subnetz
+10.18.30.0/24
+Frankfurt
+Subnetz
+10.18.31.0/24
+Frankfurt
+Subnetz
+10.254.240.0/21
+Frankfurt
+Subnetz
+10.254.248.0/21
+Frankfurt
+Subnetz
+192.168.241.0/24
+Dortmund
+Subnetz
+210.0.229.0/24
+Frankfurt
+Subnetz
+210.1.229.0/24
+Frankfurt
+Subnetz
+210.2.229.0/24
+Frankfurt
+Subnetz
+210.21.229.0/24
+Frankfurt
+Subnetz
+210.22.229.0/24
+Frankfurt
+Subnetz
+210.23.229.0/24
+Frankfurt
+Subnetz
+210.28.229.0/24
+Frankfurt
+Subnetz
+210.3.229.0/24
+Frankfurt
+Subnetz
+210.34.229.0/24
+Frankfurt
+Subnetz
+Subnetz Berlin
+210.37.229.0/24
+Frankfurt
+Subnetz
+210.38.229.0/24
+Frankfurt
+Subnetz
+210.39.229.0/24
+Frankfurt
+Subnetz
+210.4.229.0/24
+Frankfurt
+Subnetz
+210.44.229.0/24
+Subnetz
+Subnet Nürnberg
+210.48.229.0/24
+Frankfurt
+Subnetz
+210.5.229.0/24
+Frankfurt
+Subnetz
+Subnetz 5.OG
+210.6.229.0/24
+Frankfurt
+Subnetz
+210.8.229.0/24
+Frankfurt
+Subnetz
+Subnetz Cisco
+210.9.229.0/24
+Frankfurt
+Subnetz
+Inter-Site Transport
+Der Replikationsintervall zwischen den Sites wurde auf Push gestellt, um die Verzögerung von 15min zu Beschleunigen. Änderungen werden somit immer direkt auf die andere Site repliziert. Dies Betrifft Objekt sowie DNS-Aktualisierungen. Per Default ist der Eintrag leer.
+Default:
+DNS
+Jeder Domain Controller hat sich selbst als ersten DNS Server hinterlegt. Der zweite Eintrag ist der jeweilige Partner in der Site.
+Folgende Weiterleitungen sind eingerichtet. Auch hier sind nach den Public DNS Servern von quad9 und google die jeweiligen DCs der Site eingetragen.
+LDAPS
+Auf den Servern sind LDAPS Zertifikate für die SSL Verschlüsselte LDAP Verbindung hinterlegt. Ausgestellt werden diese von der PKI mit einer Gültigkeit von einem Jahr.
+Betrieb
+Betriebshinweise
+Siehe Serverliste in Netbox
+Updates
+Siehe Serverliste im Kundensharepoint CSP-BIG – Home
+Reboot
+Siehe Serverliste im Kundensharepoint CSP-BIG – Home
+Besonderheiten
+Keine
+Hinweise zum Patchmanagement
+Siehe Serverliste in Netbox
+Backup und Restore
+Siehe Serverliste in Netbox
+Monitoring
+Das Monitoring des Directory Services umfasst neben dem Basismonitoring der Server unter anderem folgende Abfragen:
+Responsivitäts-Checks für essentielle Dienste wie DNS oder LDAP
+Domain Trusts
+Replications mit weiteren Domain Controllern
+Verdächtige Windows Events
+Virenschutz
+Der Virenschutz wird von der BIG verwaltet.
+Verbrauchdatenerfassung
+Bei allen Serviceaccounts wurde das extensionAttribute15 mit „Funktionsaccount“ gefüllt. Alle anderen Accounts sind für die Erfassung relevant.
+File Services
+Die Fileservices werden zwei einem Failover Cluster mit zwei Nodes in Frankfurt bereitgestellt.
+Die beiden Cluster haben unterschiedliche Aufgaben:
+Das Cluster big-vfileclu01 stellt den regulären Fileserver der BIG bereit, das Cluster big-vffslclu01 dient der Ablage der FSlogix Profile für die Citrix Worker.
+big-vfileclu01.big.krankenkasse.de
+Infrastruktur
+Hostname
+Funktion
+IP-Adresse
+big-vfilec01
+Fileserver Cluster Node 1
+10.18.20.10
+big-vfilec03
+Fileserver Cluster Node 2
+10.18.20.18
+big-vfileclu01
+Fileserver Cluster Name
+10.18.20.12
+big-vfilei01
+Fileserver Instanz BIG
+10.18.20.14
+big-vfilei02
+Fileserver Instanz actimonda
+10.18.20.15
+big-vfilei03
+Fileserver Instanz BIG (Ablösung Netapp)
+10.18.20.16
+big-vfilei04
+Fileserver Instanz
+10.18.20.17
+Konfiguration
+Zugehörige LUNs / Datenträger
+LUN
+Funktion
+svm-frabig01:/vol/svmfrabig01_big_vfileclu01_quorum/svmfrabig01_big_vfileclu01_quorum.lun
+Quorum
+svm-frabig01:/vol/svmfrabig01_big_vfilei01_apps/svmfrabig01_big_vfilei01_apps.lun
+F:
+svm-frabig01:/vol/svmfrabig01_big_vfilei01_home01/svmfrabig01_big_vfilei01_home01.lun
+G:
+svm-frabig01:/vol/svmfrabig01_big_vfilei02_actimonda/svmfrabig01_big_vfilei02_actimonda.lun
+E:
+/vol/svmfrabig01_big_vfilei03_data01/svmfrabig01_big_vfilei03_data01.lun
+L:
+/vol/svmfrabig01_big_vfilei03_data02/svmfrabig01_big_vfilei03_data02.lun
+K:
+/vol/svmfrabig01_big_vfilei04_archive01_singlesite/svmfrabig01_big_vfilei04_archive01_singlesite.lun
+O:
+Übersicht der Fileserver Instanzen
+big-vfilei01
+Kommentar
+Fileserver Instanz
+big-vfilei01
+Zweck
+Daten und Home Shares
+Typ
+Fileserver
+IP
+10.18.20.14
+Home Node
+big-vfilec01
+Laufwerke
+F: (apps)
+G: (home01)
+Shares
+apps (f:\apps)
+f$ (Default Admin Share)
+g$ (Default Admin Share)
+home01$ (g:\home01)
+pstexports$ (g:\actimonda_pst_exports)
+proact_monitor$ (f:\proact_monitor)
+-
+-
+-
+-
+actimonda Migration
+proact probe
+VSS
+-
+big-vfilei02
+Kommentar
+Fileserver Instanz
+big-vfilei02
+Zweck
+Daten Share Actimonda
+Typ
+Fileserver
+IP
+10.18.20.15
+Home Node
+big-vfilec01
+Laufwerke
+E: (actimonda)
+Shares
+actimonda_daten (e:\actimonda_daten)
+D3-RESTORE (e:\)
+e$ (Default Admin Share)
+proact_monitor$ (e:\proact_monitor)
+VSS
+-
+big-vfilei03
+Kommentar
+Fileserver Instanz
+big-vfilei03
+Alias: big-filer02, big-vdat
+Zweck
+Daten Share BIG. Migriert von der NetApp (big-filer02)
+Aliases wurde während der Migration übernommen
+Typ
+Fileserver
+IP
+10.18.20.16
+Home Node
+big-vfilec01
+Laufwerke
+L:, K:
+Shares
+"Abtint$","K:\daten\Abtint"
+"AGOF_OMD_06","L:\daten\Software\BIG-DVD\AGOF_OMD_06"
+"Akademie","l:\daten\Software\BIG-DVD\Akademie"
+"ALLGVERW","K:\daten\Abtint\ALLGVERW"
+"apr2004_1","L:\daten\Software\BIG-DVD\apr2004_1"
+"apr2004_2","L:\daten\Software\BIG-DVD\apr2004_2"
+"aug2003_1","L:\daten\Software\BIG-DVD\aug2003_1"
+"aug2004_1","L:\daten\Software\BIG-DVD\aug2004_1"
+"aug2004_2","L:\daten\Software\BIG-DVD\aug2004_2"
+"Ausbildung","K:\daten\Abtint\Ausbildung"
+"Austausch HR","K:\daten\Abtint\ALLGVERW\PERSONAL\Austausch HR"
+"Befreiung MediaKom","L:\daten\Gruppen\FuerAlle\Befreiung Mediakom"
+"BEITRAG","K:\daten\Abtint\BEITRAG"
+"Beitrag-Test","K:\daten\Abtint\BEITRAG\Beitrag"
+"Beleglesung","L:\daten\Gruppen\FuerAlle\Poststelle\Beleglesung"
+"BICC","K:\daten\Abtint\BICC"
+"BIG-DVD","L:\daten\Software\BIG-DVD"
+"Big-Photos1","L:\daten\Software\BIG-DVD\Big-Photos1"
+"Big-Photos2","L:\daten\Software\BIG-DVD\Big-Photos2"
+"big_at_work","L:\daten\Projekte\big_at_work"
+"Controlling","K:\daten\Abtint\Controlling"
+"Cotel$","L:\daten\Software\Cotel"
+"D$","L:\daten"
+"d3import","L:\daten\Software\d3Store\d3import"
+"d3Store","L:\daten\Software\d3Store"
+"DataScience","K:\daten\Abtint\ALLGVERW\Data Science"
+"Daten$","L:\daten"
+"DatenBKK","K:\daten\Abtint\DatenBKK"
+"dez2003_1","L:\daten\Software\BIG-DVD\dez2003_1"
+"dez2003_2","L:\daten\Software\BIG-DVD\dez2003_2"
+"dez2003_3","L:\daten\Software\BIG-DVD\dez2003_3"
+"dez2004_1","L:\daten\Software\BIG-DVD\dez2004_1"
+"dez2004_2","L:\daten\Software\BIG-DVD\dez2004_2"
+"E-Mail-Vorlagen","L:\daten\Gruppen\FuerAlle\E-Mail-Vorlagen"
+"EDV","K:\daten\Abtint\EDV"
+"egk","L:\daten\Projekte\egk"
+"feb2004_1","L:\daten\Software\BIG-DVD\feb2004_1"
+"feb2004_2","L:\daten\Software\BIG-DVD\feb2004_2"
+"feb2004_3","L:\daten\Software\BIG-DVD\feb2004_3"
+"feb2005_1","L:\daten\Software\BIG-DVD\feb2005_1"
+"feb2005_2","L:\daten\Software\BIG-DVD\feb2005_2"
+"Finanzen","L:\daten\Gruppen\Finanzen"
+"Finanzen_Beitraege","L:\daten\Gruppen\Finanzen\Finanzen_Beitraege"
+"FuerAlle","L:\daten\Gruppen\FuerAlle"
+"Handelsblatt","L:\daten\Software\BIG-DVD\Handelsblatt"
+"home$","L:\daten\Home"
+"ImagePlus_Qu","L:\daten\Software\BIG-DVD\ImagePlus_Qu"
+"Infopost","L:\daten\Gruppen\FuerAlle\Infopost"
+"IP_0303001","L:\daten\Software\BIG-DVD\IP_0303001"
+"IP_03q4","L:\daten\Software\BIG-DVD\IP_03q4"
+"IP_0403","L:\daten\Software\BIG-DVD\IP_0403"
+"jan2004_1","L:\daten\Software\BIG-DVD\jan2004_1"
+"jan2004_2","L:\daten\Software\BIG-DVD\jan2004_2"
+"jan2005_1","L:\daten\Software\BIG-DVD\jan2005_1"
+"jan2005_2","L:\daten\Software\BIG-DVD\jan2005_2"
+"jul2004_1","L:\daten\Software\BIG-DVD\jul2004_1"
+"jul2004_2","L:\daten\Software\BIG-DVD\jul2004_2"
+"jun2004_1","L:\daten\Software\BIG-DVD\jun2004_1"
+"jun2004_2","L:\daten\Software\BIG-DVD\jun2004_2"
+"K$","K:\"
+"Kassenordnung","L:\daten\Gruppen\Finanzen\Kassenordnung"
+"Kommunikation","L:\daten\Gruppen\FuerAlle\Führungsebene\Kommunikation"
+"Kostenstelle","L:\daten\Software\BIG-DVD\Kostenstelle"
+"Kundenservice","K:\daten\Abtint\Kundenservice"
+"L$","L:\"
+"Leistung","K:\daten\Abtint\LEISTUNG"
+"Liquidität","L:\daten\Gruppen\Finanzen\Liquidität"
+"LV-BERLIN","K:\daten\Abtint\LV-BERLIN"
+"mai2004_1","L:\daten\Software\BIG-DVD\mai2004_1"
+"mai2004_2","L:\daten\Software\BIG-DVD\mai2004_2"
+"Marketing","K:\daten\Abtint\Marketing"
+"Medco","K:\daten\Abtint\Revision\14 Projekte\17 Medco"
+"Mediakom","K:\daten\Abtint\BEITRAG\Beitrag\8 Allgemein\Mediakom"
+"mon_big-vfilei03","K:\mon_big-vfilei03"
+"mrz2004_1","L:\daten\Software\BIG-DVD\mrz2004_1"
+"mrz2004_2","L:\daten\Software\BIG-DVD\mrz2004_2"
+"Muster Bescheide","K:\daten\Abtint\BEITRAG\Beitrag\5 Versichertenservice\Allgemein\Dokumente-Vorlagen\FRW\Einkommensbefragung\Bescheide zum 01.01.2017\Muster Bescheide"
+"NO LABEL","L:\daten\Software\BIG-DVD\NO Label"
+"nov2003_1","L:\daten\Software\BIG-DVD\nov2003_1"
+"nov2003_2","L:\daten\Software\BIG-DVD\nov2003_2"
+"nov2004_1","L:\daten\Software\BIG-DVD\nov2004_1"
+"nov2004_2","L:\daten\Software\BIG-DVD\nov2004_2"
+"OE_Ersatzleistungen","K:\daten\Abtint\OE_Ersatzleistungen"
+"okt2003_1","L:\daten\Software\BIG-DVD\okt2003_1"
+"okt2003_2","L:\daten\Software\BIG-DVD\okt2003_2"
+"okt2003_3","L:\daten\Software\BIG-DVD\okt2003_3"
+"okt2004_1","L:\daten\Software\BIG-DVD\okt2004_1"
+"okt2004_2","L:\daten\Software\BIG-DVD\okt2004_2"
+"Personalkasse","K:\daten\Abtint\Personalkasse"
+"Personalrat$","K:\daten\Abtint\Personalrat"
+"PhotosBIG","L:\daten\Software\BIG-DVD\PhotosBIG"
+"Proact_Monitor$","K:\Shares\Proact_Monitor$"
+"procareELAN","L:\daten\Software\procareELAN"
+"Projekte","L:\daten\Projekte"
+"Revision","K:\daten\Abtint\Revision"
+"Rezept300","L:\daten\Rezept300"
+"RSA_Management","K:\Daten\Abtint\RSA_Management"
+"Scripts$","L:\daten\Software\Scripts"
+"sep2003_1","L:\daten\Software\BIG-DVD\sep2003_1"
+"sep2003_2","L:\daten\Software\BIG-DVD\sep2003_2"
+"sep2003_3","L:\daten\Software\BIG-DVD\sep2003_3"
+"sep2003_4","L:\daten\Software\BIG-DVD\sep2003_4"
+"sep2003_5","L:\daten\Software\BIG-DVD\sep2003_5"
+"sep2004_1","L:\daten\Software\BIG-DVD\sep2004_1"
+"sep2004_2","L:\daten\Software\BIG-DVD\sep2004_2"
+"Servicecenter","L:\daten\Gruppen\Servicecenter"
+"Software$","L:\daten\Software"
+"Softwarepool","L:\daten\Software\Softwarepool"
+"Strategieprojekte","L:\daten\Gruppen\FuerAlle\Führungsebene\Strategie 2008-2011\Strategieprojekte"
+"ThinApp","L:\daten\Software\ThinApp"
+"Transfer$","L:\daten\Software\Transfer"
+"Vermögensverwaltung","L:\daten\Gruppen\Finanzen\Liquidität\Vermögensverwaltung"
+"Vertraege","K:\daten\Abtint\Vertraege"
+"Vertragsebene","K:\daten\Abtint\Vertraege\DMP\Vertragsebene"
+"Vertrieb","K:\daten\Abtint\Vertrieb"
+"WINBK2000","K:\daten\Abtint\WINBK2000"
+"WINBK2000test","K:\daten\Abtint\WINBK2000_test"
+"winEFW_GS7","K:\daten\Abtint\winEFW_GS7"
+"winEFW_prod","K:\daten\Abtint\WINBK2000\winEFW_prod"
+"winEFW_test","K:\daten\Abtint\WINBK2000\winEFW_test"
+"WinXP_Access 2003","L:\daten\Software\ThinApp\WinXP_Access 2003"
+"WinXP_ColumbusOM","L:\daten\Software\ThinApp\WinXP_ColumbusOM"
+"WinXP_FileZilla","L:\daten\Software\ThinApp\WinXP_FileZilla"
+"WinXP_GnuPG-Pack","L:\daten\Software\ThinApp\WinXP_GnuPG-Pack"
+"WinXP_Gutachter","L:\daten\Software\ThinApp\WinXP_Gutachter"
+"WinXP_SAP7.20","L:\daten\Software\ThinApp\WinXP_SAP7.20"
+"Workshop_Pro","L:\daten\Software\BIG-DVD\Workshop_Pro"
+"wuvatlive","L:\daten\Software\BIG-DVD\wuvatlive"
+VSS
+-
+big-vfilei04
+Kommentar
+Fileserver Instanz
+big-vfilei04
+Zweck
+Fileserver Archiv
+Typ
+Fileserver
+IP
+10.18.20.17
+Home Node
+big-vfilec03
+Laufwerke
+O:\
+Shares
+Archive,O:\archive
+JenkinsLogs$,O:\JenkinsLogs
+O$,O:\
+proact_monitor$,O:\proact_monitor
+VSS
+-
+Betrieb
+Betriebshinweise
+Siehe Serverliste in Kundenportal.
+Updates
+Siehe Serverliste in Kundenportal.
+Reboot
+Da es sich um ein Cluster handelt, ist ein Reboot der einzelnen Nodes auch während der Betriebszeit möglich. Zuvor müssen die Fileserver Instanzen auf den Partnerknoten verschoben werden. Hierbei ist zu beachten, dass die Commvault Services nicht die Migration der Fileserver-Instanzen blockieren. Daher müssen die Commvault Dienste vor der Migration auf einen anderen Node gestoppt werden:
+Weitere Hinweise in der Serverliste im Kundenportal
+Hinweise zum Patchmanagement
+Siehe Serverliste in Kundenportal
+Backup und Restore
+Das Cluster Plugin des jeweiligen Commvault Dienstes für die Fileserver muss auf dem gleichem Node laufen wie der Fileserver selbst (Besitzerknoten). In der Standardkonfiguration wie folgt. Wenn Fileserver Instanzen verschoben werden, ändert sich die Dienstverteilung gemäß des Besitzerknotens der jeweiligen Instanz.
+Für die obige Konfiguration:
+Dienste big-vfilec01:
+Dienste big-vfilec03:
+Monitoring
+Die Überwachung im Rahmen der File Services umfasst neben Server Basismonitoring unter anderem:
+Verdächtige Windows Events nach PROACT Definition
+Windows Services
+Cluster Ressourcen und Events
+Akute Failover-Erkennung
+Zudem wird die Verfügbarkeit des Services über die „proact_monitor$“ freigaben gemessen. Dies dient zur SLA Ermittlung.
+Virenschutz
+Der Virenschutz wird von der BIG verwaltet.
+big-vffslclu01.big.krankenkasse.de
+Infrastruktur
+Hostname
+Funktion
+IP-Adresse
+big-vffslc01
+Fileserver Cluster Node 1
+10.18.20.248 / 10.118.12.248
+big-vffslc02
+Fileserver Cluster Node 2
+10.18.20.249 / 10.118.12.249
+big-vffslclu01
+Fileserver Cluster Name
+10.18.20.250
+big-vffsli01
+Fileserver Instanz FSlogix
+10.118.12.242
+big-vffsli02
+Fileserver Instanz FSlogix
+10.118.12.243
+big-vffsli03
+Fileserver Instanz FSlogix
+10.118.12.244
+big-vffsli04
+Fileserver Instanz FSlogix
+10.118.12.245
+big-vffsli05
+Fileserver Instanz FSlogix
+10.118.12.246
+big-vffsli06
+Fileserver Instanz FSlogix
+10.118.12.247
+big-vffsli07
+Fileserver Instanz FSlogix
+10.118.12.250
+big-vffsli08
+Fileserver Instanz FSlogix
+10.118.12.251
+Konfiguration
+Zugehörige LUNs / Datenträger
+big-vffsli01-08
+Kommentar
+Fileserver Instanz
+big-vffsli01-08
+Zweck
+FSlogix Profil shares
+Typ
+Fileserver
+IP
+10.118.12.242
+10.118.12.243
+10.118.12.244
+10.118.12.245
+10.118.12.246
+10.118.12.247
+10.118.12.250
+10.118.12.251
+Laufwerke
+E:
+F:
+G:
+H:
+I:
+J:
+K:
+L:
+Shares
+Jeweils pro Instanz
+fslogix$, X:\fslogix
+proact_monitor$, X:\shares\proact_monitor
+VSS
+-
+Betrieb
+Betriebshinweise
+Siehe Serverliste in Kundenportal.
+Updates
+Siehe Serverliste in Kundenportal.
+Reboot
+Da es sich um ein Cluster handelt, ist ein Reboot theoretisch jederzeit möglich. Da auf dem Cluster jedoch die gemounteten FSLogix Profile liegen, ist hier mit auswirkungen in die Citrix Sessions zu rechnen. Schwenks sollten nur zu Betriebsarmen Zeit geschehen. Hierbei ist zu beachten, dass die Commvault Services nicht die Migration der Fileserver-Instanzen blockieren. Daher müssen die Commvault Dienste vor der Migration auf einen anderen Node gestoppt werden:
+Weitere Hinweise in der Serverliste im Kundenportal
+Hinweise zum Patchmanagement
+Siehe Serverliste in Kundenportal
+Backup und Restore
+Das Cluster Plugin des jeweiligen Commvault Dienstes für die Fileserver muss auf dem gleichem Node laufen wie der Fileserver selbst (Besitzerknoten). In der Standardkonfiguration wie folgt. Wenn Fileserver Instanzen verschoben werden, ändert sich die Dienstverteilung gemäß des Besitzerknotens der jeweiligen Instanz.
+Für die obige Konfiguration:
+Dienste big-vffslc01:
+Dienste big-vffslc02:
+Monitoring
+Die Überwachung im Rahmen der File Services umfasst neben Server Basismonitoring unter anderem:
+Verdächtige Windows Events nach PROACT Definition
+Windows Services
+Cluster Ressourcen und Events
+Akute Failover-Erkennung
+Zudem wird die Verfügbarkeit des Services über die „proact_monitor$“ freigaben gemessen. Dies dient zur SLA Ermittlung.
+Virenschutz
+Der Virenschutz wird von der BIG verwaltet.
+VMware Services
+Infrastruktur
+Für VM’s und Systeme die beim Kunden weiterhin in Dortmund betrieben werden, ist eine eigenständige vSphere Struktur implantiert. Sie besteht aus 2 ESXi Host die über einen vCenter Server als vSphere HA Cluster konfiguriert sind.Die benötigte Speicher Kapazität wird von dem vorhandenen Proact NetApp MetroCluster über das FC-SAN bereitgestellt.
+Konfigurationen
+Hardware Systeminformationen ESXi Hosts
+System Type: PRIMERGY RX25030 M1
+System O/S:VMware ESXi 8.0.3 build- 24305161
+O/S Version:8.0.3 build- 24022510
+vSphere Cluster
+Die 2 ESXi Hosts sind über ein vCenter (big-dtm-vcsa) in einem HA Cluster (BIG_DTM) zusammen konfiguriert.
+Hostname
+Funktion
+IP-Adresse
+Version
+big-dtm-vcsa.big.krankenkasse.de
+vCenter Server Appliance
+10.100.10.10
+8.0.3
+big-dtm-esx1 big.krankenkasse.de
+ESXi Host
+10.100.10.11
+8.0.3
+big-dtm-esx2 big.krankenkasse.de
+ESXi Host
+10.100.10.12
+8.0.3
+vSphere Datastores
+Es sind 2 Datastores von je 1 TB Größe über FC als VMFS Volumes an die ESXi Hosts verbunden.
+FC-SAN
+Das FC-SAN besteht aus 4 FC-Switchen. Wobei 2 immer eine Fabric bilden
+Fabric 1: FC-SW1/FC-SW3
+Fabric2: FC-SW2/FC-SW4
+Hostname
+FC Port
+WWPN
+FC-Switch
+Switch Port
+Zonen Alias
+big-dtm-esx1
+A
+10:00:00:00:c9:8c:52:30
+FC-SW1
+7
+BIG_DTM_ESX01_A
+big-dtm-esx1
+B
+10:00:00:00:c9:76:8a:b8
+FC-SW2
+7
+BIG_DTM_ESX01_B
+big-dtm-esx2
+A
+10:00:00:00:c9:8c:52:01
+FC-SW3
+0
+BIG_DTM_ESX02_A
+big-dtm-esx2
+B
+10:00:00:00:c9:98:43:1b
+FC-SW4
+0
+BIG_DTM_ESX02_B
+Namenskonvention
+Damit man die Systeme bereits am Namen erkennen kann, wo sie sich befinden, sind in den Hostnamen etc die Buchstaben „dtm oder DTM“ anzuwenden.
+Lizenzen
+Lizenzen wurden vom Kunden erworben und bereitgestellt.
+Betrieb
+Der Betrieb erfolgt Rechenzentrum der BIG in Dortmund.
+Updates
+Für Updates wird der vSphere Update Manager genutzt, der direkt die Updates/Patches von VMware bezieht.
+Monitoring
+Beinhaltet das Monitoring für die VCSA
+Ressourcenmonitoring für VMware customized  VCSA Linux
+Beinhaltet Monitoring der Virtualisierungs-Ressourcen
+ESX-Hosts
+VMs inkl. Ressourcen
+Datastores
+Networks
+Snapshots
+Cluster
+Hyper-V Services
+Infrastruktur
+Für VM’s und Systeme die beim Kunden weiterhin in Dortmund betrieben werden, ist eine eigenständige Hyper-V Struktur implementiert. Sie besteht aus 2 Hyper-V Host die als Failover Cluster konfiguriert sind.Die benötigte Speicher Kapazität wird über lokale Festplatten in einem Storage Spaces Direct Storage-Poolbereitgestellt.
+Konfigurationen
+Hardware Systeminformationen ESXi Hosts
+System Type: PowerEdge R660
+System O/S:Windows Server 2022 Datacenter
+Failover Cluster
+Die 2 Hyper-V Hosts sind als Failover Cluster konfiguriert.
+Hostname
+Funktion
+IP-Adresse
+big-dtm-hypv-cl.big.krankenkasse.de
+Windows Failover Cluster
+10.141.70.100
+big-dtm-hypv1.big.krankenkasse.de
+Hyper-V Host
+10.141.70.102
+big-dtm-hypv2.big.krankenkasse.de
+Hyper-V Host
+10.141.70.104
+Cluster Shared Volumes
+Es ist ein CSV mit 8 TB Größe als Two-Way Mirror konfiguriert:
+Namenskonvention
+Damit man die Systeme bereits am Namen erkennen kann, wo sie sich befinden, sind in den Hostnamen etc die Buchstaben „dtm oder DTM“ anzuwenden.
+Lizenzen
+Lizenzen wurden vom Kunden erworben und bereitgestellt.
+Betrieb
+Der Betrieb erfolgt im Rechenzentrum der BIG in Dortmund.
+Updates
+Monitoring
+PKI Services
+Als interne PKI dient eine einstufige Microsoft Enterprise PKI auf dem Server „big-vpki01.big.krankenkasse.de“.Das Web-Enrollment ist unter der folgenden URL zu erreichen: http://big-vpki01/certsrv
+Infrastruktur
+Es handelt sich um einen einzelnen Server.
+Parameter
+Wert
+Bemerkung
+Name
+big-vpki01.krankenkasse.de
+OS Version
+Windows Server 2022
+IPv4 Adresse
+10.18.21.12
+Standort
+HyperV Frankfurt
+Bereitstellung
+Virtuelle Maschine
+Role Services
+Certification Authority
+Role Services to configure
+Certification Authority Certification Authority Web Enrollment
+CA Setup Type
+Active Directory Enterprise CA
+CA Type
+Root CA
+Cryptographic provider
+RSA#Microsoft
+Key lenght
+2048
+Hash algorithm
+SHA256
+Common Name
+CA-BIG
+Distinguished name suffix
+CN=CA-BIG
+Vality period
+19 Years
+Database location
+C:\Windows\system32\certlog
+Database log
+C:\Windows\system32\certlog
+CRL Publishing interval
+1 Week
+CRL Delta Publishing Interval
+1 Day
+Konfiguration
+Name: CA-BIG
+CRL (CDP)
+AIA
+Templates
+Die folgenden zwei Templates sind extra angelegt
+WebserverMitClientAuth (Server/Client Authentication)
+Gültigkeit: 4 Jahre
+2048 Bit
+Erneuerungsintervall: 6 Wochen
+AD-Publishing: Nein
+Öffentlicher Schlüssel Export erlaubt: nein
+Signatur & Verschlüsseln
+WebserverMitExport (Server Authentication)
+Gültigkeit: 5 Jahre
+2048 Bit
+Erneuerungsintervall: 6 Wochen
+AD-Publishing: Nein
+Öffentlicher Schlüssel Export erlaubt: ja
+Signatur & Verschlüsseln
+WebserverMitExportSy (Server Authentication)
+Gültigkeit: 5 Jahre
+2048 Bit
+Erneuerungsintervall: 6 Wochen
+AD-Publishing: Nein
+Öffentlicher Schlüssel Export erlaubt: ja
+Signatur & Verschlüsseln
+DNS-Einträge
+Für den Zugriff auf die CRL ist ein A-Record in der Zone big.krankenkasse.de angelegt worden:
+Zertifikate
+Das folgende Root-Zertifikat liegt auf dem PKI:
+Betrieb
+Betriebshinweise
+Es sind keine Besonderheiten bekannt.
+Updates
+Es sind keine Besonderheiten bekannt.
+Reboot
+Es sind keine Besonderheiten bekannt.
+Besonderheiten
+Es sind keine Besonderheiten bekannt.
+Hinweise zum Patchmanagement
+Es sind keine Besonderheiten bekannt.
+AntiVirus
+Big stellt den Antivirus und wurde mit dem Ausrollen beauftragt.
+Backup und Restore
+Der Pki wird über VMWare gebackupt.
+Monitoring
+Das Monitoring besteht aus mehreren Komponenten.So ist es möglich bei Incidents  entsprechende Rückschküsse zu ziehen und schnell zu reagieren.
+Dazu gehören:
+Betriebssystem
+Notwendige Services
+Ablauf von internen Zertifikaten (u.A. werden User-Zertifikate exkludiert)
+WSUS Services
+Der WSUS Service wurde in der Standard-Variante aufgebaut, dass bedeutet 1 Server.
+Zukünftig werden die Server und lokale Desktopclients der Big über den WSUS mit Windows Updates versorgt. Dieses Dokument beschreibt die Konfiguration von diesem WSUS-Server.
+Die Geräte werden in die folgenden drei Kategorien/Gruppen unterteilt. Diese beziehen sich auf den Zeitpunkt zur Installation der Updates. Die Kategorien unterscheiden zwischen „Windows-Server-Clients“, „Windows-User-Clients“, „Windows-User-Clients-Test“ sowie „manuell-zu-patchenden-systeme“
+Infrastruktur
+Die folgenden Parameter gelten für diesen Server:
+Parameter
+Wert
+Bemerkung
+Servernamen WSUS Server
+big-vwsus01
+Die WSUS-Datenbank liegt lokal in der WDI.
+Update Speicherort
+Die von Microsoft heruntergeladenen Updates werden unter „D:\WSUS“ abgelegt.
+Server Gruppierungen
+Insgesamt gibt es vier Gruppen, in die die Server eingeordnet wurden.
+Gruppe
+Update-Routine
+Windows-user-clients
+Genehmigung: durch WSUS Auto-Approvement
+Zeitpunkt der Genehmigung: nach Updatesynchronisierung
+Edge Updates werden durch eine gesonderte Regel automatisch genemigt
+Windows-server-clients
+Genehmigung: durch WSUS Auto-Approvement
+Zeitpunkt der Genehmigung: nach UpdatesynchronisierungEdge Updates werden durch eine gesonderte Regel automatisch genehmigt
+Dementsprechend gibt es zu jeder Gruppierung eine AD-Gruppe, eine GPO und eine WSUS-Gruppe.
+AD-Gruppen
+Die folgenden AD-Gruppen dienen der GPO-Zuordnungen und die Server sind hier entsprechend aufgenommen.
+RES-WSUS-Windows-Server-Clients
+RES-WSUS-Windows-User-Clients
+Gruppenrichtlinien
+Folgende Gruppenrichtlinien wurden dafür erstellt:
+CC_WSUS-Windows-Server-ClientsDiese GPO darf nur von der Gruppe RES-WSUS-Windows-Server-Clients ausgeführt werden
+CC_WSUS-Windows-User-Clients Diese GPO darf nur von der Gruppe RES-WSUS-Windows-User-Clients ausgeführt werden
+WSUS-Gruppen
+Server Bereinigung
+Verwaiste Updates werden automatisiert bereinigt. Dies geschieht über einen Jenkins Task. Dieser Task läuft jede Woche Dienstag um 10:00 Uhr.
+Weitere Konfigurationen
+Die Updates werden direkt mit Microsoft synchronisiert.
+Ein Proxy wird nichts eingesetzt.
+Products and Classifications:
+Products-Betriebsysteme/Applikationen:
+Azure Stack HCI
+Microsoft Defender Antivirus
+Microsoft Edge
+Microsoft Server operating system-21H2
+Microsoft Server Operating System-22H2
+Microsoft Server Operating System-23H2
+Microsoft Office 2016
+Server 2022 Hotpatch Category
+SharePoint Server 2019/Office Online Server
+Microsoft Windows - Client S, version 21H2 and later, Servicing Drivers
+Microsoft Windows - Client S, version 21H2 and later, Upgrade & Servicing Drivers
+Microsoft Windows - Client, version 21H2 and later, Servicing Drivers
+Microsoft Windows - Client, version 21H2 and later, Upgrade & Servicing Drivers
+Microsoft Windows - Server, version 21H2 and later, Servicing Drivers
+Microsoft Windows - Server, version 21H2 and later, Upgrade & Servicing Drivers
+Microsoft Windows - Server, version 24H2 and later, Upgrade & Servicing Drivers
+Microsoft Windows 10 and later drivers
+Microsoft Windows 10 Language Interface Packs
+Microsoft Windows 10 Language Packs
+Microsoft Windows 10 LTSB
+Microsoft Windows 10 version 1803 and Later Servicing Drivers
+Microsoft Windows 10 Version 1803 and Later Upgrade   & Servicing Drivers
+Microsoft Windows 10, version 1809 and later, Servicing Drivers
+Microsoft Windows 10, version 1809 and later, Upgrade & Servicing Drivers
+Microsoft Windows 10, version 1903 and later, Servicing Drivers
+Microsoft Windows 10, version 1903 and later, Upgrade & Servicing Drivers
+Microsoft Windows 10, version 1903 and later
+Microsoft Windows 10
+Microsoft Windows Dictionary Updates
+Microsoft Windows Server 2012 R2
+Microsoft Windows Server 2016 and Later Servicing Drivers
+Microsoft Windows Server 2016
+Microsoft Windows Server 2019 and later, Servicing Drivers
+Microsoft Windows Server 2019 and later, Upgrade & Servicing Drivers
+Microsoft Windows Server 2019 Datacenter: Azure Edition Hotpatch
+Microsoft Windows Server 2019
+Microsoft Windows Server Drivers
+Microsoft Windows Server Manager – Windows Server Update Services (WSUS) Dynamic Installer
+Microsoft Windows Server, version 1903 and later
+Update Klassifizierungen:
+Definitionsupdates
+Sicherheitsupdates
+Wichtige Updates
+Updates
+Sprachen der Updates
+Deutsch & Englisch
+Computers
+Generel-User Group Policy or registry settings on computers
+Monitoring
+Das Monitoring des Services besteht aus folgenden Komponenten:
+Grundmonitoring Betriebssystem
+WSUS Spezifisch:
+WSUS Application Pool
+Worker processes = 1
+WSUS Endpoint
+Response Time
+Windows-Dienste
+World Wide Web Publishing Service
+WSUS Service
+Backup
+Folgende Komponenten werden gesichert:
+Virtuelle Maschine
+Exchange Services
+Hostname
+Version
+Bemerkung
+big-vmail02.big.krankenkasse.de
+Exchange Subscription Edition Enterprise
+Exchange Server
+mail.big.krankenkasse.de
+DNS Alias für externen Zugriff
+oauth.big.krankenkasse.de
+DNS Alias für externen oauth-Zugriff
+eac.big.krankenkasse.de
+Hostname für Exchange Admin Center (EAC)
+Der big-vmail02 wurde aufgrund der Umstellung auf OAuth installiert und mit in die Umgebung aufgenommen. Datenbanken und Grenzwerte
+Datenbank
+Wanmeldung senden
+Senden verbieten
+Senden und Empfangen verbieten
+DB01
+4,9 GB
+5 GB
+Unlimited
+DB02
+4,9 GB
+5 GB
+Unlimited
+DB03
+4,9 GB
+5 GB
+Unlimited
+DB04
+4,9 GB
+5 GB
+Unlimited
+Management
+Um den Zugriff auf das Management abzusichern, ist ein separates ECP Verzeichnis mit eigener IP erstellt worden. Es existiert einen DNS Eintrag für den Zugriff.
+10.18.21.11 - eac.big.krankenkasse.de
+Der Zugriff zur Exchange Admin Shell entsprechend über die URL https://eac.big.krankenkasse.de/ecp/
+Externer Zugriff
+Der Externe Zugriff auf OWA und Outlook Anywhere ist über Citrix ADC (Netsacler -> zeigen alle auf den big-vmail02) konfiguriert. Active Sync Geräte sind über ein MDM der BIG (IaaS) angebunden.
+Die BIG lässt als TASK ein Skript laufen, welches den Zugriff auf Features wie OWA und Activesync aktiviert, bzw. deaktiviert. Als Benutzer ist der Group Managed Service Account „gmsa.mailjobs$“ durch den Kunden hinterlegt.
+Ausgewertet werden User aus den Gruppen G_OutlookAnywhere, G_OutlookWebApp und G_Activesync.
+Die folgenden Verzeichnisse,
+MAPI
+OAB
+ECP
+EWS
+OutlookAnywhere
+wurden im Rahmen des CR#4753 via oauth.big-krankenkasse.de über die Netscaler erreichbar gemacht, als Ziel ist der Server big-vmail02.big.krankenkasse.de hinterlegt.
+Intern im DNS wurde dazu ebenfalls eine Zone angelegt:
+Mailflow
+Die MX Einträge zeigen auf das Mailgateway der Bitmarck. Von dort aus gelangen Mails zu dem Security Gateway der BIG big-vz1 (IaaS) und anschließend zum Exchange Server. Ausgehender Mailflow in umgekehrter Reihenfolge.
+MX Einträge
+Pref
+Hostname
+IP Adresse
+TTL
+10
+mta1.gskv.de
+62.245.133.41
+24
+10
+mta2.gskv.de
+62.245.133.42
+24
+10
+mta3.gskv.de
+62.245.133.43
+24
+SPF Record
+v=spf1 a mx ip4:195.137.170.200 ip4:195.137.170.203 ip4:208.73.7.100 ~all
+Mail Queue
+Die Mail Queue liegt jeweils in einem separaten Volume unter Q:\Queue
+Sendeconnectoren
+Die folgenden Sendeconenctoren sind vorhanden, grau markierte Sendeconnectoren sind deaktiviert.
+Name
+Adressraum
+Port
+Smarthost
+Sharepoint
+SMTP:*.bigipedia.big-direkt.de;1
+25
+big-vsp01.big.krankenkasse.de
+ePost Exchange 2016
+SMTP:*.epost.de;1 SMTP:epost.de;1
+25
+[10.230.3.11]
+IKK-Suedwest
+SMTP:*.ikk-sw.de;1
+25
+[156.25.2.173]
+Z1
+SMTP:*;1
+25
+[10.100.18.129]
+Retarus Exchange 2016
+SMTP:*.fax.retarus.com;1
+25
+[94.199.90.56],[94.199.88.56]
+Governikus_bebpo
+SMTP:*.bebpo-aas.de;1
+25
+[192.168.0.107]
+Retarus_TLS
+SMTP:*.fax.retarus.de;1 SMTP:*.fax.retarus.com;1
+25
+[185.93.140.81],[94.199.88.198]
+seppmail
+SMTP:*;1 SMTP:axa.de;1 SMTP:ergo.de;1 SMTP:allianz.de;1 SMTP:bas.bund.de;1 SMTP:datteln-in-saalbach.de;1 SMTP:gronwalds.de;1 SMTP:floerke.eu;1
+25
+seppmail.big.krankenkasse.de
+Outbound to Office 365 - 72c4246f-ba8c-4c2b-8103-7a61fc84226f
+smtp:bigdirekt.mail.onmicrosoft.com;1
+25
+Im Sendeconnector Richtung O365 befindet sich nur der big-vmail02 als Quellserver.
+Empfangsconnectoren
+Name
+Bindungen
+Remote IP Ranges
+Max Message Size
+BIG-VMAIL02\Default BIG-VMAIL02
+0.0.0.0:2525 [::]:2525
+::-ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 0.0.0.0-255.255.255.255
+36 MB
+BIG-VMAIL02\Anonymes Relayen 2019
+0.0.0.0:25
+192.168.248.45/32, 10.18.20.217, 210.5.229.254, 210.5.229.251, 210.5.229.219, 210.5.229.215, 210.5.229.212, 210.5.229.189, 210.5.229.186, 210.5.229.183, 210.5.229.181, 210.5.229.180, 210.5.229.172, 210.5.229.168, 210.5.229.159, 210.5.229.140, 210.5.229.139, 210.5.229.134, 210.5.229.131,
+210.5.229.97, 210.5.229.96, 210.5.229.89, 210.5.229.88, 210.5.229.61, 210.5.229.60, 210.5.229.59, 210.5.229.49, 210.5.229.48, 210.5.229.46, 210.5.229.45, 210.5.229.33, 210.5.229.32, 210.5.229.31, 210.5.229.24, 210.5.229.21, 210.5.229.17, 210.5.229.15, 210.5.229.13, 210.5.229.8, 210.5.229.4,
+210.5.229.3, 192.168.250.183, 192.168.248.80, 192.168.0.107, 10.100.41.4, 10.100.36.119, 10.100.18.156, 10.100.18.155, 10.100.18.154, 10.100.18.148, 10.100.18.146, 10.100.18.137, 10.100.18.129, 10.100.18.123, 10.100.18.120, 10.100.18.116, 10.100.18.115, 10.100.18.101-10.100.18.110,
+10.100.18.95-10.100.18.96, 10.100.18.93, 10.100.18.90, 10.100.18.88, 10.100.18.83, 10.100.18.70, 10.100.18.68, 10.100.18.65, 10.100.18.59, 10.100.18.55, 10.100.18.51, 10.100.18.50, 10.100.18.45, 10.100.18.41, 10.100.18.24, 10.100.18.20, 10.100.15.192, 10.100.15.169, 10.100.15.125,
+10.100.12.164, 10.100.12.163, 10.100.12.162, 10.100.12.161, 10.100.12.156, 10.100.12.154, 10.100.12.153, 10.100.12.152, 10.100.12.151, 10.100.12.149, 10.100.12.148, 10.100.12.147, 10.100.12.146, 10.100.12.145, 10.100.12.144, 10.100.12.143, 10.100.12.142, 10.100.12.141, 10.100.12.137,
+10.100.12.136, 10.100.12.135, 10.100.12.134, 10.100.12.133, 10.100.12.132, 10.100.12.131, 10.100.12.130, 10.100.12.126, 10.100.12.125, 10.100.12.124, 10.100.12.123, 10.100.12.122, 10.100.12.121, 10.100.12.120, 10.100.12.112, 10.100.12.111, 10.100.12.110, 10.100.12.105, 10.100.12.102,
+10.100.12.101, 10.100.12.15, 10.100.12.12, 10.100.12.9, 10.100.12.7, 10.100.12.6, 10.100.12.5, 10.100.12.4, 10.100.12.1, 10.100.10.94, 10.100.10.92, 10.100.10.91, 10.100.10.71-10.100.10.74, 10.100.8.191, 10.100.8.139, 10.100.5.95, 10.100.5.88, 10.100.5.40, 10.18.194.111, 10.18.194.110,
+10.18.194.11, 10.18.194.10, 10.18.21.2, 10.18.21.1, 10.18.20.225, 10.18.20.199, 10.18.20.198, 10.18.20.197, 10.18.20.196, 10.18.20.195, 10.18.20.191, 10.18.20.186, 10.18.20.185, 10.18.20.22, 10.18.20.0/24, 10.10.12.112, 10.0.93.65, 10.0.93.26
+300 MB
+BIG-VMAIL02\Client Proxy BIG-VMAIL02
+[::]:465 0.0.0.0:465
+::-ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 0.0.0.0-255.255.255.255
+36 MB
+BIG-VMAIL02\Default Frontend BIG-VMAIL02
+[::]:25 0.0.0.0:25
+::-ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 0.0.0.0-255.255.255.255
+36 MB
+BIG-VMAIL02\Outbound Proxy Frontend BIG-VMAIL02
+[::]:717 0.0.0.0:717
+::-ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 0.0.0.0-255.255.255.255
+36 MB
+BIG-VMAIL02\Client Frontend BIG-VMAIL02
+[::]:587 0.0.0.0:587
+::-ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 0.0.0.0-255.255.255.255
+36 MB
+Akzeptierte Domänen
+Name
+Akzeptierte Domäne
+Domänentyp
+actimonda.de
+actimonda.de
+Autoritativ
+big-direkt.de (Standarddomäne)
+big-direkt.de
+Autoritativ
+krankenkasse.de
+krankenkasse.de
+Autoritativ
+bigdirekt.mail.onmicrosoft.com
+bigdirekt.mail.onmicrosoft.com
+Autoritativ
+Transport Regeln
+Name
+Priorität
+Kommentar
+Status
+[SPAM] Emailing
+0
+Enabled
+Block creditcontrol
+1
+Enabled
+21C-Softwareinstall servicedesk@ahd.de hinzufügen
+2
+Koppers - Proact Servicedesk explizit in den "To:"-Header hinzufügen, damit die Mails seitens Proact importiert werden
+Disabled
+Gesendete Mails von Info
+3
+Disabled
+Mails von conny.craemer@t-online.de an T.Schnur
+4
+Mails mit dem Betreff "Bearbeitungshinweis ICKV" werden als Kopie in den Unterordner Bearbeitungshinweis_ICKV kopiert.
+Enabled
+Kopie von FAMI_Mediakom in Unterordner
+5
+Mails mit dem Betreff "Bearbeitungshinweis ICKV" werden als Kopie in den Unterordner Bearbeitungshinweis_ICKV kopiert.
+Enabled
+gkv-sv-mitgliederinfo
+6
+Umleitung zum landesverband-berlin@big-direkt.de
+Enabled
+Info-Email-Archiv
+7
+Disabled
+MrsFaxerAus
+8
+Disabled
+Faxarchiv
+9
+Disabled
+Disclaimer Dortmund mit Titel
+10
+Disclaimer Dortmund mit Titel
+Disabled
+Betreff PZR oder Professionelle Zahnreinigung
+11
+Disabled
+Kopie von Betreff PZR oder Professionelle Zahnreinigung
+12
+Disabled
+Nachrichtentyp: Lesebestätigung
+13
+Disabled
+Privat @pi-asp.de, @limesurvey.org
+14
+Enabled
+Privat voting@polyas.com
+15
+erstellt von SSa, ITO-92685..
+Enabled
+Remove Read Reciept
+16
+Im Modus AuditAndNotify
+Enabled
+Bypass @sosafe.de
+17
+ITO-76870
+Enabled
+Bypass SoSafe Absender SCL-1
+18
+CHGPRO0119741
+Enabled
+Bypass SoSafe Absender Skip Focused Inbox
+19
+CHGPRO0119741
+Enabled
+Remote Domänen
+Name
+Standard
+DomainName
+*
+AllowedOOFType
+ExternalLegacy
+AutoReplyEnabled
+True
+AutoForwardEnabled
+False
+NDREnabled
+True
+NDRDiagnosticInfoEnabled
+True
+ContentType
+MimeHtmlText
+DisplaySenderName
+True
+Name
+Hybrid Domain - bigdirekt.mail.onmicrosoft.com
+DomainName
+bigdirekt.mail.onmicrosoft.com
+AllowedOOFType
+External
+AutoReplyEnabled
+True
+AutoForwardEnabled
+True
+NDREnabled
+True
+NDRDiagnosticInfoEnabled
+True
+ContentType
+MimeHtmlText
+DisplaySenderName
+True
+Name
+Hybrid Domain - bigdirekt.onmicrosoft.com
+DomainName
+bigdirekt.onmicrosoft.com
+AllowedOOFType
+External
+AutoReplyEnabled
+True
+AutoForwardEnabled
+True
+NDREnabled
+True
+NDRDiagnosticInfoEnabled
+True
+ContentType
+MimeHtmlText
+DisplaySenderName
+True
+Virtuelle Verzeichnisse
+Über den CR #4876 wurden die virtuellen Verzeichnisse für OWA und ECP auf beiden Exchange Servern angeglichen.
+big-vmail02
+----------------------------------------
+Autodiscover
+- Internal SCP: https://mail.big.krankenkasse.de/Autodiscover/Autodiscover.xml
+Exchange Control Panel
+- Internal: https://mail.big.krankenkasse.de/ecp
+- External: https://mail.big.krankenkasse.de/ecp
+Exchange Web Services
+- Internal: https://mail.big.krankenkasse.de/EWS/Exchange.asmx
+- External: https://mail.big.krankenkasse.de/EWS/Exchange.asmx
+MAPI
+- Internal: https://mail.big.krankenkasse.de/mapi
+- External: https://oauth.big.krankenkasse.de/mapi
+ActiveSync
+- Internal: https://mail.big.krankenkasse.de/Microsoft-Server-ActiveSync
+- External: https://mail.big.krankenkasse.de/Microsoft-Server-ActiveSync
+Offline Address Book
+- Internal: https://mail.big.krankenkasse.de/OAB
+- External: https://mail.big.krankenkasse.de/OAB
+Outlook Web App
+- Internal: https://mail.big.krankenkasse.de/owa
+- External: https://mail.big.krankenkasse.de/owa
+PowerShell
+- Internal: http://big-vmail02.big.krankenkasse.de/powershell
+- External:
+Outlook Anywhere
+- Internal: mail.big.krankenkasse.de
+- External: mail.big.krankenkasse.de
+CodeTwo Exchange Rules Pro
+Allgemeines
+Auf dem Mailserver vmail02 ist die Software CodeTwo Exchange Rules Pro (Exchange Rules Pro  Admin Panel und Exchange Rules Pro Service) installiert.
+Das Tool ist eine Erweiterung für den MS Exchange-Servers und klinkt sich in den Mail-Flow des Exchange Servers ein.
+Über definierte Regeln wird der Mail-Flow und der Inhalt von E-Mails (in- und outgoing) gesteuert. Mail-Signatur, Bounce, Weiterleitung von a an b etc erfolgt zum größten Teil über CodeTwo.
+Andere Regeln sind im Exchange konfiguriert.
+Konfiguration
+Der Zugriff auf die Software erfolgt mittels Rechten, die in der Anwendung gesetzt werden und den angemeldeten Windows Benutzer, der abgefragt wird.
+Jeder Exchange Server (im Cluster) muss mind. den Service "Exchange Rules Pro Service" installiert haben, damit korrekt die Regeln beim Mail-Flow angewendet werden können.
+Installation
+- Der MSExchangeTransport Dienst wird während der Installation der Software gestoppt.
+- Es wird  das MS .NET FW benötigt.
+Es wird für jede Installation eine eigenständige/separate S/N - Lizenzschlüssel für die Software benötigt, die beim Hersteller Support bestellt werden muss.
+Der Installationsprozess ist unter dem Link: https://www.codetwo.com/userguide/exchange-rules-pro/software-installation.htm zu finden.
+Lizenzen
+Die Lizenzen werden von der BIG beigestellt.
+Zertifikate
+Für die Exchange Dienste wird das Wildcard Zertifikat *.big.krankenkasse.de verwendet, durch das Extended Protection ist das gleiche Zertifikat auch auf der ADC veröffentlicht.
+Das externe Wildcard wird ebenfalls für die Hybridstellung verwendet.
+Hybridstellung und Hybrid Modern Auth
+Es besteht die Anforderung, den Zugriff abzusichern, sodass eine Multi Faktor Authentifizierung ermöglich ist und der Zugriff via ActiveSync nur von Mobilgeräten möglich ist, die via InTune als vertrauenswürdig registriert wurden.
+Des Weiteren besteht die Anforderung die Postfächer weiterhin OnPremises auf der Exchange Infrastruktur zu hosten.
+Vorbereitend hierfür wurde eine Exchange Hybridstellung inkl. über Entra ID Connect synchronisierter Benutzerkonten ins Entra ID geschaffen, als Hybrid Endpoint ist der big-vmail02 hinterlegt.
+Auf dem big-vmail02 ist vollumfänglich TLS 1.2 aktiviert und können OAuth Abfragen über Exchange Online bedienen.
+Aktivierung Hybrid Modern Auth
+Die Aktivierung von Hybrid Modern Auth geschah mit folgenden zwei Befehlen. Dies hat zur Folge, dass sämtliche Authentifizierungen an lokale Exchange Ressourcen an Azure umgeleitet und dort durchgeführt werden:
+Set-AuthServer -Identity "EvoSTS - 72c4246f-ba8c-4c2b-8103-7a61fc84226f" -IsDefaultAuthorizationEndpoint $true
+Set-OrganizationConfig -OAuth2ClientProfileEnabled $true
+Siehe:
+https://learn.microsoft.com/en-us/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide
+Dedicated Hybrid App
+Über den Change CHGPRO0127604 wurde die bestehende Shared Service Principal Konfiguration der Hybridstellung durch eine Dedicated Hybrid App "ExchangeServerApp-9ef8005c-51b5-4988-8981-eaa77ce34e17" mit der Application ID "bcb86ae1-fdb9-4900-98cc-e83a043b4181"ersetzt.
+Dadurch ist die Exchange Hybridstellung über eine dedizierte registered M365 Application im Tenant der BIG hinterlegt.
+Die Shared Service Principal Umgebung wurde zurückgebaut, sodass diese v.a. der dort hinterlegte OAuth Key kein Sicherheitsrisiko darstellt.
+Betrieb
+Betriebshinweisekeine
+Updates
+Patchgruppe siehe Serverliste
+Virenschutz
+Für den Virenschutz ist die BIG zuständig. Auf dem Exchange Server läuft Scan Mail for Exchange von Trendmicro https://big-vmail02:16373/smex/
+Die Ausnahmen zum Virenschutz wurden der BIG mitgeteilt.
+Reboot
+Mit dem Kunden abzustimmen
+Besonderheiten
+Virenschutz des Exchange Server wird von der BIG gestellt.
+Ein Skript steuert den Zugriff auf OWA und Activesync
+Es gibt eine Separate EAC
+Externe Verzeichnisse zeigen auf den big-vmail02
+SRV Autodiscover.big.krankenkasse.de zeigt
+Es wurde die TCPKeepAliveTime gesetzt, von Standardmößig 120 auf 30 Minuten, dies soll die Stabilität und Performance der Clientverbindungen verbessern
+Hinweise zum Patchmanagement
+Patchmanagement laut Serverliste
+Backup und Restore
+Backup ist nach Proact Standard in der Klasse Advanced konfiguriert. Der genaue Backup Schedule entnehmen Sie 0018_C-BIG_CommVault_Systemübersicht_FRA
+Monitoring
+Neben dem Basismonitoring für Windows Server und Exchange Dienste werden applikationsspezifische Metriken von verschiedenen Exchange-Komponenten eingeholt:
+Lizenzerfassung
+Die Lizenzerfassung wird über die folgende LDAP-Abfrage durchgeführt:
+(&(objectCategory=person)(|(accountExpires>=132887771665761894)(accountExpires=0)(accountExpires=9223372036854775807))(!(userAccountControl:1.2.840.113556.1.4.803:=2))(!(userAccountControl:1.2.840.113556.1.4.803:=16))((&(objectClass=user)(homeMDB=*)))(!flags=-1)(!extensionattribute15=Funktionsaccount)(!cn=HealthMailbox*))
+Exchange Usage
+Mittels der Exchange usage Probe, installiert auf dem big-vmail02 wird die Erfassung des verwendeten Postfachspeichers durchgeführt.
+Remote Workplace auf Basis Citrix virtual Apps and Desktops
+Für die Bereitstellung des Remote Workplaces wird eine Citrix virtual Apps and Desktops (folgend CVAD geannant) Infrasturktur aufgebaut.
+Grafische Übersicht
+Tabellarische Serverübersicht
+Name
+IP-Adresse
+Beschreibung
+big-vctxcdc01.big.krankenkasse.de
+10.118.10.1
+Delivery Controller/ Director / WEM
+big-vctxcdc02.big.krankenkasse.de
+10.118.10.2
+Delivery Controller/ Director / WEM
+big-vctxsf01.big.krankenkasse.de
+10.118.10.3
+Storefront
+big-vctxsf02.big.krankenkasse.de
+10.118.10.4
+Storefront
+big-vctxls01.big.krankenkasse.de
+10.118.10.5
+Citrix Lizenzserver, KMS, RDS Lizenzserver
+big-vctxpvs03.big.krankenkasse.de
+10.118.10.248 (Citrix-LAN)
+10.118.11.248 (PXE-Streaming)
+Citrix PVS
+big-vctxpvs04.big.krankenkasse.de
+10.118.10.249 (Citrix-LAN)
+10.118.11.249 (PXE-Streaming)
+Citrix PVS
+big-nsadc01
+192.168.248.21
+ADC
+big-nsadc02
+192.168.248.22
+ADC
+big-adclb01
+10.18.11.1
+ADC LB
+big-adclb02
+10.18.11.2
+ADC LB
+Version
+Die CVAD-Infrastruktur wurde LTSR Konform in der Version 2402 LTSR aufgebaut.
+Citrix Delivery Controller
+Es werden für CVAD zwei Delivery-Controller aufgebaut.
+Citrix License Activation Service (LAS)
+Der Citrix License Activation Service (LAS) ist das neue, cloudbasierte Lizenzierungsmodell von Citrix, das die bisherige dateibasierte Lizenzierung vollständig ersetzt. Statt Lizenzdateien manuell herunterzuladen, hochzuladen und zu verwalten, kommuniziert der Lizenzserver direkt mit Citrix Cloud und bezieht Berechtigungen automatisch.
+LAS arbeitet nach einem kontinuierlichen Online-Aktivierungsmodell:
+Der Lizenzserver wird einmalig bei Citrix Cloud registriert.
+Berechtigungen werden automatisch alle 12-24 Stunden von LAS synchronisiert.
+Jedes Produkt erhält eine rollierende 30-Tage-Aktivierungsperiode, die bei bestehender Verbindung automatisch erneuert wird.
+Bei Verbindungsunterbrechung greift ein License-Cache-Modus (30 Tage Puffer).
+Die folgenden URLs müssen ausgehend (Outbound HTTPS/TLS 443) vom Lizenzserver erreichbar sein:
+URL / Endpunkt
+Port / Protokoll
+Zweck
+https://las.cloud.com
+TCP 443 (HTTPS)
+LAS-Hauptendpunkt für Lizenzaktivierung und -erneuerung
+https://cloud.com
+TCP 443 (HTTPS)
+Citrix Cloud Registration und Management
+https://accounts.cloud.com
+TCP 443 (HTTPS)
+Authentifizierung und Identity Management
+https://trust.citrixnetworkapi.net
+TCP 443 (HTTPS)
+Citrix Cloud API Trust Service
+https://core.citrixworkspacesapi.net
+TCP 443 (HTTPS)
+Workspace Core API
+https://cis.citrix.com
+TCP 443 (HTTPS)
+Citrix Insight Services / Telemetrie
+https://lm.citrix.com
+TCP 443 (HTTPS)
+License Management Service
+Wichtig:Falls in der Umgebung SSL-Inspection aktiv ist, muss der Traffic zu den Citrix Cloud Endpunkten davon ausgenommen werden. LAS verwendet Certificate Pinning - SSL-Inspection unterbricht die Verbindung.
+Nachdem in den Einstellungen des Citrix Lizenzservers der Cloud Connect hergestellt wurde
+werden im Dashboard des Lizenzservers die Verfügbaren Lizenzen im Reiter License Activation Service angezeigt.
+Im nächsten Schritt werden alle Citrix Produkte neu mit dem Lizenzserver verbunden und dabei auf LAS umgestellt.
+In der Citrix Cloud wird unter: Licensing - License Activation Service - License Servers der Status des Lizenzservers angezeigt.
+In den Details kann man überprüfen ob alle Citrix Dienste eine saubere Verbindung aufgebaut haben.
+Als letzter Schritt werden alle Legacy Lizenz Dateien aus dem Dateisystems des Citrix Lizenzservers entfernt und die Ereignisanzeigen der Citrix Infrastrukturdienste ( XDC, PVS, WEM, Xen ) auf Lizenzfehler überprüft.
+Datenbank
+Die SQL Datenbanken auf der SQL Instanz (big-vsql-tech01.big.krankenkasse.de) abgelegt.
+Für die CVAD-Site wurden 3 Datenbanken erstellt:
+CVAD-FRALogging
+CVAD-FRAMonitoring
+CVAD-FRASite
+Citrix Ressourcen (Desktops)
+Dem Endanwender wird ein Desktop auf Basis eines Windows Server 2019 Terminalservers bereitgestellt. Darüber hinaus gibt es einen Testdesktop um das Masterimage vor Freigabe für den Produktivbetrieb im Vorfeld zu testen.
+Alle Desktops werden über eine Deliverygroup (DG_2019_SRV_WORKER_FRA) bereitgestellt und mittels Tags an die richtigen Server geleitet. Der Tag „Reboot“ bewirkt einen täglichen Neustart um 01:00 Uhr.
+Delivery Group
+Servernamen
+Tag(s)
+DG_2019_SRV_WORKER_FRA
+big-ctxwrk001 –
+big-ctxwrk190
+Reboot
+2019_STD_PROD
+DG_2019_SRV_WORKER_FRA
+big-ctxwrk000t
+Reboot
+2019_STD_TEST
+DG_2019_SRV_WORKER_FRA
+big-ctxwrk001t
+Reboot
+2019_STD_BI_Test
+Standard Desktop
+Auf diesem Desktop arbeitet der Großteil der Anwender und stellt ein Desktop auf Windows Server 2019 bereit mit allen benötigten Anwendungen.
+Testserver Desktop
+Hier arbeiten ausgewählte Benutzer um die Testversion des Images zu testen.
+BI Desktop
+Der BI Desktop hält eine eigene vDisk mit gesonderten Anwendungen als der Standard Desktop.
+Citrix Director
+Der Director Service ist auf den Delivery Controllern installiert.
+Verfügbarkeit und Lastenausgleich
+Für eine höhere Verfügbarkeit und als Lastenausgleich wird ein Load Balancer bereitgestellt.
+LB-Server
+IP:Port
+Real-Server
+lb_director_ssl
+10.18.11.9:443
+10.118.10.1:443 [big-vctxcdc01.big.krankenkasse.de]
+10.118.10.2:443 [big-vctxcdc01.big.krankenkasse.de]
+HTTPS-Redirect 80 -> 443:
+https://director.big.krankenkasse.de
+Administrative Rollen
+Für die BIG wurde eine Helpdesk Rolle definieniert und auf eine AD-Gruppe freigegeben.
+Die Benutzer der G_Citrix_Site_Helpdeskadmin ermöglicht es den kompletten Director ohne Einschränkungen zu sehen und den Anwendern zu supporten.
+Die Benutzer der G_Citrix_Site_Admin hat volle Rechte auf die Citrix Site.
+FSLogix Profile
+Die Userprofile werden mittels FSLogix erstellt. Es handelt sich hierbei um eine Containerbasiert Lösung.
+Profil Pfad
+Die Profile liegen auf mehreren Fileserver-Instanzen.
+\\big-vffsli01\fslogix$
+\\big-vffsli02\fslogix$
+\\big-vffsli03\fslogix$
+\\big-vffsli04\fslogix$
+\\big-vffsli05\fslogix$
+\\big-vffsli06\fslogix$
+\\big-vffsli07\fslogix$
+\\big-vffsli08\fslogix$
+Die Profil-Pfade werden alle 30 Minute, aufsteigend nach belegten Speicherplatz, neu sortiert, um ein Loadbalancing auf den File-Shares zu bewirken.
+Ausnahmen
+Die Ausnahmen werden definiert über die „redirections.xml“. Diese liegt im \\big.krankenkasse.de\netlogon\CVAD\FSLogix\ Ordner.
+ODFC-Disks für Outlook Cached Modus
+Zusätzlich zu den bereits eingesetzten FSLogix Profile Containern wurde für die Citrix-Benutzerumgebung eine FSLogix Office 365 Container (ODFC)-Konfiguration eingeführt.Ziel dieser Erweiterung ist die Bereitstellung von Outlook Cached Mode innerhalb der Citrix-Sitzungen auf Basis der Microsoft Best Practice. Neben Outlook werden dabei auch weitere Office-bezogene Daten, insbesondere OneNote, im ODFC-Container berücksichtigt.
+Die ODFC-Container werden auf dem Cluster big-vffslc gespeichert.
+Durch die Einführung der ODFC-Disks werden Outlook-Cache-Daten sowie weitere Office-Komponenten aus dem lokalen Benutzerprofil ausgelagert und in einem separaten Container abgelegt. Dies verbessert insbesondere in Citrix-Umgebungen die Unterstützung für den Cached Exchange Mode und sorgt für ein stabileres und konsistenteres Benutzerverhalten bei Office-Anwendungen.
+Die Nutzung von Outlook Cached Mode in Verbindung mit ODFC-Containern ist durch eine AD Gruppe gesteurt.Hierfür wird die folgende Active-Directory-Gruppe verwendet:
+G_Outlook_cachedmodeEnthält alle Benutzer, die ODFC-Disks bzw. Outlook Cached Mode nutzen sollen.
+Für die technische Bereitstellung der ODFC-Container wird die GPO cc_Set_FSLogix_ODFC_2019 verwendet.
+Allgemeine Eckdaten
+Domäne: big.krankenkasse.de
+Verlinkt auf
+Std_2019_Prod
+Std_Produktiv_FRA
+Std_Test_FRA
+Inhalt der GPO:
+In der GPO ist der Bereich FSLogix / Office 365 Containers aktiviert.Dabei wurden folgende Funktionen konfiguriert:
+Office 365 Container aktiviert
+Office Activation einbezogen
+OneDrive einbezogen
+OneNote einbezogen
+Outlook einbezogen
+Outlook Personalization einbezogen
+Teams einbezogen
+Dynamischer Datenträger aktiviert
+Maximale Containergröße: 30000 MB
+VHD Access Mode: Direct Access
+Containerformat: VHDX
+Zusätzlich ist in den erweiterten Einstellungen aktiviert:
+Remove Orphaned OST Files On Logoff
+Für die Benennung der Container und Verzeichnisse wurden folgende Parameter gesetzt:
+No Profile Containing Folder: aktiviert
+SID Directory Name Pattern: %username%
+VHD Name Match: ODFC_%username%
+VHD Name Pattern: ODFC_%username%
+GPO für den Outlook Cached Modus:
+Für die Aktivierung des Outlook Cached Mode wird zusätzlich die GPO uc_Outlook_cache_enable verwendet.
+Allgemeine Eckdaten
+Domäne: big.krankenkasse.de
+GPO-Status: Computereinstellungen deaktiviert / Benutzereinstellungen aktiviert
+Verlinkt auf
+Std_2019_Prod
+Std_Produktiv_FRA
+Std_Test_FRA
+Security Filtering
+BIG\G_Outlook_cachedmode
+Inhalt der Outlook Cached Mode Konfiguration
+Innerhalb der Benutzerkonfiguration wurden für Microsoft Outlook 2016 folgende Einstellungen gesetzt:
+Use Cached Exchange Mode for new and existing Outlook profiles: aktiviert
+Cached Exchange Mode Sync Settings: aktiviert
+Synchronisationsumfang: All
+Disable shared mail folder caching: aktiviert
+Zusatzhinweise:
+Durch die Umsetzung gemäß Microsoft Best Practice wird insbesondere sichergestellt, dass Outlook-Cache-Daten und zugehörige Office-Komponenten wie OneNote nicht im klassischen Citrix-Profil verbleiben, sondern separat im ODFC-Container auf dem Cluster big-vffslc gespeichert werden.
+Storefront
+Es wurden 2 Storefront-Server für die CVAD-Infrastruktur aufgebaut.
+Basis URL
+Die Basis URL lautet: https://storefront.big.krankenkasse.de
+Stores
+Es wurde ein Store mit dem Namen “BIG” erstellt für den Internen und Externen Zugriff.
+Verfügbarkeit und Lastenausgleich
+Für eine höhere Verfügbarkeit und als Lastenausgleich wird ein Load Balancer bereitgestellt. Dieser Loadbalancer wird über die Citrix ADC Appliance abgebildet.
+LB-Server
+IP:Port
+Real-Server
+lb_storefront_ssl
+10.18.11.5:443
+10.118.10.3:443 [big-vctxsf01.big.krankenkasse.de]
+10.118.10.4:443 [big-vctxsf01.big.krankenkasse.de]
+HTTPS-Redirect 80 -> 443:
+https://storefront.big.krankenkasse.de
+Zertifikat
+Für die Bereitstellung der verschlüsselten Webseite wird das vorhandene Wildcard-Zertifikat verwendet.
+Das Zertifikat wurde ebenfalls auf den Loadbalancern importiert.
+Provisioning Services (Citrix PVS)
+Für die Bereitstellung der Citrix Terminalserver Worker wird das Golden-Image via Citrix Provisioning bereitgestellt.
+Setup
+Die Provisioning Server wurden auf dedizierten Hosts mit SSD Storage bereitgestellt.
+Netzwerk
+Die Provisoning Server wurden mit jeweils 2 Netzwerkkarten in ein dediziertes Citrix-LAN installiert.
+Eine weitere Netzwerkkarte wurde für den PXE-Stream konfiguriert.
+Service Account
+Die Streaming-Services werden mit dem Service-User big.krankenkasse.de\svc_pvs ausgeführt:
+Citrix PVS API Service
+Citrix PVS Soap Server
+Citrix PVS Stream Service
+Der Service-User ist Mitglied der lokale Administratoren-Gruppe auf den beiden Provisioning Server.
+Datenbank
+Die SQL Datenbank CTX_PVS wird über den SQL-Server big-vsql-tech01.big.krankenkasse.de bereitgestellt.
+vDisks
+Für die Citrix Worker wird ein Image auf Basis von Windows Server 2019 aufgebaut.
+Write Cache
+Als Cache Type wird “Cache in Device RAM with Overflow on hard disk” konfiguriert. Der Wert für den Cache beträgt 4 GB RAM.
+Targets
+Es werden folgende Citrix Worker ausgerollt:
+Citrix Worker
+Name
+vCPU
+RAM
+Beschreibung
+HDD/GB
+Master
+big-ctxwrk000m
+8
+40 GB
+Master Server für ctxwrk2019v3
+50
+big-ctxwrk001m
+8
+40 GB
+Master Server für ctxwrkBI2019v3
+50
+big-ctxwrk002m
+8
+40 GB
+Master Server für ctxwrk2019t
+50
+big-ctxwrk1900m
+8
+40 GB
+Master Server für ctxwrk2019v4
+50
+Test
+big-ctxwrk000t
+8
+40 GB
+Test Server für ctxwrk2019v3
+50
+big-ctxwrk001t
+8
+40 GB
+Test Server für ctxwrkBI2019v3
+50
+big-ctxwrk002t
+8
+40 GB
+Test Server für ctxwrk2019t
+50
+big-ctxwrk2019t
+8
+40 GB
+Test Server für ctxwrk2019v4
+50
+Produktiv (2019)
+big-ctxwrk001 –
+big-ctxwrk100;
+big-ctxwrk107 –
+big-ctxwrk146;
+big-ctxwrk151 –
+big-ctxwrk190
+8
+40 GB
+Produktiv Server für ctxwrk2019v3
+50
+Produktiv (2019 BI)
+big-ctxwrk101 –
+big-ctxwrk106;
+big-ctxwrk147 –
+big-ctxwrk150
+8
+40 GB
+Produktiv Server für ctxwrkBI2019v3
+50
+Workspace Environment Management (WEM)
+Für das Anpassen des Startmenüs der veröffentlichten Desktops wird Citrix WEM verwendet.
+Alle Komponenten werden in der Version 2402 installiert.
+Infrastruktur Service
+Der Infrastruktur Service wurde auf big-vctxcdc01.big.krankenkasse.de und big-vctxcdc02.big.krankenkasse.de installiert.
+Datenbank
+Die SQL Datenbank big_citrixWEM_2106 wird über den SQL-Server big-vsql-tech01.big.krankenkasse.de bereitgestellt.
+Service Account
+Als Service Account wird BIG\svc_citrix_wem verwendet.
+Verfügbarkeit und Lastenausgleich
+Für eine höhere Verfügbarkeit und als Lastenausgleich wird ein Load Balancer bereitgestellt. Dieser Load Balancer wird auf der Citrix ADC abgebildet.
+LB-Server
+IP:Port
+Real-Server
+lb_ctxwem_admin
+10.18.11.8:8284
+10.118.10.1:8284 [big-vctxcdc01.big.krankenkasse.de]
+10.118.10.2:8284 [big-vctxcdc01.big.krankenkasse.de]
+lb_ctxwem_agent
+10.18.11.8:8286
+10.118.10.1:8286 [big-vctxcdc01.big.krankenkasse.de]
+10.118.10.2:8286 [big-vctxcdc01.big.krankenkasse.de]
+lb_ctxwem_mon
+10.18.11.8:8287
+10.118.10.1:8287 [big-vctxcdc01.big.krankenkasse.de]
+10.118.10.2:8287 [big-vctxcdc01.big.krankenkasse.de]
+lb_ctxwem_cachedata
+10.18.11.8:8288
+10.118.10.1:8288 [big-vctxcdc01.big.krankenkasse.de]
+10.118.10.2:8288 [big-vctxcdc01.big.krankenkasse.de]
+Zertifikate
+Größtenteils wird mit dem öffentlichen Wildcard-Zertifikat gearbeitet. Ausgestellt auf *.big.krankenkasse.de
+Betrieb
+Betriebshinweise
+Updates
+Die Updates der Citrix Master-Server werden häufig durch den Kunden durchgeführt. Die PROACT unterstützt bei den Updates.
+Hinweise zum Patchmanagement
+Das Patchmanagement der Infrastruktur-Systeme der Services unterliegt der PROACT und wird größtenteils automatisiert über Ansible durchgeführt. Informationen zu den Patchgruppen und den Zeiten befinden sich in der Serverliste.
+Backup und Restore
+Es werden sowohl die Datenbanken als auch die Server gesichert.
+Monitoring
+Das Monitoring für Citrix Virtual Apps Services beinhaltet verschiedene Komponenten:
+Delivery Controller
+Basismonitoring
+Citrix Dienste
+Provisioning Server
+Basismonitoring
+Citrix Dienste
+Worker/Terminal Server
+Basismonitoring
+Citrix Dienste
+PVS Write Cache Usage
+License Server
+Basismonitoring
+Citrix Dienste
+License Usage
+Storefront Server
+Basismonitoring
+Citrix Dienste
+Zusätzlich werden folgende Metriken an verschiedenen Komponenten der Umgebung eingeholt:
+Delivery Controller
+Farmweite Metriken
+Aktive User
+Getrennte User
+Idle User
+Gesamte User
+Logon Performance Metriken (Farmweit)
+Dauer Authentication (min/max/avg)
+Dauer Brokering
+Dauer Group Policies
+Dauer HDX Connection (Client->Terminalserver)
+Dauer Steuerungsübergabe
+Dauer LogOn
+Dauer LogOn Scripts
+Dauer Profile Load
+Dauer VM Start (falls zutreffend)
+Machine Catalogs
+Worker in Wartungsmodus
+Worker bei maximaler Userkapazität
+Nicht funktionale Worker
+Nicht funktionale Worker (%)
+"Stuck on Boot"-Worker
+Gesamtanzahl Worker
+Unregistrierte Worker
+Storefront Metriken
+Angemeldete User pro Storefront
+Worker Metriken
+Aktive Sessions pro Worker
+Getrennte Session pro Worker
+Worker/Terminal Server
+License Server
+Gesamt Lizenzanzahl
+Lizenzen in Nutzung
+Lizenzen in Nutzung (%)
+Überhang
+Zudem werden verschiedene HTTPS-Endpunkte der o.g. Komponenten überwacht.
+Verbrauchdatenerfassung
+Für die Abrechnung der Citrix User wird folgende AD-Gruppe erfasst: G_Citrix_Site_Global
+besondere Anwendungen
+Microsoft Edge
+Installations-Parameter
+MsiExec.exe /i MicrosoftEdgeEnterpriseX64.msi DONOTCREATETASKBARSHORTCUT=true DONOTCREATEDESKTOPSHORTCUT=true /qn
+Installations-Pfad
+C:\Program Files (x86)\Microsoft\Edge
+Gruppenrichtlinien-Definitionen
+msedge.admx
+msedgeupdate.admx
+msedgewebview2.admx
+Gruppenrichtlinie
+cc_MicrosoftEdge
+FSLogix-Redirections
+<Exclude Copy="0">AppData\Roaming\Microsoft\Edge\User Data\Default\Service Worker\CacheStorage</Exclude>
+<Exclude Copy="0">AppData\Roaming\Microsoft\Edge\User Data\Default\Service Worker\ScriptCache</Exclude>
+<Exclude Copy="0">AppData\Local\Microsoft\Edge\User Data\Default\Code Cache</Exclude>
+<Exclude Copy="0">AppData\Local\Microsoft\Edge\User Data\Default\Cache</Exclude>
+FSLogix App-Masking-Ruleset
+MicrosoftEdge.fxa
+MicrosoftEdge.fxr
+Zugriff auf C:\Program Files (x86)\Microsoft\Edge
+Nur für folgende Benutzer/Gruppen erlaubt:
+BIG\G_XA_MicrosoftEdge
+BIG\Domänen-Admins
+NT-AUTORITÄT\SYSTEM
+Firewall
+Keine besonderen Firewall-Regeln
+Citrix ADC
+Für das Loadbalacing wird ein HA-Pair im LAN aufgebaut, darüber hinaus wird für die externe veröffentlichung der Citrix Ressourcen ein Citrix ADC in der DMZ aufgesezt.
+Citrix ADC Loadbalancer
+Es werden zwei Citrix ADC im HA Pair aufgebaut, diese fungieren als Loadbalancer.
+Lizenzierung
+Citrix ADC 25 Standard. Die Lizenz wird durch die BIG beigestellt
+Setup
+Die Citrix ADC, wurde in der Version 13.x ausgerollt.  Die Appliance läuft auf VMware.
+Netzwerk
+Funktion
+IP-Adresse
+Big-adclb01
+Management
+10.18.11.1
+Big-adclb02
+Management
+10.18.11.2
+Subnet-IP
+10.18.11.3
+lb_DNS & lb_ldap*
+10.18.11.4
+storefront.big.krankenkasse.de
+lb_ctx_storefront
+10.18.11.5
+citrixwem.big.krankenkasse.de
+lb_ctx_wem
+10.18.11.6
+lb_ctx_pvs
+10.18.11.7
+citrixdirector.big.krankenkasse.de
+lb_ctx_director
+10.18.11.8
+Weitere …
+Citrix ADC Gateway
+Für die externe veröffentlichung von Citrix Ressourcen wird ein Citrix ADC in der DMZ aufgebaut.
+Lizensierung
+Citrix ADC Advaced 1000. Die Lizenz wird durch die BIG beigestellt.
+Setup
+Die Citrix ADC, wurde in der Version 12.1 53.12 ausgerollt.  Die Appliance läuft auf HyperV.
+Netzwerk
+Funktion
+IP-Adresse
+sv-adc01
+Management
+192.168.216.22
+sv-adc02
+Management
+192.168.248.21
+Subnet-IP
+192.168.216.10
+cs_cas_exchange
+Contentswitch
+192.168.216.24
+cs_ess
+Contentswitch
+192.168.248.25
+cs_bigipedia
+Contentswitch
+192.168.248.26
+cs_soap
+Citrix Gateway
+192.168.248.29
+cs_miscellaneous
+Contentswitch
+192.168.248.30
+cs_filetransfer
+Contentswitch
+192.168.248.31
+Übersicht Content  Switch virtual Server
+Übersicht virtual Server
+Citrix Gateway
+Über das Gateway können Benutzer von extern auf Citrix Ressorucen zugreifen. Die Authentifizierung ergolgt über den AD-Benutzernamen und den 2. Faktor. Der 2. Faktor befindet sich derzeit im Rollout und wird über die Thales (Gemalto) Cloud abgebildet.
+Reverse Proxy Exchange
+Die Mailservices wie OWA, Active Sync und Outlook Anywhere werden über die Citrix ADC veröffentlich. Hierfür wurde ein dedizierter Contentswitch eingerichtet der die Anfragen an den Exchange anhand von Krieterien weiterleitet. Folgenden Policys wurden dafür definiert:
+Betrieb
+Monitoring
+Das Monitoring im Rahmen der Citrix ADC Services beinhaltet:
+vServers
+License Usage
+Network Interfaces
+Ressource Monitoring
+NitroAPI Access Monitoring
+Es werden sowohl Cluster Nodes, als auch die primäre SNIP überwacht.
+Citrix/Azure Mulitfaktor Authentifizierung Einführung
+Multi-Faktor-Authentifizierung ist ein Prozess, bei dem Benutzer während des Anmeldevorgangs zur Durchführung eines weiteren Identifizierungsverfahrens aufgefordert werden, z. B. per Eingabe eines Codes auf dem Smartphone oder per Fingerabdruckscan.
+Die BIG verwendet Azure-MFA als Multifaktor Lösung für den Zugriff auf Citrix Ressourcen via URL: https://citrixmfa.big.krankenkasse.de.
+Beim Aufruf dieses URLs wird der Client an die Authentifizierung Webseite von Microsoft weitergeleitet wo nun die spezifischen Authentifizierung Anforderungen angewendet werden die per Azure Active Directory Konfiguriert worden sind. In diesem Fall werden ist die folgenden Authentifizierung Methoden angewendet:
+One-Timepassword + FIDO2 Auth.
+Azure MFA Mobile-App (geringer User Kreis)
+Die Option „MFA pro Benutzer“ muss für die Konfiguration mit einem FIDO key deaktiviert sein.
+Bei Benutzern die den FIDO Key wie auch ein Mobile-App mit OTP verwenden möchten müssen diese Option „Erzwungen“ haben.
+Zusätzlich sind Global-Administratoren auch mit diese einstellung versehen um zusätzliche sicherheit zu gewehrleisten.
+Azure AD Connect Konfiguration
+Azure AD Connect ist eine lokale Microsoft-Anwendung, die entwickelt wurde, um Ihre Hybrididentitätsziele zu erfüllen und zu erreichen.
+Diese Komponente ist auf dem big-vadsync.big.krankenkasse installiert. Diese Konfiguration wird einmalig eingerichtet und muss im Nachgang nur bei bestimmten Anforderungen geändert werden. Im Rahmen des Changes CHGPRO0139867 wurde ein weiterer Azure AD Sync bzw. EntraID Sync Connector eingerichtet. Dieser läuft auf dem big-vadsync02 im Staging Modus und wird nur für den Notfall benutzt, sollte der Primäre Connector ausfallen.  Momentan werden die folgen „OU’s“ der BIG in das Azure AD synchronisiert:
+Achen
+Berlin
+Dortmund
+Duesseldorf
+Koeln
+Kundenservice
+Moenchengladbach
+Muenchen
+Dies bedeutet also das User die für die MFA-Lösung in Frage kommen in einer der jeweiligen Active Directory OU’s vorhanden sein muss um eine erfolgreiche Synchronisierung des Accounts zu Azure Active Directory vorzunehmen.
+Die Benutzerdaten, die für die Konfiguration verwendet worden sind, können im RDM unter „Azure AD Connect Account“ gefunden werden.
+Citrix FAS (Federated Authentication Services)
+Der Verbundauthentifizierungsdienst (Federated Authentication Service, Kurz: FAS) ist eine Citrix Komponente zur Integration in die Active Directory-Zertifizierungsstelle (ZS), die eine nahtlose Authentifizierung der Benutzer innerhalb einer Citrix Umgebung ermöglicht. In dieser Konfiguration wird anhand des Citrix FAS Servers der Benutzer per Benutzer-Zertifikat mit Single-Sign On in die jeweilige Citrix Session authentifiziert. Dies ermöglicht also eine nahtlose Authentifizierung von AzureMFA und Citrix.
+Der Citrix FAS Server – big-ctxfas.big.krankenkasse.de ist wie folgt konfiguriert:
+Citrix ADC Gateway
+Momentan ist ein zweites Citrix Gateway vorhanden – citrixmfa.big.krankenkasse.de was für die Mutlifaktor-Authentifizierung von Azure-MFA verwendet wird.
+An diesem ADC-Gateway ist kein LDAP Policy vorhanden (wie typischen weise bei eine On-Prem AD Authentifizierung) sondern ein Authentifikation-Profil was die Konfiguration des Azure IdP konfiguriert hat.
+Authentication SAML Server – SAML Metadata File:
+<md:EntityDescriptor ID="_263c9331a13789827d6998c43256ec43" entityID="https://citrixmfa.big.krankenkasse.de">
+<ds:Signature>
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+<ds:Reference URI="#_263c9331a13789827d6998c43256ec43">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>UvAX5SBelMMJBCuapXbFz483q0ndE/yFcavvzU0sbPI=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+IqNS3nSKWplRrfaJTTWNzOB/vVywFAFOFAkSmvyGbJxdOquH9nXM4RW7vtJbpeaMBb9evl5wPdru9gwtrdt2glLBxnEnXht58D3CDtpUmPZfJRx+QyUUmgH0ab9aWZ+aedBlf3WIjxTHH/Wah/hm5jkI/suTqx+FAEj1oAqkLW95tNO3/wNrG0D3Rxr/VVzmKpCXCeYmy/AUIYSgCkjoM1p+nK6r/e6Lx4OOaHcy0LD8p8/9nTM6svVvdtZic4itwyORr5k5PaEIKQwcFE0TohLkeMrOn1ERpzjm2NdXcXATFdQFUakZ1TfLgWB639Fmyd0qZI+g04jtzVrXG3UJSw==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIGKDCCBRCgAwIBAgIQCvoZFxA7XTkCN87rptrZYTANBgkqhkiG9w0BAQsFADBgMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZSYXBpZFNTTCBUTFMgUlNBIENBIEcxMB4XDTIyMDMwMjAwMDAwMFoXDTIzMDQwMjIzNTk1OVowIDEeMBwGA1UEAwwVKi5iaWcua3Jhbmtlbmthc3NlLmRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2D0QKaQ6Jv436eaFMM9VaBw0d3QuVlaPFSmS8UuEAjzCdVzE7D1OKt9xhf6qMBd5pgbF0KybmqqlHwy+f/qjDatibAb3jULQVjMjORSW4V3Px2ngi2YCosSV9ckcGB7OwEW9IbsRlLKikPEsXCZTvarZ0hA658yaP15FeYJCqjYqv/GNkDbD1Kurz5LfSUi2w5XxdzfabJalVkpj5i8uq386hJy/Nxnje3xdbOWieyRH/g/3jIaXhCpvzgeYeICfg8qNv8e30uMJ1IhqVAamnl6r53Dg7G0iNAQzeosUMIn3NriOGGr5q83VBgTRVtyURoaYk+VmVuggoYbSexaKCwIDAQABo4IDHDCCAxgwHwYDVR0jBBgwFoAUDNtsgkkPSmcKuBTuesRIUojrVjgwHQYDVR0OBBYEFFXS+BEHvK17ENI1SW3pSTJbEaXdMCAGA1UdEQQZMBeCFSouYmlnLmtyYW5rZW5rYXNzZS5kZTAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMD8GA1UdHwQ4MDYwNKAyoDCGLmh0dHA6Ly9jZHAucmFwaWRzc2wuY29tL1JhcGlkU1NMVExTUlNBQ0FHMS5jcmwwPgYDVR0gBDcwNTAzBgZngQwBAgEwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdpY2VydC5jb20vQ1BTMHYGCCsGAQUFBwEBBGowaDAmBggrBgEFBQcwAYYaaHR0cDovL3N0YXR1cy5yYXBpZHNzbC5jb20wPgYIKwYBBQUHMAKGMmh0dHA6Ly9jYWNlcnRzLnJhcGlkc3NsLmNvbS9SYXBpZFNTTFRMU1JTQUNBRzEuY3J0MAkGA1UdEwQCMAAwggF/BgorBgEEAdZ5AgQCBIIBbwSCAWsBaQB3AK33vvp8/xDIi509nB4+GGq0Zyldz7EMJMqFhjTr3IKKAAABf0n60xkAAAQDAEgwRgIhAJAZZg3Hc6Tl/NY+VvTOqwxaaabr3SIK8ct+HJsH2HhwAiEA7Z+8qJx2JMhY370gAPv+SAxqdSuAuxRa2/Sux9asgrwAdgA1zxkbv7FsV78PrUxtQsu7ticgJlHqP+Eq76gDwzvWTAAAAX9J+tMgAAAEAwBHMEUCICAvJXk0Fw3jOX/bJtZyJu0+/btCOzkljMBe1jcUxYooAiEA8QI6ZkVzARbU1BCW2D12vZFldpQv8ZtsDmvhZaUBjTYAdgCzc3cH4YRQ+GOG1gWp3BEJSnktsWcMC4fc8AMOeTalmgAAAX9J+tM8AAAEAwBHMEUCIQDvkRX4v79DkdtSGFGpKhGdLRpNjEPm6omnyu0awiBvwwIgWyqdsOINNVKSKx0n0u/pt5ME8eTXyhu4J1VWlImfgbEwDQYJKoZIhvcNAQELBQADggEBACfUwlY5GdR3XEXwtVEErG6srsEwuVNKsZpv1SiGauuDy/8d1s4r92eWoZKsAEJwNxsKnhwE5PlE9mxm6pe0U2uL2ijzxhouMFZg7KXng6ZZDqxKVN/C33Y8KeGa9RAAWefuBtF8Pr2Nt49iIjGziEb5/8at8tO4lxjQmIBGILe0nzpsEK0V1osaN8cuu3BRTWZHVsHW98MBxAp+slJo19Nw4VVSCv2Mpy60HzRBdw6AuMLM9y7e+tDgB3FLwaF4u609UF1rWYMtNYLKOcNGq2NRoRNCWZxLNxk0Zse7kSUaf39t+097weVC/NZG+eIB0ZJoYu34gk/W21s1eD0HrzM=
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</ds:Signature>
+<md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+<md:KeyDescriptor use="signing">
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIGKDCCBRCgAwIBAgIQCvoZFxA7XTkCN87rptrZYTANBgkqhkiG9w0BAQsFADBgMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZSYXBpZFNTTCBUTFMgUlNBIENBIEcxMB4XDTIyMDMwMjAwMDAwMFoXDTIzMDQwMjIzNTk1OVowIDEeMBwGA1UEAwwVKi5iaWcua3Jhbmtlbmthc3NlLmRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2D0QKaQ6Jv436eaFMM9VaBw0d3QuVlaPFSmS8UuEAjzCdVzE7D1OKt9xhf6qMBd5pgbF0KybmqqlHwy+f/qjDatibAb3jULQVjMjORSW4V3Px2ngi2YCosSV9ckcGB7OwEW9IbsRlLKikPEsXCZTvarZ0hA658yaP15FeYJCqjYqv/GNkDbD1Kurz5LfSUi2w5XxdzfabJalVkpj5i8uq386hJy/Nxnje3xdbOWieyRH/g/3jIaXhCpvzgeYeICfg8qNv8e30uMJ1IhqVAamnl6r53Dg7G0iNAQzeosUMIn3NriOGGr5q83VBgTRVtyURoaYk+VmVuggoYbSexaKCwIDAQABo4IDHDCCAxgwHwYDVR0jBBgwFoAUDNtsgkkPSmcKuBTuesRIUojrVjgwHQYDVR0OBBYEFFXS+BEHvK17ENI1SW3pSTJbEaXdMCAGA1UdEQQZMBeCFSouYmlnLmtyYW5rZW5rYXNzZS5kZTAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMD8GA1UdHwQ4MDYwNKAyoDCGLmh0dHA6Ly9jZHAucmFwaWRzc2wuY29tL1JhcGlkU1NMVExTUlNBQ0FHMS5jcmwwPgYDVR0gBDcwNTAzBgZngQwBAgEwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdpY2VydC5jb20vQ1BTMHYGCCsGAQUFBwEBBGowaDAmBggrBgEFBQcwAYYaaHR0cDovL3N0YXR1cy5yYXBpZHNzbC5jb20wPgYIKwYBBQUHMAKGMmh0dHA6Ly9jYWNlcnRzLnJhcGlkc3NsLmNvbS9SYXBpZFNTTFRMU1JTQUNBRzEuY3J0MAkGA1UdEwQCMAAwggF/BgorBgEEAdZ5AgQCBIIBbwSCAWsBaQB3AK33vvp8/xDIi509nB4+GGq0Zyldz7EMJMqFhjTr3IKKAAABf0n60xkAAAQDAEgwRgIhAJAZZg3Hc6Tl/NY+VvTOqwxaaabr3SIK8ct+HJsH2HhwAiEA7Z+8qJx2JMhY370gAPv+SAxqdSuAuxRa2/Sux9asgrwAdgA1zxkbv7FsV78PrUxtQsu7ticgJlHqP+Eq76gDwzvWTAAAAX9J+tMgAAAEAwBHMEUCICAvJXk0Fw3jOX/bJtZyJu0+/btCOzkljMBe1jcUxYooAiEA8QI6ZkVzARbU1BCW2D12vZFldpQv8ZtsDmvhZaUBjTYAdgCzc3cH4YRQ+GOG1gWp3BEJSnktsWcMC4fc8AMOeTalmgAAAX9J+tM8AAAEAwBHMEUCIQDvkRX4v79DkdtSGFGpKhGdLRpNjEPm6omnyu0awiBvwwIgWyqdsOINNVKSKx0n0u/pt5ME8eTXyhu4J1VWlImfgbEwDQYJKoZIhvcNAQELBQADggEBACfUwlY5GdR3XEXwtVEErG6srsEwuVNKsZpv1SiGauuDy/8d1s4r92eWoZKsAEJwNxsKnhwE5PlE9mxm6pe0U2uL2ijzxhouMFZg7KXng6ZZDqxKVN/C33Y8KeGa9RAAWefuBtF8Pr2Nt49iIjGziEb5/8at8tO4lxjQmIBGILe0nzpsEK0V1osaN8cuu3BRTWZHVsHW98MBxAp+slJo19Nw4VVSCv2Mpy60HzRBdw6AuMLM9y7e+tDgB3FLwaF4u609UF1rWYMtNYLKOcNGq2NRoRNCWZxLNxk0Zse7kSUaf39t+097weVC/NZG+eIB0ZJoYu34gk/W21s1eD0HrzM=
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</md:KeyDescriptor>
+<md:KeyDescriptor use="encryption">
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIGKDCCBRCgAwIBAgIQCvoZFxA7XTkCN87rptrZYTANBgkqhkiG9w0BAQsFADBgMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZSYXBpZFNTTCBUTFMgUlNBIENBIEcxMB4XDTIyMDMwMjAwMDAwMFoXDTIzMDQwMjIzNTk1OVowIDEeMBwGA1UEAwwVKi5iaWcua3Jhbmtlbmthc3NlLmRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2D0QKaQ6Jv436eaFMM9VaBw0d3QuVlaPFSmS8UuEAjzCdVzE7D1OKt9xhf6qMBd5pgbF0KybmqqlHwy+f/qjDatibAb3jULQVjMjORSW4V3Px2ngi2YCosSV9ckcGB7OwEW9IbsRlLKikPEsXCZTvarZ0hA658yaP15FeYJCqjYqv/GNkDbD1Kurz5LfSUi2w5XxdzfabJalVkpj5i8uq386hJy/Nxnje3xdbOWieyRH/g/3jIaXhCpvzgeYeICfg8qNv8e30uMJ1IhqVAamnl6r53Dg7G0iNAQzeosUMIn3NriOGGr5q83VBgTRVtyURoaYk+VmVuggoYbSexaKCwIDAQABo4IDHDCCAxgwHwYDVR0jBBgwFoAUDNtsgkkPSmcKuBTuesRIUojrVjgwHQYDVR0OBBYEFFXS+BEHvK17ENI1SW3pSTJbEaXdMCAGA1UdEQQZMBeCFSouYmlnLmtyYW5rZW5rYXNzZS5kZTAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMD8GA1UdHwQ4MDYwNKAyoDCGLmh0dHA6Ly9jZHAucmFwaWRzc2wuY29tL1JhcGlkU1NMVExTUlNBQ0FHMS5jcmwwPgYDVR0gBDcwNTAzBgZngQwBAgEwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdpY2VydC5jb20vQ1BTMHYGCCsGAQUFBwEBBGowaDAmBggrBgEFBQcwAYYaaHR0cDovL3N0YXR1cy5yYXBpZHNzbC5jb20wPgYIKwYBBQUHMAKGMmh0dHA6Ly9jYWNlcnRzLnJhcGlkc3NsLmNvbS9SYXBpZFNTTFRMU1JTQUNBRzEuY3J0MAkGA1UdEwQCMAAwggF/BgorBgEEAdZ5AgQCBIIBbwSCAWsBaQB3AK33vvp8/xDIi509nB4+GGq0Zyldz7EMJMqFhjTr3IKKAAABf0n60xkAAAQDAEgwRgIhAJAZZg3Hc6Tl/NY+VvTOqwxaaabr3SIK8ct+HJsH2HhwAiEA7Z+8qJx2JMhY370gAPv+SAxqdSuAuxRa2/Sux9asgrwAdgA1zxkbv7FsV78PrUxtQsu7ticgJlHqP+Eq76gDwzvWTAAAAX9J+tMgAAAEAwBHMEUCICAvJXk0Fw3jOX/bJtZyJu0+/btCOzkljMBe1jcUxYooAiEA8QI6ZkVzARbU1BCW2D12vZFldpQv8ZtsDmvhZaUBjTYAdgCzc3cH4YRQ+GOG1gWp3BEJSnktsWcMC4fc8AMOeTalmgAAAX9J+tM8AAAEAwBHMEUCIQDvkRX4v79DkdtSGFGpKhGdLRpNjEPm6omnyu0awiBvwwIgWyqdsOINNVKSKx0n0u/pt5ME8eTXyhu4J1VWlImfgbEwDQYJKoZIhvcNAQELBQADggEBACfUwlY5GdR3XEXwtVEErG6srsEwuVNKsZpv1SiGauuDy/8d1s4r92eWoZKsAEJwNxsKnhwE5PlE9mxm6pe0U2uL2ijzxhouMFZg7KXng6ZZDqxKVN/C33Y8KeGa9RAAWefuBtF8Pr2Nt49iIjGziEb5/8at8tO4lxjQmIBGILe0nzpsEK0V1osaN8cuu3BRTWZHVsHW98MBxAp+slJo19Nw4VVSCv2Mpy60HzRBdw6AuMLM9y7e+tDgB3FLwaF4u609UF1rWYMtNYLKOcNGq2NRoRNCWZxLNxk0Zse7kSUaf39t+097weVC/NZG+eIB0ZJoYu34gk/W21s1eD0HrzM=
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</md:KeyDescriptor>
+<md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://192.168.248.27/cgi/logout"/>
+<md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://192.168.248.27/cgi/logout"/>
+<md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://192.168.248.27/cgi/samlauth" index="0"/>
+<md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://192.168.248.27/cgi/samlauth" index="1"/>
+</md:SPSSODescriptor>
+</md:EntityDescriptor>
+Besonderheiten
+PowerShell Skripte:
+Auf dem big-vadsync.big.krankenkasse.de, unter „C:\Skripte“ liegen diverse PowerShell Skripte die zur Anwendung von Azure AD-Connect wie auch zur Bereitstellung der OneTime-Passwörter.
+Da die Skripte von diversen Leuten bearbeitet werden und immer wieder aktualisiert ist hier zu empfehlen direkt auf das Remote-Workplace Team zuzugehen, um näheres zu erfahren oder auch weiter PowerShell Experten.  Dazu sind auch innerhalb der Skripte diverse Erklärungen zu den einzelnen schritten.
+Azure Enterprise Applikation
+Zur Bereitstellung von Azure AD MFA als Identity Provider ist eine Azure Enterprise Applikation nötig. Hier wird anhand eine SAML-basierte Anmeldung konfiguriert. Hier müssen nach der initialen Konfiguration auch keine weiteren Änderungen vorgenommen werden.
+Die Zuweisung der Enterprise Applikation wird über die lokale Active Directory Gruppe „G_Citrix_Azure_MFA“ zugewiesen. Ohne diese AD-Gruppe ist die Anmeldung mit Azure MFA und dem Citrix Gateway nicht möglich.
+Es wurde eine eigene Anwendung in dem Azure Tennant angelegt:
+Die Konfiguration sieht wie folgt aus:
+Zertifikate
+Es sind für diese Umgebung 3 Wichtige Zertifikate, die ablaufen können.
+Citrix-SAML-Azure-AD-Cert – Gültig bis 29.06.2025
+Dieses Zertifikat wird von Azure erstellt und bereitgestellt.
+Wc.big.krankenkasse.de2023 – Gültig bis 06.04.2024
+Diese Zertifikat ist das übliche Wildcard Zertifikat was auch für diverser anderer Dienste innerhalb des Citrix ADC verwendet wird.
+Authoriziation-Certificate für den FAS Service – Gültig bis 29.06.2024
+Dieses Zertifikat ist auf dem big-ctxfas01 hinterlegt.
+Alle diese Zertifikate werden mit in das Monitoring übernommen.
+Für die Authentifizierung über die FAS werden an den Domain-Controllern ein Zertifikat mit dem Zweck „Smartcard-Anmeldung“ benötigt. Hierfür gibt es die Vorlage „LDAPSSL“, welche diesen Zweck beinhaltet:
+Alternativ kann die Vorlage „Domain Controller Authentication“ genutzt werden.
+Intune
+SCEP
+Damit Intune Geräte via SCEP Zertifikate von der Internen PKI erhalten, wurde eine neue VM namens big-vadysnc02 erstellt. Auf dieser VM wurde der NDES Dienst installiert und konfiguriert. Folgende Rollen wurden installiert:
+Des Weiteren wurde auf diesem Server einmal der Intune Connector installiert und ein Azure Application Proxy. Mit dem Intune Connector stellt der Server eine Verbindung zu Azure her. Der Azure Application Proxy ist dafür da, dass die NDES IIS Seite aus dem Internet erreichbar ist. Der AAP dient als Reverse Proxy und ermöglicht uns, die Seite zu Publishen ohne eine Public IP zu verwenden und ohne eingehenden Firewall Regeln.
+Die Konfiguration sieht wie folgt aus:
+Das Zertifikat Template welches die Clients erhalten sollen, wird auf dem NDES Server in der Registry definiert.
+Es wurde ein Service User namens „svc_vndes“ erstellt. Dieser hat auf dem Zertifikatstemplate Rechte. Außerdem ist dieser User auf dem big-vadsync02 Server in der lokalen „IIS_IUSRS“ Gruppe und ist in der lokalen Group Policys „Log on as a Service“
+Intune Profiles
+Es wurden folgende Intune iOS Profile erstellt:
+Das TrustedRoot Profil ist dafür, um auf den Clients das Root CA der internen PKI zu übertragen. Das SCEP Zertifikat Profil fordert von der Internen PKI ein Zertifikat an. Die folgenden Einstellungen wurden vorgenommen:
+Besonderheit
+Aufgrund der PKI Migration vom Windows Server 2012R2 auf ein Windows Server 2022 wurde in Abstimmung mit TKLO und Patryk Berger die NDES Rolle auf der PKI  erstmal nur installiert und nicht wieder konfiguriert. Die BIG Möchte die Option zu einem anderen Zeitpunkt wieder in Betracht ziehen. Bis dahin ist diese Funktion außer Kraft.
+SQL Services
+Bei den SQL Servern handelt es sich jeweils um einzelne Server mit einer oder mehrerer SQL Instanzen.
+Infrastruktur
+Hostname
+SQL Instanz
+SQL Server Version
+Kommentar
+big-vsql01
+BIG-VSQL01\INTRACONAC
+BIG-VSQL01\INSTANZ02
+BIG-VSQL01\ICKVARCHIVAC
+BIG-VSQL01\INSTANZREPORT
+SQL Server 2019 Enterprise
+big-vsql02
+BIG-VSQL02\ARCHIVAC
+SQL Server 2019 Enterprise
+DB Archiv Actimonda
+Die Instanzen wurden mit dem Patchstand Oktober 2020 installiert. Jeder SQL Instanz hat zusätzlich zum Datenbankmodul auch die Analyses Services installiert
+Konfiguration
+BIG-VSQL01\INSTANZ02
+Kommentar
+Instanz
+BIG-VSQL01\INSTANZ02
+Installiere Module
+Datenbank, Analyses Service
+Zeichensatz
+SQL_Latin1_General_CP1_CI_AS
+Default
+CPU
+Nicht zugeordnet
+RAM
+8 GB
+SQL Portzuweisung
+Statisch 1433
+Gruppen
+G_VSQL01_INSTANZ02_SA
+Admin Zugriff
+Datenbanken
+PWS
+VEDA_ENTGELT
+VEDA_HORIZON
+big_report,
+big-vsql-docusnap
+Anwendungen
+PWS, VEDA,
+BIG-VSQL01\INTRACONAC
+Kommentar
+Instanz
+BIG-VSQL01\INTRACONAC
+Installiere Module
+Datenbank, Analyses Service
+Serversortierung
+Latin1_General_CI_AS
+CPU
+Nicht zugeordnet
+RAM
+20 GB
+SQL Portzuweisung
+Statisch 1434
+Gruppen
+G_VSQL01_INTRACONAC_SA
+Admin Zugriff
+Datenbanken
+21c_iskv_ickv_actimonda
+21c_iskv_ivkv_actimonda_temp
+austausch
+Briefdatenbank
+DatacenterService
+DatacenterServiceTest
+digigs_actimonda
+hc_analyse
+ickv_21c
+ickv_21c_actimonda
+import_temp
+lei_ext_actimonda
+ReportServer
+TerportServerTempDB
+Rule
+user_orga
+Anwendungen
+Intracon
+BIG-VSQL01\ICKVARCHIVAC
+Kommentar
+Instanz
+BIG-VSQL01\INTRACONAC
+Installiere Module
+Datenbank, Analyses Service
+Zeichensatz
+Latin1_General_CI_AS
+CPU
+Nicht zugeordnet
+RAM
+8 GB
+SQL Portzuweisung
+Statisch 1435
+Gruppen
+G_VSQL01_ICKVARCHIVAC_SA
+Admin Zugriff
+Datenbanken
+ASPState
+big_report
+DatacenterSErvice
+digigs_actimonda
+hc_analyse
+ickv
+ickv_alp
+import
+import_temp
+infonet_dat
+lei_ext_alp
+Quartz
+riskkv
+user_orga
+user_orga_x
+Views_Analyse
+hc_analyse_03 (Analyses Service)
+Anwendung
+Intracon
+BIG-VSQL01\INSTANZREPORT
+Kommentar
+Instanz
+BIG-VSQL01\INSTANZREPORT
+Installiere Module
+Datenbank, Analyses Service
+Zeichensatz
+SQL_Latin1_General_CP1_CI_AS
+Default
+CPU
+Nicht zugeordnet
+RAM
+16 GB
+SQL Portzuweisung
+dynamisch
+Gruppen
+G_VSQL01_INSTANZREPORT_SA
+Admin Zugriff
+Datenbanken
+big_report
+DBA
+ReportServerPBI
+ReportServerPBITempDB
+Anwendungen
+Reporting (big-vreport01)
+BIG-VSQL02\ARCHIVAC
+Archiv Datenbankinstanz für Datenbanken der Actimonda, deren Applikationen nicht migriert wurden
+Kommentar
+Instanz
+BIG-VSQL02\ARCHIVAC
+Installiere Module
+Datenbank
+Zeichensatz
+SQL_Latin1_General_CP1_CI_AS
+Default
+CPU
+Nicht zugeordnet
+RAM
+Nicht zugeordnet
+SQL Portzuweisung
+Statisch 1433
+Gruppen
+G_VSQL02_ARCHIVAC_SA
+Admin Zugriff
+Datenbanken
+bkk_online_live
+ims_bkk_test
+ims_log
+501Kolumbus
+501Kolumbus_conf
+501Kolumbus_test
+aukgfm
+aukgfm_t
+CopyOf501Kolumbus
+CoRF21cAufbereitet_Acti
+CoRF21cImport_Acti
+Kaps4kolumbus
+Kaps4kolumbus_gesch
+Kaps501
+Kaps501_gesch
+KAPSFMDNonProd501
+KAPSFMDSteuerung
+kv365acti
+Anwendungen
+-
+BIG-VSQL-DEV01
+Developer SQL
+Kommentar
+Application Server
+BIG-VSQL-DEV01
+Datenbankinstanz
+MSSQLSERVER
+Datenbanken
+DNS Alias
+-
+Server User
+-
+AD Gruppen
+-
+File Services
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+-
+BIG-VTARZDEV01
+Developer SQL Testumgebung
+Kommentar
+Application Server
+BIG-VTARZDEV01
+Datenbankinstanz
+MSSQLSERVER
+Datenbanken
+DNS Alias
+-
+Server User
+-
+AD Gruppen
+-
+File Services
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+-
+Namenskonvention
+Keine
+Zertifikate
+Keine
+Betrieb
+Betriebshinweise
+Siehe Serverliste unter https://proactcustomer.sharepoint.com/sites/CSPBIG/
+Updates
+Siehe Serverliste unter https://proactcustomer.sharepoint.com/sites/CSPBIG/
+Reboot
+Siehe Serverliste unter https://proactcustomer.sharepoint.com/sites/CSPBIG/
+Besonderheiten
+Keine
+Hinweise zum Patchmanagement
+Siehe Serverliste unter https://proactcustomer.sharepoint.com/sites/CSPBIG/
+Backup und Restore
+Siehe Serverliste unter https://proactcustomer.sharepoint.com/sites/CSPBIG/
+Monitoring
+Die Überwachung der MS SQL Services beinhaltet folgende Abfragen:
+SQL Server Ressourcen
+SQL Windows Dienste
+SQL Instanz Performance Metriken
+SQL Database Performance Metriken
+SQL System Jobs
+Zusätzlich im Cluster Betrieb:
+Failover-Cluster Ressourcen
+Cluster Dienste
+Akute Failover-Erkennung
+Verbrauchdatenerfassung
+Nicht erforderlich
+ADFS Service
+Infrastruktur
+Kommentar
+Application Server
+big-vadfs01.big.krankenkasse.de
+big-vadfs02.big.krankenkasse.de
+Loadbalancing erfolgt über die Service-Group auf dem Citrix ADC Cluster
+DNS Alias
+fs.big.krankenkasse.de – Intern:
+fs.big.krankenkasse.de – Extern:
+Service User
+big\svc_adfs
+ADFS Proxy
+Bereitstellung über Citrix ADC Cluster über Content Switch
+FederationMetadata
+(Extern & Intern)
+http://fs.big.krankenkasse.de/federationmetadata/2007-06/federationmetadata.xml
+https://fs.big.krankenkasse.de/federationmetadata/2007-06/federationmetadata.xml
+Datenbank
+Integrierte Windows Datenbank (WID)
+Relying Party Trust
+Konfiguration Export
+Ein Export der AdfsRelyingPartyTrust-Konfiguration befindet sich im Kundenportal.
+ADFS (WAP) Proxy
+Die Proxy Funktionalität wird über den Citrix ADC der BIG abgebildet.
+Content Switch
+Policy Binding
+Policy
+Zertifikate
+Name
+Aussteller
+Kommentar
+fs.big.krankenkasse.de
+CA-BIG
+Wird bei der Kunden-CA angefordert
+ADFS Encryption
+ADFS-Server (selbstsigniert)
+Laufzeit: 3 Jahre
+ADFS Signing
+ADFS-Server (selbstsigniert)
+Laufzeit: 3 Jahre
+*.big.krankenkasse.de
+Externe CA
+Citrix ADC Zertifikat
+Um mehr Kontrolle über die Verwaltung der ADFS-Encryption & ADFS Signing Zertifikate zu haben, wurde das „AutoCertificateRollover“ deaktiviert:
+Betrieb
+Betriebshinweise
+Siehe Serverliste
+Updates
+Siehe Serverliste
+Reboot
+Siehe Serverliste
+Besonderheiten
+Keine
+Hinweise zum Patchmanagement
+Siehe Serverliste
+Backup und Restore
+Siehe Serverliste
+Monitoring
+Die Überwachung der ADFS Services beinhaltet neben Server Basismonitoring unter anderem:
+ADFS Windows Services
+Erreichbarkeit ADFS Endpoint (https://fs.big.krankenkasse.de/adfs/ls)
+Ablauf Token De-/Encryption und Signing Zertifikate
+Verbrauchdatenerfassung
+Nicht erforderlich
+IaaS HYPER-V
+Intracon Actimonda
+Altes Gehaltsprogramm Actimonda. Wird für Archivzwecke und Erstellung von Organigrammen genutzt.
+Kommentar
+Application Server
+big-vintraconac
+Datenbankinstanz
+BIG-VSQL01\INTRACONAC
+BIG-VSQL01\ICKVARCHIVAC
+Datenbank(en)
+Sämtliche Datenbanken in den Instanzen
+DNS Alias
+-
+Service User
+svc_intraconac (AD)
+Service User Datenbank und Fileservices
+AD Gruppen
+G_PWS_AC
+Zugriff für Citrix und Fileshare
+Fileservice
+\\sv-filei01\apps\intraconac
+Intracon Datastores
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+hc:VISION Technologie GmbH
+Zollhof 26
+40221 Düsseldorf
+www.hc-vision.de
+PWS Actimonda
+Altes Gehaltsprogramm Actimonda. Wird für Archivzwecke und Erstellung von Organigrammen genutzt.
+Kommentar
+Application Server
+big-vpwsac
+Datenbankinstanz
+BIG-VSQL01\INSTANZ02
+Datenbank(en)
+PWS
+DNS Alias
+-
+Service User
+svc_vpwsac (AD)
+PWS (SQL)
+Applikationserver und Filezugriff
+Service User
+AD Gruppen
+G_PWS_AC
+Zugriff für Citrix und Fileshare
+Fileservice
+\\sv-filei01\apps\pws
+Fileshare für PWS Client
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+AKDB
+Stefan Völklhttps://kundenportal.akdb.de/
+Telefon  0800 / 25 53 222-30
+stefan.voelkl@akdb.de
+Hr. Völkl hat die Installation begleitet.
+VEDA
+Aktuelles Gehaltsproramm. Besteht aus zwei Komponenten. VEDA Horizon und VEDA Entgeld. Beide Applikationen laufen unter Apache Tomcat. Über VEDA Horizon rufen die User ihre Gehaltsabrechnung per Browser ab. Die User müssen lokal in der Anwendung angelegt werden. Die Anmeldung selbst läuft aber gegen das Active Directory. Der Anmeldename im VEDA muss daher identisch mit dem sAMAccountName sein.
+Kommentar
+Application Server
+big-vvedaac
+Datenbankinstanz
+BIG-VSQL01\INSTANZ02
+Datenbank(en)
+VEDA_ENTGELT
+VEDA_HORIZON
+DNS Alias
+Service User
+svc_vvedaac (AD)
+Applikationserver AD Bind
+AD Gruppen
+G_VEDAAC
+Zugriff VEDA Horizon
+Fileservice
+\\big-vvedaac\veda2actimonda\sepa-dateien
+\\big-vvedaac\ToPC
+LW V: über GPO
+LW W: über GPO
+uc_cvad1912_laufwerke_HR
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+VEDA GmbHCarl-Zeiss-Straße 1452477 Alsdorf
+www.veda.net
+.
+Gruppenrichtlinie für VEDA Laufwerke:
+Intranet actimonda
+Intranet der actimonda. Linux Server mit mysql DB, Webserver und AD Bind. Die Verwaltung von dem System übernimmt Hr. Kraus.
+Kommentar
+Application Server
+big-vintranetac
+Datenbankinstanz
+-
+Datenbank(en)
+Lokale MySQL
+DNS Alias
+intranet.actimonda.de
+Service User
+svc_vintranetac (AD)
+AD Bind
+AD Gruppen
+-
+Fileservice
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+-
+big-vansible
+Kommentar
+Application Server
+big-vansible
+Datenbankinstanz
+-
+Datenbanken
+-
+DNS Alias
+-
+Server User
+svc_admin
+AD Gruppen
+-
+File Services
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+-
+Germo
+Bei der Umstellung der User auf den neuen Citrix Desktop in Frankfurt gab es Performance Probleme in der der Anwendung Germo. Diese wurden von BIG und Proact gemeinsam analysiert. Verantwortlich für die längeren Laufzeiten waren einmal die WAN Strecke zwischen Desktop und Applikation, der Virenscanner auf dem Fileserver, sowie ein eingeschaltetes Applikations Logging innerhalb von Germo. Die Ergebnisse sind in einem BIG Wiki Artikel zusammengefasst: https://beats-confluence.big.krankenkasse.de/x/IQIFAw
+Kommentar
+Application Server
+-
+Datenbankinstanz
+-
+Datenbanken
+-
+DNS Alias
+-
+Server User
+-
+AD Gruppen
+-
+File Services
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+-
+D3
+Neben Germo hat auch D3 eine erhöhte Laufzeit. Nach Anpassung des Trend Mirco Deep Scan Agenten auf dem Frankfurter Testserver, ist die Performance der Verarbeitung in D3 vergleichbar mit Dortmund.
+Kommentar
+Application Server
+big-vd3ccrs01
+big-vd3tapp01
+big-vd3cap01
+big-vd3cap04
+big-vd3tecs01
+big-vd3cap02
+big-vd3sig01
+big-vtestacd3
+big-vd3ecs01
+big-vd3tsrc01
+big-vd3class01
+big-vd3tone01
+big-vd3one01
+big-vd3cap03
+big-vd3tcold01
+big-vd3cold01
+big-vd3class02
+big-vd3app01
+big-vd3class
+big-vd3tccrs01
+big-vd3tclass01
+big-vd3src01
+Datenbankinstanz
+Big-vsql-dms01\dms
+Datenbanken
+-
+DNS Alias
+-
+Server User
+-
+AD Gruppen
+-
+File Services
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+-
+21c
+Die 21c Server benötigen eine direkte Kommunikation mit der Bitmarck
+Kommentar
+Application Server
+big-vt21c
+big-vdeployp
+big-vdeployt
+big-vintracon01
+big-vintracon02
+Datenbankinstanz
+-
+Datenbanken
+-
+DNS Alias
+-
+Server User
+-
+AD Gruppen
+-
+File Services
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+Bitmarck
+BIG-Vtransfer02
+Der Server stellt ein SFTP Dienst über den Citrix ADC bereit
+Kommentar
+Application Server
+big-vtransfer02, big-vtransfer
+Datenbankinstanz
+-
+Datenbanken
+-
+DNS Alias
+filetransfer.big.krankenkasse.de
+Port 2222
+Server User
+-
+AD Gruppen
+-
+File Services
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+-
+BIG-VELAN
+Produktivserver für ELAN
+Kommentar
+Application Server
+BIG-VELAN-WS
+BIG-VTELAN
+BIG-VELAN
+Datenbankinstanz
+-
+Datenbanken
+-
+DNS Alias
+-
+Server User
+-
+AD Gruppen
+-
+File Services
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+-
+BEATS
+Beats Confluence und Jira Systeme
+Kommentar
+Application Server
+big-vlconfluence (Prod)
+big-vljira01 (Prod)
+big-vtlconfluence (Test)
+big-vtljira (Test)
+Datenbankinstanz
+BIG-VSQL-TEST01\INTERN
+BIG-VSQL-TECH
+Testumgebung
+Produktivumgebung
+Datenbank(en)
+confluence
+jiradb
+LJIRA
+confluence
+jiradb
+tconfluence
+TJIRA
+BIG-VSQL-TECH
+BIG-VSQL-TECH
+BIG-VSQL-TECH
+BIG-VSQL-TEST\intern
+BIG-VSQL-TEST\intern
+BIG-VSQL-TEST\intern
+BIG-VSQL-TEST\intern
+DNS Alias
+beats-jira
+beats-service
+beats
+beats-confluence
+Service User
+-
+AD Gruppen
+-
+Fileservice
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+Bayoonet (VPN), Brainbits (VPN)
+Beats kommuniziert mit dem ITSC zur Datenssynchronisation über ein VPN. Endpunkt 10.100.62.29 (NAT). Hostname beim ITSC: jira.staging.dom1lx01.dom1.itsckd.intern
+Citrix ADC/ Netscaler
+Content Switch
+Der Zugriff ist über den Content Switch cs_miscellaneous konfiguriert. Hier gibt es zwei Policies die auf die LB umleiten.
+Virtual Servers
+Firewall
+Remote Zugriff Bayoonet
+Remote Zugriff Brainbits
+ACD
+Das ACD System ist die Callcenter Lösung der BIG
+Kommentar
+Application Server
+BIG-VACDGW1
+BIG-VACDGW2
+BIG-VACDGW3
+BIG-VACDROUTING1
+BIG-VACDROUTING2
+BIG-VACDSTAT1
+BIG-VACDTOMCAT1
+BIG-VACDTOMCAT2
+BIG-VACDWEB1
+BIG-VACDWEB2
+BIG-VTESTACD1 (Test)
+BIG-VTESTACD2 (Test)
+BIG-VTESTACD3 (Test)
+Datenbankinstanz
+Auf den Systemen selbst. Vom Hersteller verwaltet
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+-
+AD Gruppen
+-
+Fileservice
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+Bei den GW Servern 1-3 muss Secure Boot deaktiviert sein, da sonst ein Communication Treiber nicht funktioniert.
+BIG-VSPEXPERT
+Personaleinsatzplanung https://big-vspexpert.big.krankenkasse.de/ESS
+Kommentar
+Application Server
+big-vspexpert
+Datenbankinstanz
+-
+Datenbank(en)
+-
+DNS Alias
+ess.big.krankenkasse.de
+Terminiert auf Netscaler. Aktuell nicht funktionell. Vermutlich eine alte Konfiguration
+Service User
+-
+AD Gruppen
+-
+Fileservice
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+BIG-VIF01
+Interflex. Webbasierte Zeiterfassung der BIG
+Kommentar
+Application Server
+big-vif01
+Datenbankinstanz
+-
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+-
+AD Gruppen
+-
+Fileservice
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+Interflex
+BIG-VKOLUMBUS
+Kommentar
+Application Server
+big-vkolumbus, big-vkolumbus01
+Datenbankinstanz
+-
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+-
+AD Gruppen
+-
+Fileservice
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+Sharepoint
+Kommentar
+Application Server
+big-vsp01
+BIG-VSPTEST02
+big_big-vspssc3
+big_big-vspectrumk1
+big-vsp02
+big_big-vspssc1
+big_big-vspssc2
+big_big-vspectrumk
+big_big-vspexpert
+BIG-VSPTEST01
+big-vsptest01  & big-vsptest02 wurde im Rahmen des CR#3526 zurückgebaut
+Datenbankinstanz
+-
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+-
+AD Gruppen
+-
+Fileservice
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+Trendmicro
+Kommentar
+Application Server
+BIG-VTMSPS01, BIG-VTM, BIG-VTMSPS02, BIG-VTMCM, BIG-VAOSPS01, BIG-VAOSPS02, BIG-VAPEXCENTRAL, BIG-VAPEXONE, BIG-VDS, BIG-VIMSC1, BIG-VIMSC2, BIG-VIMSP, BIG-VZ1,
+Datenbankinstanz
+-
+-
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+Svc_admin , adm.ahd
+AD Gruppen
+-
+-
+Fileservice
+-
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+Trendmicro
+big-vqwrk01
+Der big-vqwrk01 ist eine Quarantäne VM. Mit dem CR#4659 wurde ein Skript erstellt, welches die VM immer wieder zurück auf einen sauberen Stand setzt. Das Skript wird auf dem Jenkins Server der Proact vCloud täglich um 04:00 Uhr ausgeführt.
+Das Skript wurde so erstellt, dass immer auf den zuletzt erstellen Snapshot zurückgesetzt wird. Damit ist sichergestellt, dass nach Updates ebenfalls nichts verloren geht.
+Die Logik des Skripts ist folgende:
+Prüfen welche Snapshots vorhanden sind
+Wenn ein Snapshot älter als 6 Tage alt ist
+Restore des letzten Snapshots und Start der VM nach Restore
+Löschen des ältesten Snapshots
+Erstellen eines neuen Snapshots
+Ansonsten Restore des letzten vorhandenen Snapshots und Start der VM nach Restore
+Mit dem Zyklus von 6 Tagen wird Monitoringmeldungen vorgebeugt, welche ein unerwünschtes, manuelles Löschen von Snapshots zur Folge haben könnte.
+IaaS VMWare
+BIG-VD3CLASS
+Applicationsserver Des Dokumentenverwaltungsprogramms D3
+Kommentar
+Application Server
+big-vd3app, big-vd3app1, big-vd3clas01, big-vd3clas02, big-vd3clas03, big-vd3clas04
+Datenbankinstanz
+Big-vsql-dms
+Greift darauf zu
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+Svc_admin , adm.ahd
+AD Gruppen
+-
+-
+Fileservice
+\\big-filer02\archiv02
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+D.velop
+BIG-VD3COLD
+Applicationsserver Des Dokumentenverwaltungsprogramms D3
+Kommentar
+Application Server
+Big-vd3cold
+Datenbankinstanz
+Big-vsql-dms
+Greift darauf zu
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+Svc_admin , adm.ahd
+AD Gruppen
+-
+-
+Fileservice
+-
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+D.velop
+BIG-VD3SIG01
+Signatur,- Signierungsserver des Dokumentenverwaltungsprogramms D3
+Kommentar
+Application Server
+Big-vsql-sig01
+Datenbankinstanz
+Big-vsql-dms
+Greift darauf zu
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+Svc_admin , adm.ahd
+AD Gruppen
+-
+-
+Fileservice
+-
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+D.velop
+BIG-VD3PS
+SMB Shares/Datenspeicher zur Übertragung von Scans zur D3 Umgebung.
+Kommentar
+Application Server
+Big-vd3ps, big-vd3ps2
+Datenbankinstanz
+Big-vsql-dms
+Greift darauf zu
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+Svc_admin , adm.ahd
+AD Gruppen
+-
+-
+Fileservice
+-
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+D.velop
+HR
+Server des HR Clusters, darunter die Applikationen Interflex und PWS
+Kommentar
+Application Server
+Big-vkom
+Datenbankinstanz
+Big-vsql-fb\intern
+Greift darauf zu
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+Svc_admin , adm.ahd
+AD Gruppen
+-
+-
+Fileservice
+-
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+Interflex/Alegion
+Intracon
+Intracon Cluster
+Kommentar
+Application Server
+BIG-VAC21c
+Datenbankinstanz
+Big-vsql-ickv
+-
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+Svc_admin , adm.ahd
+AD Gruppen
+-
+-
+Fileservice
+-
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+Intracon
+Telefonie
+Telefonie Cluster
+Kommentar
+Application Server
+BIG-VCUCM1, BIG-VCUCMDMZ, BIG-VCUCMEXPC, BIG-VCUCMHYBC, BIG-VCUPS1, BIG-VHEP01, BIG-VPOSTGRES-DB, BIG-VCUCM2, big-vcucmprov, BIG-VCUPS2, BIG-VPCD, BIG-VHEP02",
+Datenbankinstanz
+BIG-VPOSTGRES-DB
+-
+Datenbank(en)
+-
+DNS Alias
+-
+Service User
+Svc_admin , adm.ahd
+AD Gruppen
+-
+-
+Fileservice
+-
+-
+Mail
+-
+Ansprechpartner
+Siehe Serverliste
+Dienstleister
+-
+Systeme und Services in Kundenverantwortung
+Das Patchmanagement des Master Images Citrix und der Anwendungen in diesem werden durch den Kunden durchgeführt.
+Managed Services
+Das Proact Service Operation Center (SOC)
+Beschreibung und Ziele
+Das Proact Service Operation Center (SOC) ist nach den Richtlinien und Best-Practice-Ansätzen von ITIL V3 strukturiert und aufgebaut und kann skalierbar für den IT-Betrieb der Proact Kunden eingesetzt werden. SOC-Dienstleistungen werden, je nach Bedarf, in einem Spektrum von reaktivem Support bis hin zu einer kompletten Betriebsverantwortung definiert und umgesetzt. Dabei spielt es keine Rolle, ob der Kunde seine IT-Infrastruktur bei sich vor Ort (On-Premises) oder in einem der zwei Proact-Rechenzentren in Frankfurt betreibt (Proact Cloud).
+Der Grad, zu dem ein Kunde die Dienstleistung SOC in Anspruch nimmt, kann pro gebuchtem Dienst bestimmt werden. Dabei kann aus vier verschiedenen Dienstleistungsgraden, sogenannten Managed Service Leveln (MSL) gewählt werden. Während MSL 1 lediglich die Bereitstellung der zum Dienst gehörigen Infrastruktur, deren Betrieb, die telefonische Erreichbarkeit des Service Operation Centers, die Annahme und Qualifizierung von Tickets sowie ein Zugang zum Kundenportal „my.Proact umfasst, ist in MSL 4 das vollständige Management des gebuchten Dienstes durch die Proact vorgesehen. Kunden, die ihre Services aus den Proact-Rechenzentren beziehen, können darüber hinaus Service Level (KPIs) für Reaktions- und Entstörzeiten sowie die Verfügbarkeit des jeweiligen Dienstes buchen.
+Zielsetzung des Service Operation Centers ist es, sicherzustellen, dass die entsprechenden IT-Services effizient und effektiv erbracht werden! Hierzu gehört unter anderem die Erbringung von Betriebsaufgaben im Tagesgeschäfts, die Bearbeitung von Anfragen und die Erarbeitung von Problemlösungen.
+Definition der Begrifflichkeiten
+Service Request
+Ein Service Request ist eine immer wiederkehrende Anfrage nach Informationen, einem Standard-Change oder Zugriff auf einen IT-Service. Dieser Standard-Change kann ohne großes Risiko umgesetzt werden, bedarf keiner Genehmigung eines Gremiums und ist finanziell geklärt. Im Regelfall ist die Umsetzung dokumentiert bzw. über das Know-how des Mitarbeiters abgedeckt.
+Beispiele für einen Service Request sind: Passwort zurücksetzen, Anlage eines neuen Mitarbeiters, SRV In Backup/Monitoring aufnehmen, Erweiterung einer HDD (zur Vorbeugung eines Incidents) etc.
+Incident
+Ein Incident (Vorfall/Ereignis/Störung) ist ein Ereignis, das nicht zum standardmäßigen Betrieb eines Service gehört und das tatsächlich oder potenziell eine Unterbrechung dieses Service oder eine Minderung der vereinbarten Qualität verursacht (Störung) Der Ausfall eines CI (Configuration Items), der sich noch auf keinen Service ausgewirkt hat, ist ebenfalls ein Incident.
+Major Incident
+Schwerwiegende Incidents, die gravierenden Unterbrechungen der Geschäftsprozesse verursachen und mit höherer Dringlichkeit gelöst werden müssen. Die höchste Kategorie eines Incidents in Bezug auf die Auswirkung. Major Incidents führen zu einer erheblichen Unterbrechung der Geschäftsprozesse.
+Problem
+Als „Problem“ werden immer wieder auftretende – identische oder ähnliche – Störungen bezeichnet, die eine unbekannte Ursache haben.
+Change
+Changes haben einen proaktiven oder einen reaktiven Grund. Beispiele eines proaktiven Grundes sind Kostensenkung oder Service-Verbesserung. Beispiele reaktiver Changes sind die Lösung von Incidents/Problems oder Anpassungen der Services auf ein sich änderndes Umfeld.
+Der Proact Service Desk – zentrale Anlaufstelle für alle Kundenanfragen
+Single Point of Contact (SPoC) für alle Kundenanfragen, -wünsche und Störungsmeldungen innerhalb des SOCs ist der Service Desk. Der Service Desk ist die Verbindung zwischen dem Kunden und dem Service Operation Center und somit die definierte Schnittstelle zwischen den Anforderungen des Kunden und den umzusetzenden Prozessen bei der Proact.
+Ausgebildete Service Administratoren nehmen die Meldungen über technische Fehler (Incidents) oder Service-Anforderung (Service/Change Request) entgegen und sind für deren vollständige Erfassung inklusive aller erforderlichen Zusatzinformationen zuständig. Der Kunde hat die Möglichkeit ein Ticket via E-Mail, Telefon oder Webportal (my.Proact) zu eröffnen.
+Eingangskanäle
+Diese Tabelle stellt die Eingangskanäle des SOCs dar.
+Eingangskanal
+Kontakt
+Telefonisch
++49 2938/9779 -112
+E-Mail
+support@Proact.de
+Proact Kundenportal „my.Proact“
+https://my.Proact.eu/
+Verfügbare Sprachen
+DeutschEnglisch
+Aufbau
+Das Service Operation Center ist in drei Level unterteilt:
+1st Level Support
+Der First-Level-Support ist die erste Anlaufstelle für alle eingehenden Anfragen und Meldungen. Der Mitarbeiter ist für deren vollständige Erfassung inklusive aller erforderlichen Zusatzinformationen zuständig. Des Weiteren führt das 1st Level die initiale Situationsanalyse durch, löst Routine-Probleme und leitet die Meldung bei Nichtlösung an den 2nd Level weiter.
+Priorisierung der Aufgaben:
+Abdeckung der 24x7 Erreichbarkeit
+Klassifizierung der eingehenden Meldungen und Benachrichtigung des Kunden
+Bearbeitung oder Kanalisierung der Anfrage
+2nd Level Support
+Der Second-Level-Support unterstützt den First-Level-Support, sowohl durch die technische Weiterbildung als auch durch Übernahme komplexerer Anfragen oder Tickets mit kritischen SLAs. Im Fokus liegt die schnelle Service Wiederherstellung beim Kunden.
+Für die Ursachenforschung und Erarbeitung einer nachhaltigen Lösung wird der Third-Level-Support eingeschaltet. Auch Tickets, deren Lösung einen Eingriff in die Programmlogik oder langfristige Bearbeitung erfordern, werden an den Third-Level-Support weitergeleitet.
+3rd Level Support
+Der Third-Level-Support setzt sich aus Spezialisten einzelner Themengebiete oder des Herstellers zusammen. Durch eine detaillierte Ursachenforschung werden Incidents, die über einen Workaround gefixt oder bei denen Muster erkannt wurden, nachhaltig gelöst. Die Umsetzung einer Lösung oder Implementierung eines neuen Task erfolgt über einen Change Request.
+Verantwortlichkeiten
+Diese Tabelle stellt die Verantwortlichkeiten des SOCs dar:
+Name
+Rolle
+Verantwortlichkeit
+Marcus Bengsch
+Chief Technology Officer
+Verantwortung der gesamten Business Unit
+Marc Boland
+Director Service Operation Center
+Verantwortung für das gesamte SOC
+Martin Pater
+Teamlead Incidents
+Verantwortung für den Prozess Incident Management
+Melinda Balog
+Change Manager
+Verantwortung für den Prozess Change Management
+Rollen
+Head of Service Operation Center
+Der Head of Service Operation Center (HoSOC) trägt die Verantwortung für den gesamten Bereich „Service Operation Center“. Er sorgt für die kontinuierliche Verbesserung der Prozesse und Strukturen. Sollte es neue Anforderungen an den Bereich geben, werden diese von ihm bewertet und in die bestehende Struktur integriert.
+Der HoSOC ist hierarchische Eskalationsstufe im SOC und führt das Berichtswesen an den CTO aus. Die disziplinarische Führung der Mitarbeiter im SOC liegt beim HoSOC.
+Incident Manager
+Der Incident Manager ist verantwortlich für für den fehlerfreien und optimalen Verlauf des Incident-Management-Prozesses und führt das entsprechende Berichtswesen durch.
+Er ist die erste Eskalationsstufe für Incidents, falls diese nicht innerhalb der vereinbarten Service Levels gelöst werden können. Der Incident Manager führt regelmäßige Meetings mit den entsprechenden Personen, die die Rollen des Prozesses besetzen.
+Major Incident Team
+Das Major Incident Team ist ein dynamisch gegründetes Team von Proact Managern und technischen Experten, normaler Weise unter der Führung des HoSOC oder des Incident Managers.
+Es wird einberufen, um gemeinsam die Lösung für einen Major Incident (schwerwiegenden Incident) zu erarbeiten.
+Change Manager
+Der Change Manager ist verantwortlich für die Beurteilung der Requests for Change (RfC) zusammen mit dem Change Advisory Board (CAB). Dieses Gremium besteht aus erfahrenen Mitarbeitern der betroffenen Fachrichtungen.
+Ticket-Workflow
+Im Prozess „Ticket-Workflow“ wird die Bearbeitung aller Tickets metahaft beschrieben.
+Zustand eines Tickets
+Status: „In Progress“
+Tickets die in der aktiven Bearbeitung sind
+Tickets bei denen die Proact in der Verantwortung steht und es interne/externe Themen zu klären gibt
+Status: „Closed“
+Tickets bei denen die finale Lösung erarbeitet und der Kunde informiert wurde
+Status: „On Hold / With Customer – Information Required“
+Tickets bei denen Informationen vom Kunden ausstehen. Dies gilt zum Beispiel auch wenn der Ansprechpartner auf Kundenseite nicht erreicht wurde und es entsprechende Rückfragen gibt, die eine weitere Bearbeitung verzögern
+In der nachfolgenden Grafik wird der Verlauf eines Tickets von der Ticketannahme bis hin zur Umsetzung eines möglichen Changes dargestellt:
+Notfallmanagement
+Im Tagesgeschäft haben wir immer wieder mit kleinen Störungen (Incidents) zu tun, die wir kurzerhand lösen können. Der mögliche Schaden solcher Ereignisse ist aus Sicht der betroffenen Institution nur gering.
+Erst dann, wenn Störungen oder Ausfälle größere Schäden verursachen können und ihre Behebung mit den üblichen Verfahren nicht mehr möglich ist, erfordern sie ein Notfallmanagement. Beispiele dafür sind:
+durch Brände können wichtige Betriebsräume (z. B. das Rechenzentrum) nicht mehr genutzt werden
+Personalausfall
+das Stromnetz fällt flächendeckend und über einen längeren Zeitraum hinweg aus
+wichtige Kommunikationsnetze (Internet, Telefonnetz) fallen tagelang aus.
+Die folgende Tabelle erläutert die Unterschiede zwischen Störungen, Notfällen und Katastrophen und fasst zusammen, wann und welcher Prozess/Maßnahme gestartet wird.
+Vorfallsart
+Erläuterung
+Behandlung
+Störung (Incident)
+Kurzzeitiger Ausfall von Prozessen oder Ressourcen mit nur geringem Schaden
+Behandlung ist Teil der üblichen Störungsbehebung (Ticket-Workflow)
+Notfall (Major Incident)
+Länger andauernder Ausfall von Prozessen oder Ressourcen mit hohem oder sehr hohem Schaden
+Störungsbeseitigung (Ticket-Workflow).
++ Einleitung des Major-Incident-Prozesses
+Katastrophe
+Räumlich und zeitlich nicht begrenztes Großschadensereignis
+Major-Incident-Prozess!
+Die Situation wir durch die Verantwortungsträger bewertet und es werden zeitliche entsprechende Maßnahmen festgelegt und ergriffen! Diese Maßnahmen und die Kommunikation sind zeitlich variabel.
+Definition und Ziele der einzelnen Prozesse des Service Operation Centers
+Event Management
+Das Service Operation Center überwacht mit Hilfe einer dedizierten Software sämtliche im Einsatz befindlichen Systeme (Configuration Items), erkennt Trends, Muster und Schwachstellen und stößt proaktiv die Beseitigung von potentiellen Störungen oder vom System gemeldeten Fehlern an.
+Sämtliche solcher Meldungen (Events) werden in dem Prozess „Event Management“ ermittelt und zur Bearbeitung an den Service Desk übermittelt.
+Dazu zählt neben der Überwachung von Configuration Items auch das Monitoring der Kunden-Backups und der Autosupport der Storage-Systeme. Dabei wird der Kunde stets über alle vorgenommenen Maßnahmen informiert. Im Proact-Kundenportal (my.Proact.eu) kann der Kunde im Bereich „Monitoring“ den Status der Incidents verfolgen.
+Ziel des Prozesses ist die Ermittlung von Informationen und Warnungen, Behebung von Störungen und Erkennung von Trends, Muster und Schwachstellen.
+Außerdem soll die generelle Verfügbarkeit von Services verbessert werden, indem Incidents/Problems proaktiv identifiziert und gelöst werden. Das Event Management stellt sicher, dass Konfigurationselemente (CIs) und Services kontinuierlich überwacht werden. Der Event-Management-Prozess filtert und kategorisiert Events, um ggf. geeignete Maßnahmen einzuleiten.
+Incident Management
+Der Incident Management-Prozess konzentriert sich bei Ausfällen auf die schnellstmögliche Wiederherstellung des Service für den Kunden, so dass Ausfälle eine minimale Auswirkung auf das Business haben. Gemeldete Störungen oder Servicebeeinträchtigungen werden im 1st Level aufgenommen, analysiert und bearbeitet. Sollte eine Störung nicht im 1st Level vom Proact Service Desk gelöst werden können, wird diese an das 2nd Level weitergeleitet, wo eine finale Lösung, oder, sollte dies im Rahmen der für den Dienst vom Kunden definierten Entstörzeiten nicht möglich sein, ein Workaround bereitgestellt wird.
+Zielsetzung des Service Operation Centers ist die schnellstmögliche Wiederherstellung einen Service und die Unterstützung des Support Teams des Kunden.
+Request Fulfilment
+Der Request Fulfilment-Prozess ist der Prozess zur Bearbeitung von Service-Anfragen. Meistens geht es um wiederkehrende Standard-Anfragen, die ohne finanzielle Auswirkungen oder technische Risiken umgesetzt werden können. Nach positiver Prüfung auf Autorisierung des Kunden wird die Standard-Anfrage bearbeitet und der Kunde informiert.
+Ziel dieses Prozesses ist die Bearbeitung von Service Requests.
+Problem Management
+Das Problem Management beschäftigt sich mit der Analyse und der Auflösung der Ursachen von Incidents. Zusätzlich entwickelt es proaktive Aktivitäten zur Verhinderung aktueller und zukünftiger Incidents und pflegt diese als „Known Error“ in der Proact Knowledge Base, die eine schnelle Diagnose bei neu auftretenden Incidents ermöglicht.
+Ziel des Problem Management-Prozesses ist die Auflösung von Ursachen und die Verhinderung von Incidents.
+Change Management
+Im Rahmen des Change Managements werden Änderungen initiiert, dokumentiert und autorisiert. Dies geschieht in Form eines Change Requests/Request for Changes (RfCs).
+Darüber hinaus werden Auswirkungen, Kosten, Vorteile und Risiken der in Erwägung gezogenen Änderungen analysiert und bewertet. Im Change Advisory Board (CAB) werden regelmäßig geplante Änderungen genehmigt und deren Implementierung angestoßen, überwacht und reportet.
+Das Ziel ist, dass alle Anpassungen an der IT-Infrastruktur kontrolliert, effizient und unter Minimierung von Risiken für den Betrieb bestehender Business-Services durchgeführt werden.
+Change Management – Genehmigung und Change Advisory Board
+Die Changes werden über einen RfC (Request for Change) eingereicht. Die RfCs werden in einem CAB (Change Advisory Board) von den unterschiedlichen Verantwortlichen bewertet und genehmigt/abgelehnt. Das CAB ist eine Art Gremium, welches die Changes auf technische und finanzielle Risiken hin bewertet.
+IT Operations Management
+Die Kollegen des IT Operations Managements führen die täglichen, operativen Aktivitäten durch, die für den Betrieb der Proact Cloud notwendig sind.
+Im IT Operations Management wird in erster Linie der fehlerfreie Betrieb und die Wartung der Proact Cloud sichergestellt. Falls notwendig, werden Patches eingespielt, im Falle von Fehlerbeseitigungsmaßnahmen ad hoc, aber auch zu fest definierten und mit dem Kunden abgestimmten Patch-Day-Terminen. Darüber hinaus überprüft das IT Operations Management laufend wie die Systeme ausgelastet sind (Capacity Controlling), beobachtet das Wachstum der Daten und stellt sicher, dass jederzeit ausreichend Kapazitäten vorhanden sind.
+Im Bereich Datacenter Management überwacht das IT Operations Management den ordnungsgemäßen Betrieb der Stromversorgung und Klimatisierung innerhalb der Proact-Rechenzentren. Im Falle von Abweichungen sorgt das Team für die Wiederherstellung der vorgeschriebenen Parameter. Außerdem verwaltet das Team die Zutrittskontrolle und -vergabe zu den Rechenzentren gemäß den Proact Sicherheitsrichtlinien.
+Ziel des Prozesses ist der fehlerfreie Betrieb der Proact Cloud.
+Eskalation Management – Ziele
+Eine Aktivität, bei der zusätzliche Ressourcen eingeholt werden, wenn diese erforderlich sind, um den Service Level Zielen oder Kundenerwartungen gerecht zu werden. Eskalationen können innerhalb aller IT Service Management Prozesse erforderlich sein, werden jedoch meistens mit dem Incident- und dem Problem Management in Verbindung gebracht. Es sind zwei Eskalationstypen definiert: funktionale Eskalation und hierarchische Eskalation.
+Eskalation Management – Prozess
+Siehe Major Incident Prozess
+Eskalation Management – System Prozess
+Diese Grafik zeigt den Benachrichtigungsprozess, wenn ein Ticket droht vereinbarte Kennzahlen zu überschreiten.
+Überblick über die KPIs
+KPIs sind Key Performance Indikators, also Kennzahlen, die messbare Größen beschreiben. Im Bereich Managed Services (Cloud) werden Reaktionszeiten, Entstörzeiten und Wiederherstellungszeiten als KPI für den SLA angeboten. Kennzahlen die das Einhalten der vereinbarten Service Level kontrollierbar machen.
+Reaktionszeit
+Die Reaktionszeit ist der Zeitraum vom Eingang einer Anfrage, einer Störungsmeldung oder einer Service Anforderung bis zur Rückmeldung an den Kunden. Der Kunde wird über die weiteren Schritte informiert. Die Reaktionszeit zur Störungsbearbeitung wird wie folgt definiert:
+RZ = EZP Reaktion – SZP Reaktion
+RZ [Minuten]: Reaktionszeit
+SZP Reaktion [Minuten]: Der Startzeitpunkt referenziert auf den Zeitstempel im Trouble Ticket System, nachdem eine Störung im Service Desk gemeldet wurde und als Ticket formuliert ist.
+EZP Reaktion [Minuten]: Der Endzeitpunkt ist durch den Zeitstempel im Trouble Ticket System gekennzeichnet, nachdem ein Problembearbeiter festgelegt wurde.
+Entstörzeit
+Die Entstörzeit beginnt, nachdem das Proact SOC dem Kunden im Rahmen der Reaktionszeit die weiteren Vorgehensschritte genannt hat. Entstörzeiten können nur für Service gebucht werden, die im Rechenzentrum der Proact (Cloud) betrieben werden. Die Entstörzeit ist die Zeit, die für die reine Entstörung benötigt wird, bis zur Wiedererlangung der Verfügbarkeit des betroffenen Dienstes. Dabei ist es möglich, dass der Fehler oder die Störung entweder innerhalb der definierten Zeit behoben wird oder dass ein Workaround eingesetzt wird, um den Dienst wieder verfügbar zu machen. Die Bereitstellung aller dem Dienst zugehörigen Daten kann dabei in vereinzelten Fällen erst nach Ablauf der Entstörzeit erfolgen.
+EZ = EZP Entstörzeit – SZP Entstörzeit
+EZ [Minuten]: Entstörzeit
+SZP Entstörzeit [Minuten]: Der Startzeitpunkt referenziert auf den Zeitstempel im Trouble Ticket System, nachdem ein Problembearbeiter festgelegt wurde.
+EZP Entstörzeit [Minuten]: Der Endzeitpunkt ist durch den Zeitstempel „Problem gelöst“ im Trouble Ticket System gekennzeichnet.
+Wiederherstellungszeit
+Die Wiederherstellungszeit ist die Summe aus Reaktions- und Entstörzeit.
+WHZ = RZ + EZ
+WHZ [Minuten]: Wiederherstellungszeit
+RZ [Minuten]: Reaktionszeit
+EZ [Minuten]: Entstörzeit
+System-Verfügbarkeit
+Die Gesamtverfügbarkeit wird in Prozent pro Monat ermittelt und berechnet sich nach folgender Formel:
+V=
+(T Monat – T Wartungsfenster)
+-
+T Nichtverfügbarkeit
+X 100
+(T Monat – T Wartungsfenster)
+T Monat [Minuten]: der Zeitraum der Auswertung der Verfügbarkeit eines IT Service pro Monat bezieht sich auf den Monat.
+T Wartungsfenster [Minuten]: Zeiträume oder Zeitraum, in denen der IT Service durch geplante und abgestimmte Wartungsarbeiten nicht bereitgestellt wird.
+T Nichtverfügbarkeit [Minuten]: Zeitraum oder Zeiträume, in denen der IT Service ungeplant nicht zur Verfügung steht. Die Gesamtausfallzeit berechnet sich aus der Summe der einzelnen Ausfälle
+Monitoring
+Überblick
+Das Monitoring der Umgebung erfolgt mittels LogicMonitor. Hierfür werden innerhalb der Kundenumgebung eine oder mehrere virtuelle Maschine platziert, welche als zentrale Sammelstelle (Kollektor) für konfigurierte Abfragen und erfasste Metriken agieren. Die erfassten Metriken werden an die übergeordnete Monitoring-Infrastruktur übergeben und können dort visualisiert und anhand von Schwellwerten o.ä. für die Generierung von Alarmierungen genutzt werden.
+Das Monitoring der Infrastruktur erfolgt Agentenlos, d.h. auf dem jeweiligen zu überwachenden System ist keine Installation einer Monitoring-Software notwendig. Das Einholen der gewünschten Metriken erfolgt über den Kollektor und über das Netzwerk erreichbare System-Schnittstellen wie beispielsweise WMI bei Windows, SSH bei Linux und SNMP bei einem Switch.
+Welche Metriken überprüft werden, wird anhand von in Standards gefassten Erfahrungswerten zu entsprechenden Services festgelegt. Natürlich kommt es auch zu Abweichungen von diesen Standards, um Sonderfällen oder individuellen Absprachen entgegenzukommen.
+Monitoring-Infrastruktur
+Funktion
+Hostname
+IP-Adresse
+Betriebssystem
+Kollektor
+big-mon-win01
+10.18.20.35
+Windows Server 2022 Standard
+Kollektor
+big-mon-win02
+10.18.20.36
+Windows Server 2022 Standard
+Kollektor
+big-mon-ctx01
+10.118.12.252
+Windows Server 2022 Standard
+Kollektor
+big-mon-ctx02
+10.118.12.253
+Windows Server 2022 Standard
+Lizenzerfassung
+Die Lizenzerfassung innerhalb der Umgebung wird durch Verbrauchsdatenmodule abgebildet, welche als Windowsservice abhängig von der zu erfassenden Metrik auf einem System direkt oder aber dem Kollektor des Monitorings platziert werden.
+Beispiele für zu erfassende Metriken sind Benutzerlizenzen mittels Active Directory oder die aktiven Instanzen innerhalb eines SQL-Clusters.
+Backup
+Den Leistungsbestreibungen sind folgende drei Backupklassen zu entnehmen:
+Diese Backupklassen lassen sich anhand des Suffixes der Storage Policies (29.1.7) erkennen:Back-Up 1 = _defaultBack-Up 2 = _advanced Back-Up 3 = _enterprise
+Konfiguration
+Commvault Gruppen
+In Commvault werden standardmäßig 3 Computergruppen erstellt, die unter anderem für die Firewall Konfiguration verwendet werden.
+Zusätzlich erstellte Gruppen werden hier aufgelistet.
+Gruppenname
+Funktion
+Beschreibung
+Besondere Einstellungen
+0018_C-BIG_ahd vCloud Infrastructure
+Gruppe für die Proact Backupinfrastruktur
+Zugriff auf das Kundennetzwerk über Proxy
+0018_C-BIG_Client_Group
+Gruppe für Clients, die über einen Agent gesichert werden
+Kundeninfrastuktur
+0018_C-BIG_Proxy
+Gruppe für die CV Proxies
+Kommunikation Backupinfrastuktur <-> Kundennetzwerk
+Automatische Gruppe
+Name beginnt mit 0018
+Client act as proxy -> false
+Commvault Proxy
+Es ist sind zwei Commvault Proxies für die Kommunikation bereitgestellt.
+RZ
+Server
+Fra2
+big-fra2-bakprx01
+Fra7
+big-fra7-bakprx01
+Commvault Firewall
+Name: 0118_C-BIG
+Client Type: Servers
+Zurgiff:  Via Proxy
+Gruppen
+Zuordnung
+Gruppe
+Trusted Client Group1
+Clients
+01180018_C-BIG _Client_Group
+Trusted Client Group 2
+Backup Infrastruktur
+01180018_C-BIG_ahd vCloud Infrastructure
+Proxy/DMZ Group
+Proxy Server
+01180018_C-BIG _Proxy
+Aktivierung “Force Client from trusted client group 1  to use proxy for all traffic”
+Library
+Die Daten werden zum größten Teil auf zentralen Disk Libraries abgelegt. Ebenfalls gibt es eine kleine OnPrem Disklibaray.
+Data Path FRA2/FRA7
+RZ
+Media Agent
+Library
+FRA2
+0012_S-Services_svc-fra2-bak001
+0012_DL_S-Services_de-fra2-file0
+0012_S-Services_svc-fra2-bak002
+0012_DL_S-Services_de-fra2-file0
+0012_S-Services_svc-fra2-bak003
+0012_DL_S-Services_de-fra2-file0
+0012_S-Services_svc-fra2-bak004
+0012_DL_S-Services_de-fra2-file0
+0012_S-Services_de-fra2-bak005
+0012_DL_S-Services_de-fra2-file0
+0012_S-Services_de-fra2-bak006
+0012_DL_S-Services_de-fra2-file0
+0012_S-Services_de-fra2-bak007
+0012_DL_S-Services_de-fra2-file0
+0012_S-Services_de-fra2-bak008
+0012_DL_S-Services_de-fra2-file0
+RZ
+Media Agent
+Library
+FRA7
+0012_S-Services_svc-fra7-bak001
+0012_DL_S-Services_de-fra7-file0
+0012_S-Services_svc-fra7-bak002
+0012_DL_S-Services_de-fra7-file0
+0012_S-Services_svc-fra7-bak003
+0012_DL_S-Services_de-fra7-file0
+0012_S-Services_svc-fra7-bak004
+0012_DL_S-Services_de-fra7-file0
+0012_S-Services_de-fra7-bak005
+0012_DL_S-Services_de-fra7-file0
+0012_S-Services_de-fra7-bak006
+0012_DL_S-Services_de-fra7-file0
+0012_S-Services_de-fra7-bak007
+0012_DL_S-Services_de-fra7-file0
+0012_S-Services_de-fra7-bak008
+0012_DL_S-Services_de-fra7-file0
+Data Path vback01_OnPrem
+RZ
+Media Agent
+Library
+BIG
+big-vback01
+0018_C-BIG_big-vback01
+Dedupdatenbank
+Für die Sicherungen in FRA werde Globale Deduplizierungsdatenbanken (GDDB) genutzt.
+Für die Sicherung im RZ der BIG gibt es eine lokale DDB auf dem Mediaagent.
+GDDBs
+RZ
+GDDB
+FRA7
+DE-FRA7-GDDB-07
+FRA2
+DE-FRA2-GDDB-07
+DDB OnPrem
+RZ
+DDB
+BIG
+SP_0018_C-BIG_big_vback01_OnPrem_109
+Storage Policies
+Storage Policy:   0018-10_SP_C-BIG_FRA7_Default
+Primary Copy
+Use Existing Global Dedup Policy
+Yes
+Client Side Dedup
+Yes
+Globale Dedup Policy
+DE-FRA7-GDDB-07
+Streams
+100
+Retention
+30/0
+Storage Policy Kopie
+01-Disk-FRA7
+Backup Level
+Default
+Retention
+Basic
+30 Tage
+Extended
+90 Tage weekly
+365 Tage monthly
+Log Storage Policy
+0018-11_SP_C-BIG_FRA7_LOG_Default
+Storage Policy:   0018-11_SP_C-BIG_FRA7_LOG_Default
+Primary Copy
+Use Existing Global Dedup Policy
+Yes
+Client Side Dedup
+Yes
+Globale Dedup Policy
+DE-FRA7-GDDB-07
+Streams
+100
+Retention
+3/0
+Storage Policy Kopie
+01-Disk-FRA7
+Backup Level
+Default
+Retention
+Basic
+3 Tage
+Extended
+Storage Policy:   0018-10_SP_C-BIG_FRA2_Default
+Primary Copy
+Use Existing Global Dedup Policy
+Yes
+Client Side Dedup
+Yes
+Globale Dedup Policy
+DE-FRA2-GDDB-07
+Streams
+100
+Retention
+30/0
+Storage Policy Kopie
+01-Disk-FRA2
+Backup Level
+Default
+Retention
+Basic
+30 Tage
+Extended
+90 Tage weekly
+365 Tage monthly
+Log Storage Policy
+0018-11_SP_C-BIG_FRA2_LOG_Default
+Storage Policy:   0018-11_SP_C-BIG_FRA2_LOG_Default
+Primary Copy
+Use Existing Global Dedup Policy
+Yes
+Client Side Dedup
+Yes
+Globale Dedup Policy
+DE-FRA2-GDDB-07
+Streams
+100
+Retention
+3/0
+Storage Policy Kopie
+01-Disk-FRA2
+Backup Level
+Default
+Retention
+Basic
+3 Tage
+Extended
+Storage Policy: 0018-12_SP_C-BIG_FRA7_Enterprise
+Primary Copy
+Use Existing Global Dedup Policy
+Yes
+Client Side Dedup
+Yes
+Globale Dedup Policy
+DE-FRA7-GDDB-07
+Streams
+100
+Retention
+30/1
+Storage Policy Kopie
+01-Disk-FRA7
+Backup Level
+Enterprise
+Retention
+Basic
+30 Tage
+Extended
+90 Tage weekly
+365 Tage monthly
+Log Storage Policy
+0018-13_SP_C-BIG_FRA7_LOG_Enterprise
+Synchronous Copy
+Storage Policy
+0018-12_SP_C-BIG_FRA7_Enterprise
+Storage Policy Kopie
+02-Disk-FRA2
+Use Existing Global Dedup Policy
+Yes
+Globale Dedup Policy
+DE-FRA2-GDDB-07
+Backup Level
+Default
+Retention
+Basic
+30 Tage
+Extended
+90 Tage weekly
+365 Tage monthly
+Storage Policy: 0018-13_SP_C-BIG_FRA7_LOG_Enterprise
+Primary Copy
+Use Existing Global Dedup Policy
+Yes
+Client Side Dedup
+Yes
+Globale Dedup Policy
+DE-FRA7-GDDB-07
+Streams
+100
+Retention
+3/0
+Storage Policy Kopie
+01-Disk-FRA7
+Backup Level
+Enterprise
+Retention
+Basic
+3 Tage
+Extended
+Synchronous Copy
+Storage Policy
+0018-12_SP_C-BIG_FRA7_Enterprise
+Storage Policy Kopie
+02-Disk-FRA2
+Use Existing Global Dedup Policy
+Yes
+Globale Dedup Policy
+DE-FRA2-GDDB-07
+Backup Level
+Enterprise
+Retention
+Basic
+3 Tage
+Extended
+Storage Policy: 0018_C-BIG_OnPrem_to_ahd_Default
+Primary Copy
+Streams
+50
+Retention
+7/0
+Storage Policy Kopie
+01-OnPrem
+Backup Level
+-
+Retention
+Basic
+7 Tage
+Extended
+Log Storage Policy
+-
+Synchronous Copy
+Storage Policy
+0018_C-BIG_OnPrem_to_ahd_Default
+Storage Policy Kopie
+02-Disk-FRA7
+Use Existing Global Dedup Policy
+Yes
+Globale Dedup Policy
+DE-FRA7-GDDB-07
+Backup Level
+Default
+Retention
+Basic
+30 Tage
+Extended
+90 Tage weekly
+365 Tage monthly
+Schedule Policies
+Data Protection
+Name
+0018_C-BIG_ActiveDirectory
+Full
+Freitags 18 Uhr
+Inc
+Sa-Do 18 Uhr
+Name
+0018_C-BIG_Exchange
+Full
+So 0 Uhr
+Inc
+Mo – Sa 0 Uhr
+Name
+0018_C-BIG_HyperV_PoweredOff
+Full
+Samstags 3 Uhr
+Inc
+Mo-Do 18 Uhr
+Name
+0018_C-BIG_HyperV_Unix
+Full
+Samstags 0 Uhr
+Inc
+Mo-Do 18 Uhr
+Name
+0018_C-BIG_HyperV_Windows
+Full
+Freitags 22 Uhr
+Inc
+Mo-Do 22 Uhr
+Name
+0018_C-BIG_NDMP
+Full
+Fr 18 Uhr
+Inc
+Mo – Do 18 Uhr
+Name
+0018_C-BIG_NDMP_Snaplock
+Full
+Fr 18 Uhr
+Inc
+Sa-Do 18 Uhr
+Name
+0018_C-BIG_big-sql-data2
+Inc (Transaction Log)
+Täglich 2 Uhr
+Wiederholung
+Jede Stunde
+Name
+0018_C-BIG_big-vqwrk01
+Full
+Fr 04:30 Uhr
+Inc
+Mo – Do 04:30 Uhr
+Name
+0018_C-BIG_FileSystem_Cluster
+Full
+Letzter Samstag im Monat 23:30 Uhr
+Inc
+So - Fr 23:30 Uhr
+Synthetic Full
+Samstag 23:30 Uhr (Außer letzter Samstag im Monat)
+Name
+0018_C-BIG_FileSystem_Windows
+Full
+Freitags 18 Uhr
+Inc
+Sa - Do 18 Uhr
+Name
+0018_C-BIG_SQL
+Full
+Täglich 18 Uhr
+Inc (Transaction Log)
+Start 05:45 Uhr, alle 30 Minuten, bis 17:45 Uhr
+Name
+0018_C-BIG_SQL_D3
+Full
+Täglich 20:30 Uhr
+Inc (Transaction Log)
+Start 05:45 Uhr, alle 30 Minuten, bis 17:45 Uhr
+Name
+0018_C-BIG_SQL_Default
+Full
+Täglich 3 Uhr
+Inc
+Name
+0018_C-BIG_SQL_ickv
+Full
+Täglich 22 Uhr
+Inc (Transaction Log)
+Start 05:45 Uhr, alle 30 Minuten, bis 17:45 Uhr
+Name
+0018_C-BIG_SQL_sql-data
+Full
+Täglich 18 Uhr
+Inc
+Name
+0018_C-BIG_SQL_SQL01
+Full
+Täglich 18 Uhr
+Inc (Transaction Log)
+Täglich 12 Uhr
+Name
+0018_C-BIG_VMware_DS1-7
+Full
+Sa 00:01 Uhr
+Inc
+So – Fr 00:01 Uhr
+Name
+0018_C-BIG_VMware_OnPrem
+Full
+Fr 18 Uhr
+Inc
+Mo - Do 18 Uhr
+Name
+0018_C-BIG_VMware_T
+Full
+Fr 18 Uhr
+Inc
+Mo - Do 18 Uhr
+Auxcopy
+Name
+0018_C-BIG_Aux_Copy_OnPrem_ahd_vCloud
+Copy
+Täglich 2 Uhr
+Wiederholungen
+Alle 12 Stunden bis 23:59 Uhr
+BackupCopy
+Name
+0018_C-BIG_BackupCopy
+Copy
+Täglich 20 Uhr
+Subclients (Auswahllisten)
+Virtuelle Maschinen (Cloud)
+HyperV Host: 0018_C-BIG_HyperV_svc-fra-hvcl11
+Subclient Name
+0018_C-BIG_Windows
+Content Rule
+Cluster Disk
+frabig_hvcl11_csv001_sas, frabig_hvcl11_csv002_sas,
+frabig_hvcl11_csv003_sas,
+frabig_hvcl11_csv001_ssd,
+frabig_hvcl11_csv004_sas
+Guest OS
+Contains
+*Windows*
+Power State
+Equals
+Power On
+Storage Device
+Storage Policy
+0018-00_C-BIG-FRA2_Default
+Backup Options
+File System and Applikation Consistent
+Advanced Options
+Number of Data Reader
+5
+Subclient Name
+0018_C-BIG_Unix
+Content Rule
+Cluster Disk
+frabig_hvcl11_csv001_sas, frabig_hvcl11_csv002_sas,
+frabig_hvcl11_csv003_sas,
+frabig_hvcl11_csv001_ssd,
+frabig_hvcl11_csv004_sas
+Guest OS
+Does Not Contain
+*Windows*
+Power State
+Equals
+Power On
+Storage Device
+Storage Policy
+0018-00_C-BIG-FRA2_Default
+Backup Options
+Crash Consistent
+Advanced Options
+Number of Data Reader
+5
+Subclient Name
+0018_C-BIG_PoweredOffVMs
+Content Rule
+Cluster Disk
+frabig_hvcl11_csv001_sas, frabig_hvcl11_csv002_sas,
+frabig_hvcl11_csv003_sas,
+frabig_hvcl11_csv001_ssd,
+frabig_hvcl11_csv004_sas
+Power State
+Equals
+Power Off
+Storage Device
+Storage Policy
+0018-00_C-BIG-FRA2_Default
+Backup Options
+Crash Consistent
+Advanced Options
+Number of Data Reader
+5
+Virtuelle Maschinen (OnPrem)
+Server
+Agent
+Policy
+0118_C-BIG_big-dtm-vcsa.big.krankenkasse.de
+VSA
+0018_C-BIG_OnPrem_to_ahd_Default
+Subclient Name
+default
+Content Rule
+VM Name/Pattern
+\
+Storage Device
+Storage Policy
+0018_C-BIG_OnPrem_to_ahd_Default
+Backup Options
+File System and Applikation Consistent
+Advanced Options
+Number of Data Reader
+5
+Changes
+Datum
+Change
+Tätigkeit
+Bearbeiter
+13.03.2025
+-
+Aktualisierung
+JSTR
+Backup OnPrem BIG Dortmund
+Grafische Übersicht
+Beschreibung der Grafik
+Im Dortmunder Standort der BIG gibt es eine VMware Umgebung. Die Datenspeicher der VMware Umgebung befinden sich auf einer Netapp. Alle VMs OnPrem der BIG laufen in der VMware Umgebung.
+Für die Datensicherung OnPrem gibt es einen virtuellen Server, der als Commvault Media Agent läuft. Dieser Media Agent befindet sich im selben Cluster, wie auch die produktiven VMs. Der Server hat für die Sicherung OnPrem virtuelle Disks aus dem Datastore angebunden. Eine Disk für die Disklibrary und die andere für die Dedupdatenbank.
+Die Sicherung der VM erfolgt vor Ort in die Disklibrary und  wird anschließend als Zusatzkopie nach Frankfurt transportiert.
+Die Sicherungdaten OnPrem werden durch den Media Agent dedupliziert.
+Bei der Übertragung nach Frankfurt werden vom Media Agent On Prem nur noch geänderte Blöcke über die Leitung gesendet.
+Commvault Media Agent OnPrem
+Hostname
+IP
+Funktion
+Big-vback01.big.krankenkasse.de
+10.100.10.143
+Media Agent OnPrem
+Disklibrary
+Die Disklibrary ist fest einem Laufwerkbuchstaben zugewiesen.
+Darstellung / Konfiguration am Media Agent
+Darstellung in Commvault
+Commvault Storage Policy OnPrem
+Storage Policy: 0018_C-BIG_OnPrem_to_ahd_Default
+Primary Copy
+Use Existing Global Dedup Policy
+Yes
+Client Side Dedup
+Yes
+lokale DDB
+Yes
+Streams
+100
+Retention
+7/0
+Storage Policy Kopie
+01-OnPrem
+Backup Level
+Default
+Retention
+Basic
+7 Tage
+Extended
+Synchronous Copy
+Storage Policy
+0018_C-BIG_OnPrem_to_ahd_Default
+Storage Policy Kopie
+02-Disk-FRA7
+Use Existing Global Dedup Policy
+Yes
+Globale Dedup Policy
+DE-FRA7-GDDB-07
+Backup Level
+Default
+Retention
+Basic
+30 Tage
+Extended
+90 Tage weekly
+365 Tage monthly
+Commvault Schedule Policies
+Lokale Datensicherung
+Name
+0018_C-BIG_VMware_OnPrem
+Full
+Freitags 18 Uhr
+Inc
+Mo-Do18 Uhr
+Kopie in die ahd vCloud
+Name
+0018-BIG_Aux_Copy_OnPrem_ahd_vCloud
+Copy
+Täglich 2 Uhr
+Wiederholungen
+Alle 12 Stunden
+VMware Backup Settings
+Auswahlliste:
+Filter
+Backup Options
+Anhang
